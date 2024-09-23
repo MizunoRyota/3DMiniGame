@@ -1,0 +1,15 @@
+﻿  HitChecker.cpp
+  Player.cpp
+D:\ゆいぜみ\school\2024ゆいゼミ\school\3Dミニゲーム\HitChecker.cpp(46,45): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
+D:\ゆいぜみ\school\2024ゆいゼミ\school\3Dミニゲーム\HitChecker.cpp(46,33): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
+D:\ゆいぜみ\school\2024ゆいゼミ\school\3Dミニゲーム\HitChecker.cpp(47,45): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
+D:\ゆいぜみ\school\2024ゆいゼミ\school\3Dミニゲーム\HitChecker.cpp(47,33): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
+D:\ゆいぜみ\school\2024ゆいゼミ\school\3Dミニゲーム\HitChecker.cpp(58,21): error C2352: 'Player::ChangeSpeedFlag': 非静的メンバー関数の呼び出しにはオブジェクトが必要です
+  D:\ゆいぜみ\school\2024ゆいゼミ\school\3Dミニゲーム\Player.h(15,7):
+  'Player::ChangeSpeedFlag' の宣言を確認してください
+  
+D:\ゆいぜみ\school\2024ゆいゼミ\school\3Dミニゲーム\HitChecker.cpp(65,34): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
+D:\ゆいぜみ\school\2024ゆいゼミ\school\3Dミニゲーム\Player.cpp(186,15): warning C4305: '-=': 'double' から 'float' へ切り詰めます。
+D:\ゆいぜみ\school\2024ゆいゼミ\school\3Dミニゲーム\Player.cpp(190,16): warning C4305: '-=': 'double' から 'float' へ切り詰めます。
+  main.cpp
+  コードを生成中...

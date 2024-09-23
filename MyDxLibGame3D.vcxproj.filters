@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="convenience">
+      <UniqueIdentifier>{2ea0a41c-a22d-427b-b1bc-ca2b0f1a6913}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Obstacle">
+      <UniqueIdentifier>{e4e79899-75c8-48d5-bef4-2677af712ca4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="game.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Color.cpp">
+      <Filter>convenience</Filter>
+    </ClCompile>
+    <ClCompile Include="Box.cpp">
+      <Filter>convenience</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="HitChecker.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="SkyDome.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage2.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Bus.cpp">
+      <Filter>Obstacle</Filter>
+    </ClCompile>
+    <ClCompile Include="Coin.cpp">
+      <Filter>Obstacle</Filter>
+    </ClCompile>
+    <ClCompile Include="Car.cpp">
+      <Filter>Obstacle</Filter>
+    </ClCompile>
+    <ClCompile Include="BackEnemy.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="CoinChecker.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Puddle.cpp">
+      <Filter>Obstacle</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="game.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Pallet.h">
+      <Filter>convenience</Filter>
+    </ClInclude>
+    <ClInclude Include="Color.h">
+      <Filter>convenience</Filter>
+    </ClInclude>
+    <ClInclude Include="Box.h">
+      <Filter>convenience</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="HitChecker.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="SkyDome.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage2.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Bus.h">
+      <Filter>Obstacle</Filter>
+    </ClInclude>
+    <ClInclude Include="Coin.h">
+      <Filter>Obstacle</Filter>
+    </ClInclude>
+    <ClInclude Include="Car.h">
+      <Filter>Obstacle</Filter>
+    </ClInclude>
+    <ClInclude Include="BackEnemy.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="CoinChecker.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Puddle.h">
+      <Filter>Obstacle</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
