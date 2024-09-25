@@ -190,10 +190,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				{
 					DeadJudge = hitcheck->DeadJudge();
 				}
-				hitcheck->PuddleCheck(player->GetPos(), puddle->GetPos());
-				player->ChangeSpeed();
-
-
+				hitcheck->PuddleCheck(player->GetPos(), puddle->GetPos(),player);
 
 				// ‰æ–Ê‚ğ‰Šú‰»‚·‚é
 				ClearDrawScreen();

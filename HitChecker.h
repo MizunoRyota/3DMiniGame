@@ -1,5 +1,5 @@
 #pragma once
-
+#include"Player.h"
 class HitChecker
 {
 public:
@@ -8,7 +8,7 @@ public:
     void Init();
     void BusCheck(const VECTOR& player, const VECTOR& obs);
     bool CarCheck(const VECTOR& player, const VECTOR& obs);
-    void PuddleCheck(const VECTOR& player, const VECTOR& obs);
+    void PuddleCheck(const VECTOR& playerpos, const VECTOR& obs,Player*player);
     bool DeadJudge();
     void circleDraw();
     const bool & GetDead() const { return deadgudge; }

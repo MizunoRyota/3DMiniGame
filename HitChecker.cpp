@@ -14,6 +14,7 @@ HitChecker::HitChecker()
     PuddleRadius = 1.3f;
     CarRadius = 1.3f;
     deadgudge = false;
+    SpeedDownjudge = false;
 }
 HitChecker::~HitChecker()
 {}
@@ -21,6 +22,7 @@ HitChecker::~HitChecker()
 void HitChecker::Init()
 {
     deadgudge = false;
+    SpeedDownjudge = false;
 }
 
 void HitChecker::BusCheck(const VECTOR& player, const VECTOR& obs)
@@ -41,7 +43,14 @@ void HitChecker::BusCheck(const VECTOR& player, const VECTOR& obs)
     }
 }
 
-void HitChecker::PuddleCheck(const VECTOR& playerpos, const VECTOR& obs)
+
+/// <summary>
+/// みずたまりチェック
+/// </summary>
+/// <param name="playerpos"></param>
+/// <param name="obs"></param>
+/// <param name="player"></param>
+void HitChecker::PuddleCheck(const VECTOR& playerpos, const VECTOR& obs,Player*player)
 {
     PuddleCircle[1] = VGet(obs.x-2.5, obs.y + 0.6, obs.z);
     PuddleCircle[0] = VGet(obs.x+0.5, obs.y + 0.6, obs.z);
@@ -55,7 +64,8 @@ void HitChecker::PuddleCheck(const VECTOR& playerpos, const VECTOR& obs)
 
         if (PuddleDistance[i] <= (PuddleLength))
         {
-            Player::ChangeSpeedFlag();
+            SpeedDownjudge = true;
+            player->Set(SpeedDownjudge);
         } 
     }
 }
