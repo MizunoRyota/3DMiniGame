@@ -204,6 +204,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				puddle->Draw();
 				coin->Draw();
 				player->Draw();
+				player->DrawSpeedDown();
 				game->ScoreDraw();
 				//if (DeadJudge == true)
 				//{

@@ -13,6 +13,7 @@ public:
 	void PlayerGameOver();	//ゲームオーバー
 	void ChangeMotion(int motionNum);//モーション変更
 	void ChangeSpeedFlag();			 //下がったスピードを元に戻す関数
+	void DrawSpeedDown();	//スピードダウン画像の表示
 	void Draw();			// 描画.
 	void Jump();			//ジャンプ
 	// モデルハンドルの取得.
@@ -29,7 +30,9 @@ private:
 	int ChangeSpeedTime;	// 時間計測用の変数
 
 	//ゲームに関する変数
-	bool EndJudge;//ゲームオーバー演出が終わったかどうかの判定]
+	bool EndJudge;				//ゲームオーバー演出が終わったかどうかの判定]
+	int SpeedDownHandle;		//スピードダウン中の画像
+	int BettoriHnadle;			//べっとり効果音の画像
 
 	//アニメーションに関するメンバ変数
 	int PlayerHandle;			// モデルハンドル.

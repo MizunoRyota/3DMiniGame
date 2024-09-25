@@ -15,6 +15,10 @@ Player::Player()
 {
 	// ３Ｄモデルの読み込み
 	PlayerHandle = MV1LoadModel("Data/3Dmodel/Player/Player.mv1");
+	//画像の読み込み
+	SpeedDownHandle = LoadGraph("Data/Texture/game/SpeedDown.png");
+	BettoriHnadle = LoadGraph("Data/Texture/game/Bettori.png");
+	 
 	// 再生時間の初期化
 	PlayTime = 0.0f;
 	EndJudge = true;
@@ -255,6 +259,7 @@ void Player::ChangeSpeedFlag()
 {
 	if (SpeedDownJudge==true)
 	{
+		DrawSpeedDown();
 		// 初回の呼び出し時に開始時刻を設定
 		if (ChangeSpeedTime == 0)
 		{
@@ -273,6 +278,16 @@ void Player::ChangeSpeedFlag()
 void Player::ChangeSpeed()
 {
 	SpeedDownJudge = true;
+}
+
+void Player::DrawSpeedDown()
+{
+	if (SpeedDownJudge == true)
+	{
+		DrawGraph(600, 600, BettoriHnadle, true);
+		DrawGraph(900, 100, BettoriHnadle, true);
+		DrawGraph(100, 50, BettoriHnadle, true);
+	}
 }
 
 /// <summary>
