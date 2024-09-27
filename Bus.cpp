@@ -2,7 +2,7 @@
 #include"Bus.h"
 
 const float Bus::Speed = static_cast<float>(10000.0 / 30.0 / 30.0 / 30.0);
-const float Bus::Scale = 0.011f;		// スケール
+const float Bus::Scale = 0.008f;		// スケール
 
 Bus::Bus()
 {
@@ -38,14 +38,18 @@ void Bus::Update()
 	if (pos.z<=-20)
 	{
 		pos.z = 70.0f;
-		dir = rand() % 2;
+		dir = rand() % 3;
 		if (dir==0)
 		{
-			pos.x = -1.5;
+			pos.x = -1.8;
+		}
+		else if(dir==1)
+		{
+			pos.x = 1.8;
 		}
 		else
 		{
-			pos.x = 1.5;
+			pos.x = 0;
 		}
 	}
 	// ３Dモデルのポジション設定

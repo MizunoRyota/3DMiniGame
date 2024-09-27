@@ -27,7 +27,7 @@ void Camera::Init()
 {
     pos = VGet(-1, 0, 0);
     Hight = 1.0;
-    zoom = -1.5;
+    zoom = -1.3;
 }
 /// @brief 
 /// @param playerpos 
@@ -43,11 +43,11 @@ void Camera::GameTitle(const VECTOR& playerpos)
 void Camera::ReadyUpdate(const VECTOR& playerpos)
 {
 
-    if (zoom>=-3.5)
+    if (zoom>=-3.2)
     {
         zoom-=0.04;
     }
-    if (Hight <= 1.7)
+    if (Hight <= 1.4)
     {
         Hight += 0.04;
     }

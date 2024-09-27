@@ -38,7 +38,7 @@ void Stage::Init()
 void Stage::Update()
 {
 	pos.z -= 0.2;
-	if (pos.z<=-70)
+	if (pos.z<=-80)
 	{
 		pos.z = 90;
 	}

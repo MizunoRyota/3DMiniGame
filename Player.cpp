@@ -7,7 +7,7 @@
 const float Player::Speed = static_cast<float>(10000.0 / 40.0 / 40.0 / 40.0);
 const float Player::DownSpeed = static_cast<float>(10000.0 / 80.0 / 80.0 / 80.0);
 
-const float Player::Scale = 0.007f;		// スケール
+const float Player::Scale = 0.006f;		// スケール
 const float Player::Gravity = 0.6f;     // 重力加速度
 const float Player::JumpSpeed = 0.2f;   // ジャンプの初速度
 
@@ -46,10 +46,11 @@ void Player::PlayerInitialize()
 	// 再生時間の初期化
 	PlayTime = 0.0f;
 	//プレイヤーの初期化
-	Pos = VGet(0.5, 0.5f, -7);
+	Pos = VGet(0.5, 0.5f, -7.0);
 	Velocity = VGet(0, 0, 0);
 	Dir = VGet(0, 0, 0);
 	Rotation=0;
+	SpeedDownJudge = false;
 	// ３ＤモデルのY軸の回転値を９０度にセットする
 	MV1SetRotationXYZ(PlayerHandle, VGet(0.0f,300.0f * DX_PI_F / 180.0f, 0.0f));
 	MV1GetRotationXYZ( PlayerHandle);
@@ -185,11 +186,11 @@ void Player::PlayerUpdate()
 		Dir = VNorm(Velocity);
 	}
 
-	if (Pos.x>2)
+	if (Pos.x>3)
 	{
 		Pos.x -= 0.3;
 	}
-	else if (Pos.x<-2)
+	else if (Pos.x<-3)
 	{
 		Pos.x -= -0.3;
 	}
@@ -297,4 +298,5 @@ void Player::Draw()
 {
 	// ３Ｄモデルの描画
 	MV1DrawModel(PlayerHandle);
+	DrawSpeedDown();
 }

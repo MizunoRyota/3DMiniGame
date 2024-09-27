@@ -50,9 +50,9 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	const int FRAME_TIME = 1000 / TARGET_FPS;  // 1フレームあたりの理想的な時間 (ミリ秒)
 
 	// ********** フォントのロード **********
-	LPCSTR font_path = "data/font.otf"; // 読み込むフォントファイルのパス
+	LPCSTR font_path = "Data/Font/Mimi_font-Regular.otf"; // 読み込むフォントファイルのパス
 	//// フォントの変更
-	ChangeFont("New Tegomin", DX_CHARSET_DEFAULT);
+	ChangeFont("Mimi_font", DX_CHARSET_DEFAULT);
 	// インスタンス生成
 	GameState* game = new GameState(); 
 	Camera* camera = new Camera();
@@ -204,13 +204,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				puddle->Draw();
 				coin->Draw();
 				player->Draw();
-				player->DrawSpeedDown();
 				game->ScoreDraw();
-				//if (DeadJudge == true)
-				//{
-				//	DrawFormatString(600, 670, Pallet::AliceBlue.GetHandle(), "YOUAREDEAD");
-				//	DeadJudge = false;
-				//}
+
 				hitcheck->circleDraw();
 
 				if (DeadJudge==true)

@@ -17,7 +17,7 @@ public:
 private:
     VECTOR PlayerCircle;        //プレイヤーの当たり判定のポジション
     VECTOR Distancepos[3];      //バスの当たり判定それぞれのポジション
-    VECTOR ObstacleCircle[3];   //バスとプレイヤーとの距離の減算を保持する
+    VECTOR BusCircle[3];   //バスとプレイヤーとの距離の減算を保持する
     VECTOR Cardistance;         //普通自動車とプレイヤーとの距離の減算の保持する
     VECTOR CarCircle;           //普通自動車の当たり判定のポジション
     VECTOR Puddledistance[2];   //
@@ -30,7 +30,7 @@ private:
     float CarLength;            //普通自動車とプレイヤーとの半径同士の合計
     float Length;               //バスとプレイヤーとの半径同士の合計
     float PuddleLength;         //
-    float ObstacleRadius;       //バスの当たり判定の半径
+    float BusRadius;       //バスの当たり判定の半径
     float PlayerRadius;         //プレイヤーの当たり判定の半径
     float PuddleRadius;         //みずたまりのあたる判定の半径
     float CarRadius;            //普通自動車の当たり判定の半径

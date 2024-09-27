@@ -39,7 +39,7 @@ void GameState::GameReady()
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 	DrawGraph(150, 400, Controller, true);
 	SetFontSize(50);
-	DrawFormatString(600, 270, Pallet::AliceBlue.GetHandle(), "　　チュートリアル\n\n操作方法:←→で移動↑でジャンプ");
+	DrawFormatString(600, 270, Pallet::AliceBlue.GetHandle(), "　　チュートリアル\n\nあそび方:←→で移動↑でジャンプ");
 	DrawFormatString(600, 670, Pallet::AliceBlue.GetHandle(), "START SPACE KEY");
 
 }
@@ -68,7 +68,17 @@ void GameState::HighScoreDraw()
 void GameState::GameOver()
 {
 	SetFontSize(60);
+	// 例：透明度50%の白色の四角形を描画する
+	SetDrawBlendMode(DX_BLENDMODE_ALPHA, 128);
 
+	DrawBox(0, 200, 1600, 800, Pallet::Black.GetHandle(), TRUE);
+	DrawBox(0, 210, 1600, 220, Pallet::Aqua.GetHandle(), TRUE);
+	DrawBox(0, 780, 1600, 790, Pallet::Aqua.GetHandle(), TRUE);
+
+	// 描画モードを元に戻す
+	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+
+	SetFontSize(50);
 	DrawFormatString(600, 340, Pallet::AliceBlue.GetHandle(), "HighScore %d", HighScore);
 
 	DrawFormatString(600, 500, Pallet::AliceBlue.GetHandle(), "SCORE::%d", Score);
