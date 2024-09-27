@@ -5,6 +5,11 @@
 GameState::GameState()
 {
 	Controller = LoadGraph("data/texture/title/setumei.png");
+	PaintHandle[0] = LoadGraph("data/texture/GameOver/GreenPaint.png");
+	PaintHandle[1] = LoadGraph("data/texture/GameOver/RedPaint.png");
+	PaintHandle[2] = LoadGraph("data/texture/GameOver/SkybluePaint.png");
+	PaintHandle[3] = LoadGraph("data/texture/GameOver/YellowPaint.png");
+
 	HighScore = 0;
 	Score = 0;
 }
@@ -22,7 +27,7 @@ void GameState::GameInitialize()
 void GameState::GameTitle()
 {
 	SetFontSize(95);
-    DrawFormatString(370, 160, Pallet::AliceBlue.GetHandle(), "TITLE", true);
+    DrawFormatString(370, 160, Pallet::AliceBlue.GetHandle(), "City Sprint", true);
 	DrawFormatString(200, 670, Pallet::AliceBlue.GetHandle(), "START SPACE KEY");
 }
 
@@ -79,8 +84,13 @@ void GameState::GameOver()
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 
 	SetFontSize(50);
-	DrawFormatString(600, 340, Pallet::AliceBlue.GetHandle(), "HighScore %d", HighScore);
+	DrawGraph(150, 200, PaintHandle[0], true);
+	DrawGraph(1000, 300, PaintHandle[1], true);
+	DrawGraph(1100, 550, PaintHandle[2], true);
+	DrawGraph(300, 600, PaintHandle[3], true);
 
-	DrawFormatString(600, 500, Pallet::AliceBlue.GetHandle(), "SCORE::%d", Score);
+	DrawFormatString(600, 340, Pallet::AliceBlue.GetHandle(), "GAME OVER");
+	DrawFormatString(600, 500, Pallet::AliceBlue.GetHandle(), "HIGH SCORE %d", HighScore);
+	DrawFormatString(580, 560, Pallet::AliceBlue.GetHandle(), "YOUR SCORE %d", Score);
 
 }

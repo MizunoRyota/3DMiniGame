@@ -15,6 +15,7 @@ public:
 
 private:
 	int Controller;		//コントローラーの画像
+	int PaintHandle[4]; //ペイントの画像
 	int Score;			//スコア
 	int HighScore;		//ハイスコア
 	int SpeedMeter;		//現在のスピード

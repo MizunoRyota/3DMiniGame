@@ -29,7 +29,7 @@ void Puddle::Init()
 void Puddle::Update()
 {
 	pos.z -= 0.5f;
-	if (pos.z <= -50)
+	if (pos.z <= -60)
 	{
 		pos.z = 70.0f;
 	}

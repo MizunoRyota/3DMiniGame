@@ -43,7 +43,7 @@ void Car::Update()
 	pos.z -= 0.5f;
 	if (pos.z <= -20)
 	{
-		pos.z = 70.0f;
+		pos.z = 50.0f;
 		dir = rand() % 3;
 		if (dir == 0)
 		{
