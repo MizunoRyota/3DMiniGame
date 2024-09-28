@@ -10,6 +10,8 @@ GameState::GameState()
 	PaintHandle[2] = LoadGraph("data/texture/GameOver/SkybluePaint.png");
 	PaintHandle[3] = LoadGraph("data/texture/GameOver/YellowPaint.png");
 
+	ObstaclePattern = 0;
+	
 	HighScore = 0;
 	Score = 0;
 }
@@ -51,7 +53,17 @@ void GameState::GameReady()
 
 void GameState::GameUpdate()
 {
+
+	ObstacleConfiguration();
 	Score++;
+}
+
+void GameState::ObstacleConfiguration()
+{
+	if (IsObstacle=true)
+	{
+		ObstaclePattern = rand() % 4;
+	}
 }
 
 void GameState::ScoreDraw()

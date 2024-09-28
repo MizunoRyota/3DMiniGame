@@ -178,8 +178,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				stage2->Update();
 
 				//áŠQ•¨§Œä
-				bus->Update();
-				car->Update();
+				bus->Update(game->GetObstaclePattern());
+				car->Update(game->GetObstaclePattern());
 				puddle->Update();
 				//ƒRƒCƒ“§Œä
 				coin->Update(bus->GetPos(),car->GetPos());

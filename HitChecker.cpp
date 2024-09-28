@@ -94,7 +94,6 @@ bool HitChecker::CarCheck(const VECTOR& player, const VECTOR& obs)
     return CarDistance <= (CarLength);
 }
 
-
 bool HitChecker::DeadJudge()
 {
     //ゲームオーバー判定
@@ -105,23 +104,23 @@ bool HitChecker::DeadJudge()
 
 void HitChecker::circleDraw()
 {
-    //for (int i = 0; i < 3; i++)
-    //{
-    //    if (Distance[i] <= (Length))
-    //    {
-    //        DrawSphere3D(BusCircle[i], BusRadius, 16, Pallet::AliceBlue.GetHandle(), Pallet::AliceBlue.GetHandle(), false);
-    //    }
-    //    else
-    //    {
-    //    DrawSphere3D(BusCircle[i], BusRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
-    //    }
-    //}
+ //   for (int i = 0; i < 3; i++)
+ //   {
+ //       if (Distance[i] <= (Length))
+ //       {
+ //           DrawSphere3D(BusCircle[i], BusRadius, 16, Pallet::AliceBlue.GetHandle(), Pallet::AliceBlue.GetHandle(), false);
+ //       }
+ //       else
+ //       {
+ //       DrawSphere3D(BusCircle[i], BusRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
+ //       }
+ //   }
 
-    //DrawSphere3D(CarCircle, CarRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
-    //DrawSphere3D(PlayerCircle, PlayerRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
+ //   DrawSphere3D(CarCircle, CarRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
+ //   DrawSphere3D(PlayerCircle, PlayerRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
 
- /*   for (size_t i = 0; i < 2; i++)
-    {
-        DrawSphere3D(PuddleCircle[i], PuddleRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
-    }*/
+ //   for (size_t i = 0; i < 2; i++)
+ //   {
+ //       DrawSphere3D(PuddleCircle[i], PuddleRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
+ //   }
 }

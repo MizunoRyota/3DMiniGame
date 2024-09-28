@@ -1,7 +1,6 @@
 #include"DxLib.h"
 #include"Car.h"
 
-const float Car::Speed = static_cast<float>(10000.0 / 30.0 / 30.0 / 30.0);
 const float Car::Scale = 0.037f;		// ÉXÉPÅ[Éã]
 
 Car::Car()
@@ -38,22 +37,21 @@ void Car::CarTitle()
 	MV1SetPosition(CarHandle, pos);
 }
 
-void Car::Update()
+void Car::Update(int PlacePattern)
 {
 	pos.z -= 0.5f;
 	if (pos.z <= -20)
 	{
 		pos.z = 50.0f;
-		dir = rand() % 3;
-		if (dir == 0)
+		if ( PlacePattern == 0)
 		{
-			pos.x = -1.8;
+			pos.x = 2.0;
 		}
-		else if (dir == 1)
+		else if ( PlacePattern == 1)
 		{
-			pos.x = 1.8;
+			pos.x = -2.0;
 		}
-		else
+		else if(PlacePattern)
 		{
 			pos.x = 0;
 		}

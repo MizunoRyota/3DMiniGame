@@ -1,7 +1,6 @@
 #include"DxLib.h"
 #include"Bus.h"
 
-const float Bus::Speed = static_cast<float>(10000.0 / 30.0 / 30.0 / 30.0);
 const float Bus::Scale = 0.008f;		// ÉXÉPÅ[Éã
 
 Bus::Bus()
@@ -31,23 +30,23 @@ void Bus::Init()
 	MV1SetPosition(BusHandle, pos);
 }
 
-void Bus::Update()
+void Bus::Update(int PlacePattern)
 {
 	isActive = true;
 	pos.z-=0.5f;
 	if (pos.z<=-20)
 	{
 		pos.z = 50.0f;
-		dir = rand() % 3;
-		if (dir==0)
+
+		if ( PlacePattern==0)
 		{
 			pos.x = -1.8;
 		}
-		else if(dir==1)
+		else if( PlacePattern==1)
 		{
 			pos.x = 1.8;
 		}
-		else
+		else if(PlacePattern == 0)
 		{
 			pos.x = 0;
 		}

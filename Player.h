@@ -19,7 +19,6 @@ public:
 	// モデルハンドルの取得.
 	const VECTOR& GetPos() const { return Pos; }
 	void Set(bool flag) { SpeedDownJudge = flag; }
-	//const bool GetEnd() const { return EndJudge; }
 	 
 private:
 	//プレイヤー自身に関するメンバ変数
