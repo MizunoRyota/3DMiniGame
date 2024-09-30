@@ -10,7 +10,7 @@ HitChecker::HitChecker()
     Length = PlayerRadius + BusRadius;
     CarLength = PlayerRadius + CarRadius;
     BusRadius = 1.5f;
-    PlayerRadius = 1.0f;
+    PlayerRadius = 0.5f;
     PuddleRadius = 1.3f;
     CarRadius = 1.3f;
     deadgudge = false;
@@ -24,7 +24,11 @@ void HitChecker::Init()
     deadgudge = false;
     SpeedDownjudge = false;
 }
-
+/// <summary>
+/// バスの当たり判定
+/// </summary>
+/// <param name="player"></param>
+/// <param name="obs"></param>
 void HitChecker::BusCheck(const VECTOR& player, const VECTOR& obs)
 {
     //オブジェクトの位置獲得
@@ -38,9 +42,9 @@ void HitChecker::BusCheck(const VECTOR& player, const VECTOR& obs)
     for (int i = 0; i < BusNum; i++)
     {
         //プレイヤーとオブジェクトの距離の合計を獲得
-        Distancepos[i] = VSub(player, BusCircle[i]);
-        Distance[i] = VSquareSize( Distancepos[i]);
-        if (Distance[i] <= (Length))
+        BusDistancepos[i] = VSub(player, BusCircle[i]);
+        Busdistance[i] = VSquareSize( BusDistancepos[i]);
+        if (Busdistance[i] <= (Length))
         {
             DeadJudge();
         }
@@ -56,15 +60,15 @@ void HitChecker::BusCheck(const VECTOR& player, const VECTOR& obs)
 void HitChecker::PuddleCheck(const VECTOR& playerpos, const VECTOR& obs, Player* player)
 {
     //オブジェクトの位置獲得
-    PuddleCircle[1] = VGet(obs.x - 2.5, obs.y + 0.6, obs.z);
-    PuddleCircle[0] = VGet(obs.x + 0.5, obs.y + 0.6, obs.z);
+    PuddleCircle[1] = VGet(obs.x , obs.y + 0.6, obs.z);
+    PuddleCircle[0] = VGet(obs.x + 2, obs.y + 0.6, obs.z);
+    PuddleCircle[2] = VGet(obs.x + -2, obs.y + 0.6, obs.z);
 
     //オブジェクトとプレイヤーの半径の合計
     PuddleLength = PlayerRadius + CarRadius;
 
     for (int i = 0; i < PuddleNum; i++)
     {
-
         //プレイヤーとオブジェクトの距離の合計を獲得
         Puddledistance[i] = VSub(playerpos, PuddleCircle[i]);
 
@@ -77,7 +81,12 @@ void HitChecker::PuddleCheck(const VECTOR& playerpos, const VECTOR& obs, Player*
         }
     }
 }
-
+/// <summary>
+/// 普通自動車判定
+/// </summary>
+/// <param name="player"></param>
+/// <param name="obs"></param>
+/// <returns></returns>
 bool HitChecker::CarCheck(const VECTOR& player, const VECTOR& obs)
 {
     //オブジェクトの位置獲得
@@ -104,23 +113,23 @@ bool HitChecker::DeadJudge()
 
 void HitChecker::circleDraw()
 {
- //   for (int i = 0; i < 3; i++)
- //   {
- //       if (Distance[i] <= (Length))
- //       {
- //           DrawSphere3D(BusCircle[i], BusRadius, 16, Pallet::AliceBlue.GetHandle(), Pallet::AliceBlue.GetHandle(), false);
- //       }
- //       else
- //       {
- //       DrawSphere3D(BusCircle[i], BusRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
- //       }
- //   }
+    //for (int i = 0; i < 3; i++)
+    //{
+    //    if (Busdistance[i] <= (Length))
+    //    {
+    //        DrawSphere3D(BusCircle[i], BusRadius, 16, Pallet::AliceBlue.GetHandle(), Pallet::AliceBlue.GetHandle(), false);
+    //    }
+    //    else
+    //    {
+    //    DrawSphere3D(BusCircle[i], BusRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
+    //    }
+    //}
 
- //   DrawSphere3D(CarCircle, CarRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
- //   DrawSphere3D(PlayerCircle, PlayerRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
+    //DrawSphere3D(CarCircle, CarRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
+    //DrawSphere3D(PlayerCircle, PlayerRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
 
- //   for (size_t i = 0; i < 2; i++)
- //   {
- //       DrawSphere3D(PuddleCircle[i], PuddleRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
- //   }
+    //for (size_t i = 0; i < 3; i++)
+    //{
+    //    DrawSphere3D(PuddleCircle[i], PuddleRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
+    //}
 }

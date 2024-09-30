@@ -23,7 +23,7 @@ Player::Player()
 	PlayTime = 0.0f;
 	EndJudge = true;
 	SpeedDownJudge = false;
-	Pos = VGet(1, 0.5f, 0);
+	Pos = VGet(0, 0.5f, 0);
 	Velocity = VGet(0, 0, 0);
 	Dir = VGet(0, 0, 1);
 	ChangeSpeedTime = 0;

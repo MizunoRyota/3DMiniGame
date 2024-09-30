@@ -10,7 +10,7 @@ const float Stage2::Scale = 0.04f;		// スケール
 Stage2::Stage2()
 {
 	Stage2Handle = MV1LoadModel("Data/3Dmodel/Stage/Stage.mv1");
-	pos = VGet(0.0f, 0.0f, 110.0f);
+	pos = VGet(0.0f, 0.0f, 0.0f);
 	MV1SetRotationXYZ(Stage2Handle, VGet(0.0f, 180.0f * DX_PI_F, 0.0f));
 	// 3Dモデルのスケール決定
 	MV1SetScale(Stage2Handle, VGet(Scale, Scale, Scale));
@@ -40,7 +40,7 @@ void Stage2::Update()
 	pos.z -= 0.2;
 	if (pos.z <= -70)
 	{
-		pos.z = 90;
+		pos.z = 110;
 	}
 	MV1SetPosition(Stage2Handle, pos);
 }

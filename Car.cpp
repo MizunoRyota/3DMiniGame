@@ -45,15 +45,19 @@ void Car::Update(int PlacePattern)
 		pos.z = 50.0f;
 		if ( PlacePattern == 0)
 		{
-			pos.x = 2.0;
+			pos.x = 0;
 		}
 		else if ( PlacePattern == 1)
 		{
 			pos.x = -2.0;
 		}
-		else if(PlacePattern)
+		else if(PlacePattern==2)
 		{
-			pos.x = 0;
+			pos.x = 2;
+		}
+		else
+		{
+			pos.x = 2;
 		}
 	}
 	// ３Dモデルのポジション設定

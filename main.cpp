@@ -12,6 +12,7 @@
 #include"Car.h"
 #include"Coin.h"
 #include"Puddle.h"
+#include"NewsPaper.h"
 #include"Player.h"
 enum STATE
 {
@@ -65,6 +66,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	Bus* bus = new Bus();
 	Car* car = new Car();
 	Puddle* puddle = new Puddle();
+	NewsPaper* newspaper = new NewsPaper();
 	// エスケープキーが押されるかウインドウが閉じられるまでループ
 	LONGLONG frameTime = 0;
 
@@ -181,10 +183,13 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				bus->Update(game->GetObstaclePattern());
 				car->Update(game->GetObstaclePattern());
 				puddle->Update();
+				newspaper->Update();
 				//コイン制御
 				coin->Update(bus->GetPos(),car->GetPos());
 
 				hitcheck->BusCheck(player->GetPos(), bus->GetPos());//バストの接触確認
+				hitcheck->BusCheck(player->GetPos(), bus->GetPos2());//バストの接触確認
+
 				DeadJudge = hitcheck->GetDead();//ゲームオーバーの判定
 				if (hitcheck->CarCheck(player->GetPos(), car->GetPos()))//普通自動車との判定
 				{
@@ -203,6 +208,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				car->GameDraw();
 				puddle->Draw();
 				coin->Draw();
+				newspaper->Draw();
 				player->Draw();
 				game->ScoreDraw();
 

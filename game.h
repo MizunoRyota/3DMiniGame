@@ -24,5 +24,4 @@ private:
 	int SpeedMeter;		//現在のスピード
 	int ObstaclePattern;//障害物の配置パターン
 	bool IsObstacle;	//障害物があるかどうかの判定
-
 };

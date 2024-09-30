@@ -17,4 +17,5 @@ private:
 	// Ã“I’è”.
 	static const float Scale;
 	static const float CoinNum;
+
 };
