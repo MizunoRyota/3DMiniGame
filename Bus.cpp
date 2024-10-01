@@ -9,7 +9,7 @@ Bus::Bus()
 	BusHandle[1] = MV1DuplicateModel(BusHandle[0]);
 	for (int i = 0; i < BusNum; i++)
 	{
-		pos[i] = VGet(1, 0.5, 50);
+		pos[i] = VGet(2.0, 0.5, 50);
 		MV1SetScale(BusHandle[i], VGet(Scale, Scale, Scale));
 		MV1SetPosition(BusHandle[i], pos[i]);
 	}
@@ -28,20 +28,20 @@ void Bus::Init()
 {
 	for (int i = 0; i < BusNum; i++)
 	{
-	pos[i] = VGet(1.5f, 1.4f, 40.0f);
-	MV1SetRotationXYZ(BusHandle[i], VGet(0.0f, 4.7f, 0.0f));
-	// 3Dモデルのスケール決定
-	MV1SetScale(BusHandle[i], VGet(Scale, Scale, Scale));
-	// ３Dモデルのポジション設定
-	MV1SetPosition(BusHandle[i], pos[i]);
+		pos[i] = VGet(2.0f, 1.2f, 40.0f);
+		MV1SetRotationXYZ(BusHandle[i], VGet(0.0f, 4.7f, 0.0f));
+		// 3Dモデルのスケール決定
+		MV1SetScale(BusHandle[i], VGet(Scale, Scale, Scale));
+		// ３Dモデルのポジション設定
+		MV1SetPosition(BusHandle[i], pos[i]);
 	}
 }
 
-void Bus::Update(int PlacePattern)
+void Bus::Update(int PlacePattern,float ObstacleSpeed)
 {
 	isActive = true;
-	pos[0].z-=0.5f;
-	pos[1].z -= 0.5f;
+	pos[0].z-=ObstacleSpeed;
+	pos[1].z -= ObstacleSpeed;
 	if (pos[0].z<=-20&&pos[1].z<=-20)
 	{
 		pos[0].z = 50.0f;

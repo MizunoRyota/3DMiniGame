@@ -22,7 +22,7 @@ Car::~Car()
 
 void Car::Init()
 {
-	pos = VGet(1.5f, 0.5f, 40.0f);
+	pos = VGet(2.0f, 0.5f, 40.0f);
 	MV1SetRotationXYZ(CarHandle, VGet(0.0f, 0.0f, 0.0f));
 	// 3Dモデルのスケール決定
 	MV1SetScale(CarHandle, VGet(Scale, Scale, Scale));
@@ -37,9 +37,9 @@ void Car::CarTitle()
 	MV1SetPosition(CarHandle, pos);
 }
 
-void Car::Update(int PlacePattern)
+void Car::Update(int PlacePattern, float ObstacleSpeed)
 {
-	pos.z -= 0.5f;
+	pos.z -= ObstacleSpeed;
 	if (pos.z <= -20)
 	{
 		pos.z = 50.0f;

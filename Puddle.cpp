@@ -18,17 +18,16 @@ Puddle::~Puddle()
 	MV1DeleteModel(PuddleHandle);
 }
 
-
 void Puddle::Init()
 {
-	pos = VGet(0.0f, 0.50f, 40.0f);
+	pos = VGet(0.5f, 0.50f, 40.0f);
 	// ３Dモデルのポジション設定
 	MV1SetPosition(PuddleHandle, pos);
 }
 
-void Puddle::Update()
+void Puddle::Update( float ObstacleSpeed)
 {
-	pos.z -= 0.5f;
+	pos.z -= ObstacleSpeed;
 	if (pos.z <= -60)
 	{
 		pos.z = 95.0f;

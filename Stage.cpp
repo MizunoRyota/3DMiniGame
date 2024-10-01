@@ -2,50 +2,65 @@
 #include"Stage.h"
 
 // 静的定数
-// 速度（1=1m、60fps固定として、時速10km）
-// 10000m ÷ 時間 ÷ 分 ÷ 秒 ÷ フレーム
-const float Stage::Speed = static_cast<float>(10000.0 / 60.0 / 60.0 / 60.0);
 const float Stage::Scale = 0.04f;		// スケール
-
+const int Stage::StageNum3 = 3;
 Stage::Stage()
 {
-	StageHandle = MV1LoadModel("Data/3Dmodel/Stage/Stage.mv1");
-	pos = VGet(0.0f, 0.0f, 20.0f);
-	MV1SetRotationXYZ(StageHandle, VGet(0.0f, 0.0f, 0.0f));
+	StageHandle[0] = MV1LoadModel("Data/3Dmodel/Stage/Stage.mv1");
+	pos[0] = VGet(0.0f, 0.0f, 20.0f);
+	MV1SetRotationXYZ(StageHandle[0], VGet(0.0f, 0.0f, 0.0f));
 	// 3Dモデルのスケール決定
-	MV1SetScale(StageHandle, VGet(Scale, Scale, Scale));
-	// ３Dモデルのポジション設定
-	MV1SetPosition(StageHandle, pos);
+	for (int i = 1; i < StageNum3; i++)
+	{
+		StageHandle[i] = MV1DuplicateModel(StageHandle[0]);
+		pos[i] = VGet(1, 0.5, i + 20);
+		MV1SetScale(StageHandle[i], VGet(Scale, Scale, Scale));
+		MV1SetPosition(StageHandle[i], pos[i]);
+	}
 }
 
 Stage::~Stage()
 {
 	// モデルのアンロード.
-	MV1DeleteModel(StageHandle);
+	for (int i = 0; i < StageNum3; i++)
+	{
+		MV1DeleteModel(StageHandle[i]);
+	}
 }
 
 void Stage::Init()
 {
-	StageHandle = MV1LoadModel("Data/3Dmodel/Stage/Stage.mv1");
-	pos = VGet(0.0f, 0.0f, 20.0f);
-	MV1SetRotationXYZ(StageHandle, VGet(0.0f, 0.0f, 0.0f));
+	pos[0] = VGet(0.0f, 0.0f, 0.0f);
+	pos[1] = VGet(0.0f, 0.0f, 90.0f);
+	pos[2] = VGet(0.0f, 0.0f, -90.0f);
+	MV1SetRotationXYZ(StageHandle[1], VGet(0.0f, 180.0f * DX_PI_F, 0.0f));
 	// 3Dモデルのスケール決定
-	MV1SetScale(StageHandle, VGet(Scale, Scale, Scale));
-	// ３Dモデルのポジション設定
-	MV1SetPosition(StageHandle, pos);
+	for (int i = 0; i < StageNum3; i++)
+	{
+		MV1SetScale(StageHandle[i], VGet(Scale, Scale, Scale));
+		// ３Dモデルのポジション設定
+		MV1SetPosition(StageHandle[i], pos[i]);
+	}
 }
 
 void Stage::Update()
 {
-	pos.z -= 0.2;
-	if (pos.z<=-80)
+	for (int i = 0; i < StageNum3; i++)
 	{
-		pos.z = 90;
+		pos[i].z -= 0.2;
+		if (pos[i].z <= -90)
+		{
+			pos[i].z = 90;
+		}
+		MV1SetPosition(StageHandle[i], pos[i]);
 	}
-	MV1SetPosition(StageHandle, pos);
 }
 
 void Stage::GameDraw()
 {
-	MV1DrawModel(StageHandle);
+	for (int i = 0; i < StageNum3; i++)
+	{
+		MV1DrawModel(StageHandle[i]);
+	}
+
 }

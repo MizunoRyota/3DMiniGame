@@ -8,7 +8,7 @@ public:
 	Puddle();
 	~Puddle();
 	void Init();
-	void Update();
+	void Update( float ObstacleSpeed);
 	void Draw();
 	const VECTOR& GetPos() const { return pos; }//ポジションの位置返す
 

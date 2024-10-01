@@ -7,7 +7,6 @@
 #include"Camera.h"
 #include"SkyDome.h"
 #include"Stage.h"
-#include"Stage2.h"
 #include"Bus.h"
 #include"Car.h"
 #include"Coin.h"
@@ -60,7 +59,6 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	Skydome* skydome = new Skydome();
 	HitChecker* hitcheck = new HitChecker;
 	Stage* stage = new Stage();
-	Stage2* stage2 = new Stage2();
 	Player* player = new Player();
 	Coin* coin = new Coin();
 	Bus* bus = new Bus();
@@ -71,7 +69,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	LONGLONG frameTime = 0;
 
 	bool DeadJudge = false;			//ゲームオーバーの判定
-	bool EndJudge = false;
+	bool EndJudge = false;			//ゲームオーバーに遷移できるかどうかの判定
 	bool debugPauseFlag = false;	//ポーズするときの変数
 	int gameStatus = STATE_INIT;	//現在のゲーム中の状態
 
@@ -103,12 +101,12 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				EndJudge = true;
 				hitcheck->Init();
 				stage->Init();
-				stage2->Init();
 				car->Init();
 				bus->Init();
 				puddle->Init();
 				player->PlayerInitialize();
 				camera->Init();
+				game->GameInitialize();
 				//ゲーム状態変化
 				gameStatus = STATE_TITLE;
 			}
@@ -125,7 +123,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				game->GameTitle();
 				skydome->SkydomeDraw();
 				stage->GameDraw();
-				stage2->GameDraw();
+				//stage2->GameDraw();
 				car->GameDraw();
 				player->Draw();
 				game->HighScoreDraw();
@@ -135,9 +133,9 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				{
 					WaitTimer(200);
 					ClearDrawScreen();
+					car->Init();
 					gameStatus = STATE_READY;
 				}
-
 			}
 			//チュートリアル画面
 			if (gameStatus == STATE_READY)
@@ -151,7 +149,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				//描画
 				skydome->SkydomeDraw();
 				stage->GameDraw();
-				stage2->GameDraw();
+				//stage2->GameDraw();
 				player->Draw();
 				game->GameReady();
 
@@ -177,18 +175,17 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 
 				//ステージ制御
 				stage->Update();
-				stage2->Update();
 
 				//障害物制御
-				bus->Update(game->GetObstaclePattern());
-				car->Update(game->GetObstaclePattern());
-				puddle->Update();
+				bus->Update(game->GetObstaclePattern(),game->GetObstacleSpeed());
+				car->Update(game->GetObstaclePattern(), game->GetObstacleSpeed());
+				puddle->Update(game->GetObstacleSpeed());
 				newspaper->Update();
 				//コイン制御
-				coin->Update(bus->GetPos(),car->GetPos());
+				coin->Update(car->GetPos());
 
-				hitcheck->BusCheck(player->GetPos(), bus->GetPos());//バストの接触確認
-				hitcheck->BusCheck(player->GetPos(), bus->GetPos2());//バストの接触確認
+				hitcheck->BusCheck(player->GetPos(), bus->GetPos());//バスとの接触確認
+				hitcheck->BusCheck(player->GetPos(), bus->GetPos2());//バスとの接触確認
 
 				DeadJudge = hitcheck->GetDead();//ゲームオーバーの判定
 				if (hitcheck->CarCheck(player->GetPos(), car->GetPos()))//普通自動車との判定
@@ -203,7 +200,6 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				// 描画
 				skydome->SkydomeDraw();
 				stage->GameDraw();
-				stage2->GameDraw();
 				bus->GameDraw();
 				car->GameDraw();
 				puddle->Draw();
@@ -222,14 +218,12 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 			//ゲームオーバー演出
 			if (gameStatus == STATE_END)
 			{
-
 				camera->GameEnd(player->GetPos());
 				EndJudge = player->PlayerEnd();
 				// 画面を初期化する
 				ClearDrawScreen();
 				skydome->SkydomeDraw();
 				stage->GameDraw();
-				stage2->GameDraw();
 				bus->GameDraw();
 				car->GameDraw();
 				player->Draw();
@@ -249,7 +243,6 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 
 				skydome->SkydomeDraw();
 				stage->GameDraw();
-				stage2->GameDraw();
 				bus->GameDraw();
 				car->GameDraw();
 				player->Draw();

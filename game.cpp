@@ -1,7 +1,7 @@
 #include<DxLib.h>
 #include"Pallet.h"
-#include"game.h"
 #include"Box.h"
+#include"game.h"
 GameState::GameState()
 {
 	Controller = LoadGraph("data/texture/title/setumei.png");
@@ -9,28 +9,30 @@ GameState::GameState()
 	PaintHandle[1] = LoadGraph("data/texture/GameOver/RedPaint.png");
 	PaintHandle[2] = LoadGraph("data/texture/GameOver/SkybluePaint.png");
 	PaintHandle[3] = LoadGraph("data/texture/GameOver/YellowPaint.png");
-
+	ObstacleSpeed = 0.5;
 	ObstaclePattern = 0;
-	
 	HighScore = 0;
 	Score = 0;
 }
 
 GameState::~GameState()
 {
-
 }
 
 void GameState::GameInitialize()
 {
+	if (HighScore <= Score)
+	{
+		HighScore = Score;
+	}
 	Score = 0;
 }
 
 void GameState::GameTitle()
 {
 	SetFontSize(95);
-    DrawFormatString(370, 160, Pallet::DeepSkyBlue.GetHandle(), "City Sprint", true);
-	DrawFormatString(200, 670, Pallet::DeepSkyBlue.GetHandle(), "START SPACE KEY");
+    DrawFormatString(370, 160, Pallet::AliceBlue.GetHandle(), "CITY SPRINT", true);
+	DrawFormatString(200, 670, Pallet::AliceBlue.GetHandle(), "START SPACE KEY");
 }
 
 void GameState::GameReady()
@@ -46,16 +48,40 @@ void GameState::GameReady()
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 	DrawGraph(150, 400, Controller, true);
 	SetFontSize(50);
-	DrawFormatString(600, 270, Pallet::AliceBlue.GetHandle(), "　　チュートリアル\n\nあそび方:←→で移動↑でジャンプ");
+	DrawFormatString(600, 270, Pallet::AliceBlue.GetHandle(), "　　チュートリアル\n\n ←→で移動↑でジャンプ");
+	DrawFormatString(600, 420, Pallet::AliceBlue.GetHandle(), "　　みずたまりにあたると動きにくくなるぞ");
 	DrawFormatString(600, 670, Pallet::AliceBlue.GetHandle(), "START SPACE KEY");
-
 }
 
 void GameState::GameUpdate()
 {
-
+	ObstacleSpeedUpdate();
 	ObstacleConfiguration();
 	Score++;
+}
+
+void GameState::ObstacleSpeedUpdate()
+{
+	if (Score>=1000)
+	{
+		ObstacleSpeed = 0.6f;
+	}
+	else if (Score>=2000)
+	{
+		ObstacleSpeed = 0.7f;
+	}
+	else if (Score>=3000)
+	{
+		ObstacleSpeed = 0.8f;
+	}
+	else if (Score>=4000)
+	{
+		ObstacleSpeed = 0.9f;
+	}
+	else if (Score>=5000)
+	{
+		ObstacleSpeed = 1.0f;
+	}
 }
 
 void GameState::ObstacleConfiguration()
@@ -82,10 +108,7 @@ void GameState::ScoreDraw()
 void GameState::HighScoreDraw()
 {
 	SetFontSize(40);
-	if (HighScore<=Score)
-	{
-		HighScore = Score;
-	}
+
 	DrawFormatString(1050, 600, Pallet::AliceBlue.GetHandle(), "HighScore %d", HighScore);
 }
 

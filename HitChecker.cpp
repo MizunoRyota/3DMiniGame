@@ -11,19 +11,22 @@ HitChecker::HitChecker()
     CarLength = PlayerRadius + CarRadius;
     BusRadius = 1.5f;
     PlayerRadius = 0.5f;
-    PuddleRadius = 1.3f;
+    PuddleRadius = 1.0f;
     CarRadius = 1.3f;
     deadgudge = false;
     SpeedDownjudge = false;
 }
 HitChecker::~HitChecker()
 {}
-
+/// <summary>
+/// 初期化
+/// </summary>
 void HitChecker::Init()
 {
     deadgudge = false;
     SpeedDownjudge = false;
 }
+
 /// <summary>
 /// バスの当たり判定
 /// </summary>
@@ -33,19 +36,21 @@ void HitChecker::BusCheck(const VECTOR& player, const VECTOR& obs)
 {
     //オブジェクトの位置獲得
     PlayerCircle = VGet(player.x, player.y + 0.6f, player.z);
-    BusCircle[1] = VGet(obs.x, obs.y, obs.z);
-    BusCircle[0] = VGet(obs.x, obs.y, obs.z-3.0f);
-    BusCircle[2] = VGet(obs.x, obs.y, obs.z+3.0f);
-    //オブジェクトとプレイヤーの半径の合計
+    BusCircle[1] = VGet(obs.x, obs.y, obs.z);//中心
+    BusCircle[0] = VGet(obs.x, obs.y, obs.z-3.0f);//奥
+    BusCircle[2] = VGet(obs.x, obs.y, obs.z+3.0f);//手前
+    //オブジェクトとプレイヤーの半径の合計の計算
     Length = PlayerRadius + BusRadius;
 
     for (int i = 0; i < BusNum; i++)
     {
-        //プレイヤーとオブジェクトの距離の合計を獲得
+        //プレイヤーのポジションからバスのポジションを減算
         BusDistancepos[i] = VSub(player, BusCircle[i]);
+        //プレイヤーとオブジェクトの距離の合計を獲得
         Busdistance[i] = VSquareSize( BusDistancepos[i]);
         if (Busdistance[i] <= (Length))
         {
+            //ゲームオーバーフラグの変更
             DeadJudge();
         }
     }
@@ -60,9 +65,9 @@ void HitChecker::BusCheck(const VECTOR& player, const VECTOR& obs)
 void HitChecker::PuddleCheck(const VECTOR& playerpos, const VECTOR& obs, Player* player)
 {
     //オブジェクトの位置獲得
-    PuddleCircle[1] = VGet(obs.x , obs.y + 0.6, obs.z);
-    PuddleCircle[0] = VGet(obs.x + 2, obs.y + 0.6, obs.z);
-    PuddleCircle[2] = VGet(obs.x + -2, obs.y + 0.6, obs.z);
+    PuddleCircle[1] = VGet(obs.x , obs.y + 0.6, obs.z);         //中心
+    PuddleCircle[0] = VGet(obs.x + 2, obs.y + 0.6, obs.z);      //奥
+    PuddleCircle[2] = VGet(obs.x + -2, obs.y + 0.6, obs.z);     //手前 
 
     //オブジェクトとプレイヤーの半径の合計
     PuddleLength = PlayerRadius + CarRadius;
@@ -81,6 +86,7 @@ void HitChecker::PuddleCheck(const VECTOR& playerpos, const VECTOR& obs, Player*
         }
     }
 }
+
 /// <summary>
 /// 普通自動車判定
 /// </summary>
