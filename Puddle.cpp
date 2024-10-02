@@ -20,7 +20,7 @@ Puddle::~Puddle()
 
 void Puddle::Init()
 {
-	pos = VGet(0.5f, 0.50f, 40.0f);
+	pos = VGet(0.5f, 0.50f, 80.0f);
 	// ３Dモデルのポジション設定
 	MV1SetPosition(PuddleHandle, pos);
 }

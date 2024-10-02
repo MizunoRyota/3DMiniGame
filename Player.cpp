@@ -4,12 +4,12 @@
 // 静的定数
 // 速度（1=1m、60fps固定として、時速10km）
 // 10000m ÷ 時間 ÷ 分 ÷ 秒 ÷ フレーム
-const float Player::Speed = static_cast<float>(10000.0 / 40.0 / 40.0 / 40.0);
+const float Player::Speed = static_cast<float>(10000.0 / 45.0 / 45.0 / 45.0);
 const float Player::DownSpeed = static_cast<float>(10000.0 / 80.0 / 80.0 / 80.0);
 
 const float Player::Scale = 0.006f;		// スケール
-const float Player::Gravity = 0.6f;     // 重力加速度
-const float Player::JumpSpeed = 0.2f;   // ジャンプの初速度
+const float Player::Gravity = 0.60f;     // 重力加速度
+const float Player::JumpSpeed = 0.18f;   // ジャンプの初速度
 
 Player::Player()
 {
@@ -256,6 +256,14 @@ bool Player::PlayerEnd()
 
 }
 
+void Player::PlayerGameOver()
+{
+	//プレイヤーが落ちていく
+	Pos.y -= 0.005;
+	// ３Dモデルのポジション設定
+	MV1SetPosition(PlayerHandle, Pos);
+}
+
 void Player::ChangeSpeedFlag()
 {
 	if (SpeedDownJudge==true)
@@ -268,7 +276,7 @@ void Player::ChangeSpeedFlag()
 		}
 
 		// 経過時間が3000ミリ秒(3秒)以上経過したらフラグを切り替える
-		if (GetNowCount() - ChangeSpeedTime >= 3000)
+		if (GetNowCount() - ChangeSpeedTime >= 2500)
 		{
 			SpeedDownJudge = false;
 			ChangeSpeedTime = 0;

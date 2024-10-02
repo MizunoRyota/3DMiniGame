@@ -9,7 +9,7 @@ Bus::Bus()
 	BusHandle[1] = MV1DuplicateModel(BusHandle[0]);
 	for (int i = 0; i < BusNum; i++)
 	{
-		pos[i] = VGet(2.0, 0.5, 50);
+		pos[i] = VGet(0, 0, 0);
 		MV1SetScale(BusHandle[i], VGet(Scale, Scale, Scale));
 		MV1SetPosition(BusHandle[i], pos[i]);
 	}
@@ -28,7 +28,7 @@ void Bus::Init()
 {
 	for (int i = 0; i < BusNum; i++)
 	{
-		pos[i] = VGet(2.0f, 1.2f, 40.0f);
+		pos[i] = VGet(0.0f, 1.2f, -20.0f);
 		MV1SetRotationXYZ(BusHandle[i], VGet(0.0f, 4.7f, 0.0f));
 		// 3Dモデルのスケール決定
 		MV1SetScale(BusHandle[i], VGet(Scale, Scale, Scale));

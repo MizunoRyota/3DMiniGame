@@ -5,6 +5,7 @@
 GameState::GameState()
 {
 	Controller = LoadGraph("data/texture/title/setumei.png");
+	TitleHandle = LoadGraph("data/texture/title/TitleLogo.png");
 	PaintHandle[0] = LoadGraph("data/texture/GameOver/GreenPaint.png");
 	PaintHandle[1] = LoadGraph("data/texture/GameOver/RedPaint.png");
 	PaintHandle[2] = LoadGraph("data/texture/GameOver/SkybluePaint.png");
@@ -26,13 +27,14 @@ void GameState::GameInitialize()
 		HighScore = Score;
 	}
 	Score = 0;
+	ObstacleSpeed = 0.5;
 }
 
 void GameState::GameTitle()
 {
 	SetFontSize(95);
-    DrawFormatString(370, 160, Pallet::AliceBlue.GetHandle(), "CITY SPRINT", true);
-	DrawFormatString(200, 670, Pallet::AliceBlue.GetHandle(), "START SPACE KEY");
+	DrawGraph(100, 150, TitleHandle,true);
+	DrawFormatString(150, 750, Pallet::AliceBlue.GetHandle(), "START SPACE KEY");
 }
 
 void GameState::GameReady()
@@ -48,9 +50,11 @@ void GameState::GameReady()
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 	DrawGraph(150, 400, Controller, true);
 	SetFontSize(50);
-	DrawFormatString(600, 270, Pallet::AliceBlue.GetHandle(), "　　チュートリアル\n\n ←→で移動↑でジャンプ");
-	DrawFormatString(600, 420, Pallet::AliceBlue.GetHandle(), "　　みずたまりにあたると動きにくくなるぞ");
+	DrawFormatString(600, 270, Pallet::AliceBlue.GetHandle(), "　　チュートリアル\n\n  ←→で移動↑でジャンプ");
+	DrawFormatString(600, 450, Pallet::AliceBlue.GetHandle(), "　　みずたまりにあたると動きにくくなるぞ");
+	DrawFormatString(600, 500, Pallet::AliceBlue.GetHandle(), "　　新聞紙に当たると視界が遮られるぞ");
 	DrawFormatString(600, 670, Pallet::AliceBlue.GetHandle(), "START SPACE KEY");
+
 }
 
 void GameState::GameUpdate()
@@ -64,23 +68,31 @@ void GameState::ObstacleSpeedUpdate()
 {
 	if (Score>=1000)
 	{
-		ObstacleSpeed = 0.6f;
+		ObstacleSpeed = 0.7f;
 	}
 	else if (Score>=2000)
 	{
-		ObstacleSpeed = 0.7f;
+		ObstacleSpeed = 0.9f;
 	}
 	else if (Score>=3000)
 	{
-		ObstacleSpeed = 0.8f;
+		ObstacleSpeed = 1.1f;
 	}
 	else if (Score>=4000)
 	{
-		ObstacleSpeed = 0.9f;
+		ObstacleSpeed = 1.3f;
 	}
 	else if (Score>=5000)
 	{
-		ObstacleSpeed = 1.0f;
+		ObstacleSpeed = 1.5f;
+	}
+	else if (Score >= 6000)
+	{
+		ObstacleSpeed = 1.7f;
+	}
+	else if (Score >= 7000)
+	{
+		ObstacleSpeed = 1.9f;
 	}
 }
 
@@ -90,6 +102,11 @@ void GameState::ObstacleConfiguration()
 	{
 		ObstaclePattern = rand() % 4;
 	}
+}
+
+void GameState::ScoreUp()
+{
+	Score = Score + 100;
 }
 
 void GameState::ScoreDraw()

@@ -50,9 +50,9 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	const int FRAME_TIME = 1000 / TARGET_FPS;  // 1フレームあたりの理想的な時間 (ミリ秒)
 
 	// ********** フォントのロード **********
-	LPCSTR font_path = "Data/Font/Mimi_font-Regular.otf"; // 読み込むフォントファイルのパス
+	LPCSTR font_path = "Data/Font/LightNovelPOPv2.otf"; // 読み込むフォントファイルのパス
 	//// フォントの変更
-	ChangeFont("Mimi_font", DX_CHARSET_DEFAULT);
+	ChangeFont("ラノベPOP v2", DX_CHARSET_DEFAULT);
 	// インスタンス生成
 	GameState* game = new GameState(); 
 	Camera* camera = new Camera();
@@ -106,6 +106,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				puddle->Init();
 				player->PlayerInitialize();
 				camera->Init();
+				newspaper->Initialize();
 				game->GameInitialize();
 				//ゲーム状態変化
 				gameStatus = STATE_TITLE;
@@ -123,7 +124,6 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				game->GameTitle();
 				skydome->SkydomeDraw();
 				stage->GameDraw();
-				//stage2->GameDraw();
 				car->GameDraw();
 				player->Draw();
 				game->HighScoreDraw();
@@ -149,7 +149,6 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				//描画
 				skydome->SkydomeDraw();
 				stage->GameDraw();
-				//stage2->GameDraw();
 				player->Draw();
 				game->GameReady();
 
@@ -177,16 +176,27 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				stage->Update();
 
 				//障害物制御
-				bus->Update(game->GetObstaclePattern(),game->GetObstacleSpeed());
 				car->Update(game->GetObstaclePattern(), game->GetObstacleSpeed());
+				bus->Update(game->GetObstaclePattern(),game->GetObstacleSpeed());
 				puddle->Update(game->GetObstacleSpeed());
 				newspaper->Update();
 				//コイン制御
-				coin->Update(car->GetPos());
+				if (hitcheck->CoinCheck(player->GetPos(), coin->GetPos()))
+				{
+					game->ScoreUp();//スコア上昇
+					coin->CoinMove();//
+				}
+				else
+				{
+					coin->Update(car->GetPos());
+				}
 
 				hitcheck->BusCheck(player->GetPos(), bus->GetPos());//バスとの接触確認
 				hitcheck->BusCheck(player->GetPos(), bus->GetPos2());//バスとの接触確認
-
+				if (hitcheck->NewsPaperCheck(player->GetPos(), newspaper->GetPos()))
+				{
+					newspaper->ChangeCrush();
+				}
 				DeadJudge = hitcheck->GetDead();//ゲームオーバーの判定
 				if (hitcheck->CarCheck(player->GetPos(), car->GetPos()))//普通自動車との判定
 				{
@@ -236,11 +246,10 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 			//ゲームリザルト
 			if (gameStatus == STATE_GAMEOVER)
 			{
+				player->PlayerGameOver();
 				// 画面を初期化する
 				ClearDrawScreen();
-
 				//描画
-
 				skydome->SkydomeDraw();
 				stage->GameDraw();
 				bus->GameDraw();

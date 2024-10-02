@@ -12,6 +12,7 @@ public:
 	void ObstacleSpeedUpdate();				//障害物のスピード更新
 	void ObstacleConfiguration();			//障害物パターンの配置
 	void ScoreDraw();						//スコアの表示
+	void ScoreUp();							//スコア加算
 	void HighScoreDraw();					//ハイスコアの表示
 	void GameOver();						//ゲームオーバーの表示
 	const int& GetObstaclePattern() const { return ObstaclePattern; }	//障害物パターン渡し
@@ -19,6 +20,7 @@ public:
 private:
 	int Controller;		//コントローラーの画像
 	int PaintHandle[4]; //ペイントの画像
+	int TitleHandle;	//タイトルの画像
 	int Score;			//スコア
 	int HighScore;		//ハイスコア
 	int SpeedMeter;		//現在のスピード

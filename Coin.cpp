@@ -1,7 +1,7 @@
 #include"DxLib.h"
 #include"Coin.h"
 
-const float Coin::Scale = 0.01f;		// スケール
+const float Coin::Scale = 0.015f;		// スケール
 const float Coin::CoinNum = 11.0f;		// コインの数
 
 Coin::Coin()
@@ -26,18 +26,25 @@ Coin::~Coin()
 
 void Coin::CoinInitalize()
 {
+    pos = VGet(0.0f, 0.0f, 0.0f);
 }
 
 void Coin::Update(const VECTOR& carpos)
 {
     Rotation += 0.1f;
-    CoinInitalize();//コインの初期化
     pos = VGet(carpos.x, carpos.y + Hight, carpos.z);
     MV1SetRotationXYZ(CoinHandle, VGet(0.0f, Rotation, 0.0f));
     MV1SetPosition(CoinHandle, pos);
 }
 
+void Coin::CoinMove()
+{
+    pos = VGet(80.0f, 0.0f, 0.0f);
+    // ３Dモデルのポジション設定
+    MV1SetPosition(CoinHandle, pos);
+}
+
 void Coin::Draw()
 {
-        MV1DrawModel(CoinHandle);
+    MV1DrawModel(CoinHandle);
 }

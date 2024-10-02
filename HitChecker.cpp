@@ -11,8 +11,11 @@ HitChecker::HitChecker()
     CarLength = PlayerRadius + CarRadius;
     BusRadius = 1.5f;
     PlayerRadius = 0.5f;
-    PuddleRadius = 1.0f;
+    PuddleRadius = 0.9f;
     CarRadius = 1.3f;
+    NewsPaperRadius = 1.3f;
+
+    CoinRadius = 1.0;
     deadgudge = false;
     SpeedDownjudge = false;
 }
@@ -65,9 +68,9 @@ void HitChecker::BusCheck(const VECTOR& player, const VECTOR& obs)
 void HitChecker::PuddleCheck(const VECTOR& playerpos, const VECTOR& obs, Player* player)
 {
     //オブジェクトの位置獲得
-    PuddleCircle[1] = VGet(obs.x , obs.y + 0.6, obs.z);         //中心
-    PuddleCircle[0] = VGet(obs.x + 2, obs.y + 0.6, obs.z);      //奥
-    PuddleCircle[2] = VGet(obs.x + -2, obs.y + 0.6, obs.z);     //手前 
+    PuddleCircle[1] = VGet(obs.x , obs.y, obs.z);         //中心
+    PuddleCircle[0] = VGet(obs.x + 2, obs.y, obs.z);      //奥
+    PuddleCircle[2] = VGet(obs.x + -2, obs.y, obs.z);     //手前 
 
     //オブジェクトとプレイヤーの半径の合計
     PuddleLength = PlayerRadius + CarRadius;
@@ -109,6 +112,38 @@ bool HitChecker::CarCheck(const VECTOR& player, const VECTOR& obs)
     return CarDistance <= (CarLength);
 }
 
+bool HitChecker::CoinCheck(const VECTOR& player, const VECTOR& obs)
+{
+    //オブジェクトの位置獲得
+    CoinCircle = VGet(obs.x, obs.y + 0.6, obs.z);
+
+    //プレイヤーとオブジェクトの距離の合計を獲得
+    Coindistance = VSub(player, obs);
+
+    //オブジェクトとプレイヤーの半径の合計
+    CoinLength = PlayerRadius + CoinRadius;
+
+    CoinDistance = VSquareSize(Coindistance);
+
+    return CoinDistance <= (CoinLength);
+}
+
+bool HitChecker::NewsPaperCheck(const VECTOR& player, const VECTOR& obs)
+{
+    //オブジェクトの位置獲得
+    NewsPaperCircle = VGet(obs.x, obs.y + 0.6, obs.z);
+
+    //プレイヤーとオブジェクトの距離の合計を獲得
+    NewsPaperdistance = VSub(player, obs);
+
+    //オブジェクトとプレイヤーの半径の合計
+    NewsPaperLength = PlayerRadius + NewsPaperRadius;
+
+    NewsPaperDistance = VSquareSize(NewsPaperdistance);
+
+    return NewsPaperDistance <= (NewsPaperLength);
+}
+
 bool HitChecker::DeadJudge()
 {
     //ゲームオーバー判定
@@ -133,6 +168,9 @@ void HitChecker::circleDraw()
 
     //DrawSphere3D(CarCircle, CarRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
     //DrawSphere3D(PlayerCircle, PlayerRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
+    //DrawSphere3D(CoinCircle, PlayerRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
+    //DrawSphere3D(NewsPaperCircle, PlayerRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
+
 
     //for (size_t i = 0; i < 3; i++)
     //{

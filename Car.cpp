@@ -1,7 +1,7 @@
 #include"DxLib.h"
 #include"Car.h"
 
-const float Car::Scale = 0.037f;		// スケール]
+const float Car::Scale = 0.037f;		// スケール
 
 Car::Car()
 {
@@ -22,7 +22,7 @@ Car::~Car()
 
 void Car::Init()
 {
-	pos = VGet(2.0f, 0.5f, 40.0f);
+	pos = VGet(2.0f, 0.5f, -20.0f);
 	MV1SetRotationXYZ(CarHandle, VGet(0.0f, 0.0f, 0.0f));
 	// 3Dモデルのスケール決定
 	MV1SetScale(CarHandle, VGet(Scale, Scale, Scale));
@@ -43,21 +43,21 @@ void Car::Update(int PlacePattern, float ObstacleSpeed)
 	if (pos.z <= -20)
 	{
 		pos.z = 50.0f;
-		if ( PlacePattern == 0)
+		if (PlacePattern == 0)
 		{
 			pos.x = 0;
 		}
-		else if ( PlacePattern == 1)
+		else if (PlacePattern == 1)
 		{
 			pos.x = -2.0;
 		}
-		else if(PlacePattern==2)
+		else if (PlacePattern == 2)
 		{
-			pos.x = 2;
+			pos.x = 2.0;
 		}
-		else
+		else if (PlacePattern == 3)
 		{
-			pos.x = 2;
+			pos.x = 2.0;
 		}
 	}
 	// ３Dモデルのポジション設定

@@ -8,6 +8,8 @@ public:
 	void Update(const VECTOR& carpos);
 	void CoinInitalize();
 	void Draw();
+	void CoinMove();
+	const VECTOR& GetPos() const { return pos; }//ポジションの位置返す
 private:
 	VECTOR pos;
 	int CoinHandle;
