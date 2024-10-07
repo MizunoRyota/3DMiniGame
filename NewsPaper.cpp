@@ -9,11 +9,11 @@ NewsPaper::NewsPaper()
     bool flag = false; // フラグの初期値
     int interval = 800000; // 切り替え間隔（ミリ秒）
     int lastTime = 0; // 最後にフラグを切り替えた時間
-    LeftDir = true;
-    RightDir = false;
 	Pos = VGet(0, 3, 0);
-    Rotation = 0;
+    RightDir = false;
+    LeftDir = true;
     CrushTime = 0;
+    Rotation = 0;
     // 3Dモデルのスケール決定
     MV1SetScale(NewsPaperHandle, VGet(Scale, Scale, Scale));
     // ３Dモデルのポジション設定
@@ -33,9 +33,16 @@ void NewsPaper::Initialize()
     MV1SetPosition(NewsPaperHandle, Pos);
 }
 
+void NewsPaper::Ready()
+{
+    Pos = VGet(-1.0f, 2.0f , 0.0f);
+    MV1SetRotationXYZ(NewsPaperHandle, VGet(90.0f * DX_PI_F / 180.0f, 0.0f, Rotation));
+    // ３Dモデルのポジション設定
+    MV1SetPosition(NewsPaperHandle, Pos);
+}
+
 void NewsPaper::Update()
 {
-
     LateralMove();
     if (CrushJudge==true)
     {
@@ -79,7 +86,6 @@ void NewsPaper::CrashPaper()
         {
             CrushTime = GetNowCount();  // ミリ秒単位で現在時刻を取得
         }
-
         // 経過時間が3000ミリ秒(3秒)以上経過したらフラグを切り替える
         if (GetNowCount() - CrushTime >= 2000)
         {
@@ -118,4 +124,5 @@ void NewsPaper::Draw()
         DrawRotaGraph(800, 200, 1.2f, PI / 3, NewsPaperGraph, TRUE);
     }
     MV1DrawModel(NewsPaperHandle);
+
 }

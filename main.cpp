@@ -119,6 +119,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				car->CarTitle();
 				camera->GameTitle(player->GetPos());
 				player->PlayerTitle();
+
 				ClearDrawScreen();
 
 				game->GameTitle();
@@ -145,13 +146,14 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				skydome->SkydomeUpdate();
 				camera->ReadyUpdate(player->GetPos());
 				player->PlayerUpdate();
+				newspaper->Ready();
 				ClearDrawScreen();
 				//描画
 				skydome->SkydomeDraw();
 				stage->GameDraw();
 				player->Draw();
 				game->GameReady();
-
+				newspaper->Draw();
 				// ゲーム状態変化
 				if (CheckHitKey(KEY_INPUT_SPACE))
 				{
@@ -180,7 +182,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				bus->Update(game->GetObstaclePattern(),game->GetObstacleSpeed());
 				puddle->Update(game->GetObstacleSpeed());
 				newspaper->Update();
-				//コイン制御
+				////コイン制御
 				if (hitcheck->CoinCheck(player->GetPos(), coin->GetPos()))
 				{
 					game->ScoreUp();//スコア上昇

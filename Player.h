@@ -29,9 +29,10 @@ private:
 	int ChangeSpeedTime;	// 時間計測用の変数
 
 	//ゲームに関する変数
-	bool EndJudge;				//ゲームオーバー演出が終わったかどうかの判定]
+	bool EndJudge;				//ゲームオーバー演出が終わったかどうかの判定
 	int SpeedDownHandle;		//スピードダウン中の画像
 	int BettoriHnadle;			//べっとり効果音の画像
+	int	BettoriFrame;			//べっとり枠の画像
 
 	//アニメーションに関するメンバ変数
 	int PlayerHandle;			// モデルハンドル.
@@ -40,6 +41,7 @@ private:
 	int AttachIndex;			//アニメーションを付与される変数
 	float AnimTime;				//アニメーションを進める変数
 	bool SpeedDownJudge;		//スピードダウン状態になっているかの判定
+
 	// ジャンプに関するメンバ変数
 	bool isJumping;       // プレイヤーがジャンプしているかどうかを示すフラグ
 	bool isRunnig;		  // プレイヤーが走っているかどうかを示すフラグ

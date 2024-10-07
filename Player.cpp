@@ -18,18 +18,18 @@ Player::Player()
 	//‰æ‘œ‚Ì“Ç‚Ýž‚Ý
 	SpeedDownHandle = LoadGraph("Data/Texture/game/SpeedDown.png");
 	BettoriHnadle = LoadGraph("Data/Texture/game/Bettori.png");
-	 
+	BettoriFrame = LoadGraph("Data/Texture/game/newNettori.png");
 	// Ä¶ŽžŠÔ‚Ì‰Šú‰»
 	PlayTime = 0.0f;
 	EndJudge = true;
+	Velocity = VGet(0, 0, 0);
 	SpeedDownJudge = false;
 	Pos = VGet(0, 0.5f, 0);
-	Velocity = VGet(0, 0, 0);
 	Dir = VGet(0, 0, 1);
 	ChangeSpeedTime = 0;
-	// ‚R‚cƒ‚ƒfƒ‹‚ÌYŽ²‚Ì‰ñ“]’l‚ð‚X‚O“x‚ÉƒZƒbƒg‚·‚é
+	//‚R‚cƒ‚ƒfƒ‹‚ÌYŽ²‚Ì‰ñ“]’l‚ð‚X‚O“x‚ÉƒZƒbƒg‚·‚é
 	MV1SetRotationXYZ(PlayerHandle, VGet(0.0f,-90.0f * DX_PI_F / 180.0f, 0.0f));
-	// ‚RDƒ‚ƒfƒ‹‚Ìƒ|ƒWƒVƒ‡ƒ“Ý’è
+	//‚RDƒ‚ƒfƒ‹‚Ìƒ|ƒWƒVƒ‡ƒ“Ý’è
 	MV1SetPosition(PlayerHandle, Pos);
 }
 
@@ -70,7 +70,8 @@ void  Player::PlayerTitle()
 		PlayTime = 0.0f;
 	}
 
-	// ‚R‚cƒ‚ƒfƒ‹‚ÌYŽ²‚Ì‰ñ“]’l‚ð‚X‚O“x‚ÉƒZƒbƒg‚·‚é	// ‚R‚cƒ‚ƒfƒ‹‚ÌYŽ²‚Ì‰ñ“]’l‚ð³–Ê‚ÉƒZƒbƒg‚·‚é
+	// ‚R‚cƒ‚ƒfƒ‹‚ÌYŽ²‚Ì‰ñ“]’l‚ð‚X‚O“x‚ÉƒZƒbƒg‚·‚é	
+	// // ‚R‚cƒ‚ƒfƒ‹‚ÌYŽ²‚Ì‰ñ“]’l‚ð³–Ê‚ÉƒZƒbƒg‚·‚é
 	MV1SetRotationXYZ(PlayerHandle, VGet(0.0f, 300.0f * DX_PI_F / 180.0f, 0.0f));
 
 	// 3Dƒ‚ƒfƒ‹‚ÌƒXƒP[ƒ‹Œˆ’è
@@ -100,7 +101,6 @@ void Player::ChangeMotion(int motionNum)
 
 void Player::PlayerUpdate()
 {
-
 	// ‚R‚cƒ‚ƒfƒ‹‚ÌYŽ²‚Ì‰ñ“]’l‚ð³–Ê‚ÉƒZƒbƒg‚·‚é
 	MV1SetRotationXYZ(PlayerHandle, VGet(0.0f, 180.0f * DX_PI_F / 180.0f, 0.0f));
 
@@ -203,6 +203,7 @@ void Player::PlayerUpdate()
 
 	//3dƒ‚ƒfƒ‹‚ÌƒAƒjƒ[ƒVƒ‡ƒ“‚ÌƒZƒbƒg
 	MV1SetAttachAnimTime(PlayerHandle, AttachIndex, PlayTime);
+
 }
 
 void Player::Jump()
@@ -227,10 +228,7 @@ bool Player::PlayerEnd()
 	PlayTime += 0.1f;
 
 	// Ä¶ŽžŠÔ‚ªƒAƒjƒ[ƒVƒ‡ƒ“‚Ì‘Ä¶ŽžŠÔ‚É’B‚µ‚½‚çÄ¶ŽžŠÔ‚ð‚O‚É–ß‚·
-	//if (PlayTime >= TotalTime)
-	//{
-	//	PlayTime = 0.0f;
-	//}
+
 	if (Pos.z>=-22)
 	{
 		Pos.z -= 0.1f;
@@ -294,8 +292,9 @@ void Player::DrawSpeedDown()
 	if (SpeedDownJudge == true)
 	{
 		DrawGraph(600, 600, BettoriHnadle, true);
-		DrawGraph(900, 100, BettoriHnadle, true);
-		DrawGraph(100, 50, BettoriHnadle, true);
+		DrawGraph(900, 150, BettoriHnadle, true);
+		DrawGraph(100, 100, BettoriHnadle, true);
+		DrawGraph(0, 0, BettoriFrame, true);
 	}
 }
 

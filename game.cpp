@@ -1,4 +1,4 @@
-#include<DxLib.h>
+ï»¿#include<DxLib.h>
 #include"Pallet.h"
 #include"Box.h"
 #include"game.h"
@@ -6,11 +6,13 @@ GameState::GameState()
 {
 	Controller = LoadGraph("data/texture/title/setumei.png");
 	TitleHandle = LoadGraph("data/texture/title/TitleLogo.png");
+	PuddleTutorialHandle= LoadGraph("data/texture/game/PuddleTutorial2.png");
+	NewsPaperTutorialHandle= LoadGraph("data/texture/game/GreenPaint.png");
 	PaintHandle[0] = LoadGraph("data/texture/GameOver/GreenPaint.png");
 	PaintHandle[1] = LoadGraph("data/texture/GameOver/RedPaint.png");
 	PaintHandle[2] = LoadGraph("data/texture/GameOver/SkybluePaint.png");
 	PaintHandle[3] = LoadGraph("data/texture/GameOver/YellowPaint.png");
-	ObstacleSpeed = 0.5;
+	ObstacleSpeed = 0.3;
 	ObstaclePattern = 0;
 	HighScore = 0;
 	Score = 0;
@@ -34,27 +36,27 @@ void GameState::GameTitle()
 {
 	SetFontSize(95);
 	DrawGraph(100, 150, TitleHandle,true);
-	DrawFormatString(150, 750, Pallet::AliceBlue.GetHandle(), "START SPACE KEY");
+	DrawFormatString(150, 750, Pallet::AliceBlue.GetHandle(), "PRESS SPACE KEY");
 }
 
 void GameState::GameReady()
 {
-	// —áF“§–¾“x50%‚Ì”’F‚ÌlŠpŒ`‚ğ•`‰æ‚·‚é
+	// ä¾‹ï¼šé€æ˜åº¦50%ã®ç™½è‰²ã®å››è§’å½¢ã‚’æç”»ã™ã‚‹
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, 128);
 
 	DrawBox(0, 200, 1600, 800, Pallet::Black.GetHandle(), TRUE);
 	DrawBox(0, 210, 1600, 220, Pallet::Aqua.GetHandle(), TRUE);
 	DrawBox(0, 780, 1600, 790, Pallet::Aqua.GetHandle(), TRUE);
-
-	// •`‰æƒ‚[ƒh‚ğŒ³‚É–ß‚·
+	// æç”»ãƒ¢ãƒ¼ãƒ‰ã‚’å…ƒã«æˆ»ã™
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
-	DrawGraph(150, 400, Controller, true);
-	SetFontSize(50);
-	DrawFormatString(600, 270, Pallet::AliceBlue.GetHandle(), "@@ƒ`ƒ…[ƒgƒŠƒAƒ‹\n\n  ©¨‚ÅˆÚ“®ª‚ÅƒWƒƒƒ“ƒv");
-	DrawFormatString(600, 450, Pallet::AliceBlue.GetHandle(), "@@‚İ‚¸‚½‚Ü‚è‚É‚ ‚½‚é‚Æ“®‚«‚É‚­‚­‚È‚é‚¼");
-	DrawFormatString(600, 500, Pallet::AliceBlue.GetHandle(), "@@V•·†‚É“–‚½‚é‚Æ‹ŠE‚ªÕ‚ç‚ê‚é‚¼");
-	DrawFormatString(600, 670, Pallet::AliceBlue.GetHandle(), "START SPACE KEY");
+	//DrawGraph(150, 400, Controller, true);
+	//DrawGraph(150, 400, PuddleTutorialHandle, true);
 
+	SetFontSize(50);
+	DrawFormatString(600, 270, Pallet::AliceBlue.GetHandle(), "ã€€ã€€ãƒãƒ¥ãƒ¼ãƒˆãƒªã‚¢ãƒ«\n\n  â†â†’ã§ç§»å‹•â†‘ã§ã‚¸ãƒ£ãƒ³ãƒ—");
+	DrawFormatString(500, 450, Pallet::AliceBlue.GetHandle(), "ã€€ã€€ã¿ãšãŸã¾ã‚Šã«ã‚ãŸã‚‹ã¨å‹•ãã«ãããªã‚‹ã");
+	DrawFormatString(500, 500, Pallet::AliceBlue.GetHandle(), "ã€€ã€€æ–°èç´™ã«å½“RãŸã‚‹ã¨è¦–ç•ŒãŒé®ã‚‰ã‚Œã‚‹ã");
+	DrawFormatString(600, 670, Pallet::AliceBlue.GetHandle(), "PRESS SPACE KEY");
 }
 
 void GameState::GameUpdate()
@@ -68,31 +70,35 @@ void GameState::ObstacleSpeedUpdate()
 {
 	if (Score>=1000)
 	{
-		ObstacleSpeed = 0.7f;
-	}
+		ObstacleSpeed = 0.4f;
+	} 
 	else if (Score>=2000)
 	{
-		ObstacleSpeed = 0.9f;
+		ObstacleSpeed = 0.5f;
 	}
 	else if (Score>=3000)
 	{
-		ObstacleSpeed = 1.1f;
+		ObstacleSpeed = 0.6f;
 	}
 	else if (Score>=4000)
 	{
-		ObstacleSpeed = 1.3f;
+		ObstacleSpeed = 0.7f;
 	}
 	else if (Score>=5000)
 	{
-		ObstacleSpeed = 1.5f;
+		ObstacleSpeed = 0.8f;
 	}
 	else if (Score >= 6000)
 	{
-		ObstacleSpeed = 1.7f;
+		ObstacleSpeed = 0.9f;
 	}
 	else if (Score >= 7000)
 	{
-		ObstacleSpeed = 1.9f;
+		ObstacleSpeed = 1.0f;
+	}
+	else if (Score>=8000)
+	{
+		ObstacleSpeed = 1.1f;
 	}
 }
 
@@ -106,17 +112,19 @@ void GameState::ObstacleConfiguration()
 
 void GameState::ScoreUp()
 {
+
+	DrawFormatString(800, 20, Pallet::LemonYellow.GetHandle(), "SCORE UP", Score);
 	Score = Score + 100;
 }
 
 void GameState::ScoreDraw()
 {
-	// —áF“§–¾“x50%‚Ì”’F‚ÌlŠpŒ`‚ğ•`‰æ‚·‚é
+	// ä¾‹ï¼šé€æ˜åº¦50%ã®ç™½è‰²ã®å››è§’å½¢ã‚’æç”»ã™ã‚‹
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, 128);
 
 	DrawBox(0, 0, 1600, 100, Pallet::Black.GetHandle(), TRUE);
 
-	// •`‰æƒ‚[ƒh‚ğŒ³‚É–ß‚·
+	// æç”»ãƒ¢ãƒ¼ãƒ‰ã‚’å…ƒã«æˆ»ã™
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 	SetFontSize(60);
 	DrawFormatString(600, 20, Pallet::LemonYellow.GetHandle(), "SCORE::%d", Score);
@@ -132,24 +140,23 @@ void GameState::HighScoreDraw()
 void GameState::GameOver()
 {
 	SetFontSize(60);
-	// —áF“§–¾“x50%‚Ì”’F‚ÌlŠpŒ`‚ğ•`‰æ‚·‚é
+	// ä¾‹ï¼šé€æ˜åº¦50%ã®ç™½è‰²ã®å››è§’å½¢ã‚’æç”»ã™ã‚‹
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, 128);
 
 	DrawBox(0, 200, 1600, 800, Pallet::Black.GetHandle(), TRUE);
 	DrawBox(0, 210, 1600, 220, Pallet::Aqua.GetHandle(), TRUE);
 	DrawBox(0, 780, 1600, 790, Pallet::Aqua.GetHandle(), TRUE);
 
-	// •`‰æƒ‚[ƒh‚ğŒ³‚É–ß‚·
+	// æç”»ãƒ¢ãƒ¼ãƒ‰ã‚’å…ƒã«æˆ»ã™
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 
 	SetFontSize(50);
-	DrawGraph(100, 200, PaintHandle[0], true);
-	DrawGraph(1000, 300, PaintHandle[1], true);
-	DrawGraph(1200, 550, PaintHandle[2], true);
-	DrawGraph(300, 400, PaintHandle[3], true);
-
+	DrawGraph(100, 200, PaintHandle[0], true);	//ç·‘
+	DrawGraph(1100, 200, PaintHandle[1], true);	//èµ¤
+	DrawGraph(1300, 550, PaintHandle[2], true);	//é’
+	DrawGraph(200, 600, PaintHandle[3], true);	//é»„
+	SetFontSize(70);
 	DrawFormatString(600, 340, Pallet::AliceBlue.GetHandle(), "GAME OVER");
 	DrawFormatString(580, 500, Pallet::AliceBlue.GetHandle(), "YOUR SCORE %d", Score);
-	DrawFormatString(600, 670, Pallet::AliceBlue.GetHandle(), "TITLE SPACE KEY");
-
+	DrawFormatString(600, 670, Pallet::AliceBlue.GetHandle(), "PRESS SPACE KEY");
 }

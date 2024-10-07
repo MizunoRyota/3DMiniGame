@@ -18,13 +18,15 @@ public:
 	const int& GetObstaclePattern() const { return ObstaclePattern; }	//障害物パターン渡し
 	const float& GetObstacleSpeed() const { return ObstacleSpeed; }	//障害物スピード渡し
 private:
-	int Controller;		//コントローラーの画像
-	int PaintHandle[4]; //ペイントの画像
-	int TitleHandle;	//タイトルの画像
-	int Score;			//スコア
-	int HighScore;		//ハイスコア
-	int SpeedMeter;		//現在のスピード
-	int ObstaclePattern;//障害物の配置パターン
-	float ObstacleSpeed;//
-	bool IsObstacle;	//障害物があるかどうかの判定
+	int Controller;							//コントローラーの画像
+	int PaintHandle[4];						//ペイントの画像
+	int TitleHandle;						//タイトルの画像
+	int PuddleTutorialHandle;				//水たまり画像
+	int NewsPaperTutorialHandle;			//新聞紙画像
+	int Score;								//スコア
+	int HighScore;							//ハイスコア
+	int SpeedMeter;							//現在のスピード
+	int ObstaclePattern;					//障害物の配置パターン
+	float ObstacleSpeed;					//障害物速度
+	bool IsObstacle;						//障害物があるかどうかの判定
 };
