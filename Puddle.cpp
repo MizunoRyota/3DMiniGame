@@ -30,7 +30,7 @@ void Puddle::Update( float ObstacleSpeed)
 	pos.z -= ObstacleSpeed;
 	if (pos.z <= -60)
 	{
-		pos.z = 95.0f;
+		pos.z = 90.0f;
 	}
 	// ３Dモデルのポジション設定
 	MV1SetPosition(PuddleHandle, pos);

@@ -46,7 +46,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	SetUseBackCulling(TRUE);		// バックカリングを行う
 
 	// 1秒間に処理するフレーム数を設定(60FPS)
-		const int TARGET_FPS = 60;
+	const int TARGET_FPS = 60;
 	const int FRAME_TIME = 1000 / TARGET_FPS;  // 1フレームあたりの理想的な時間 (ミリ秒)
 
 	// ********** フォントのロード **********
@@ -54,7 +54,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	//// フォントの変更
 	ChangeFont("ラノベPOP v2", DX_CHARSET_DEFAULT);
 	// インスタンス生成
-	GameState* game = new GameState(); 
+	GameState* game = new GameState();
 	Camera* camera = new Camera();
 	Skydome* skydome = new Skydome();
 	HitChecker* hitcheck = new HitChecker;
@@ -121,7 +121,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				player->PlayerTitle();
 
 				ClearDrawScreen();
-
+				//描画
 				game->GameTitle();
 				skydome->SkydomeDraw();
 				stage->GameDraw();
@@ -146,14 +146,14 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				skydome->SkydomeUpdate();
 				camera->ReadyUpdate(player->GetPos());
 				player->PlayerUpdate();
-				newspaper->Ready();
 				ClearDrawScreen();
 				//描画
 				skydome->SkydomeDraw();
 				stage->GameDraw();
 				player->Draw();
+				bus->GameDraw();
+				car->GameDraw();
 				game->GameReady();
-				newspaper->Draw();
 				// ゲーム状態変化
 				if (CheckHitKey(KEY_INPUT_SPACE))
 				{
@@ -179,9 +179,10 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 
 				//障害物制御
 				car->Update(game->GetObstaclePattern(), game->GetObstacleSpeed());
-				bus->Update(game->GetObstaclePattern(),game->GetObstacleSpeed());
+				bus->Update(game->GetObstaclePattern(), game->GetObstacleSpeed());
 				puddle->Update(game->GetObstacleSpeed());
 				newspaper->Update();
+
 				////コイン制御
 				if (hitcheck->CoinCheck(player->GetPos(), coin->GetPos()))
 				{
@@ -204,7 +205,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				{
 					DeadJudge = hitcheck->DeadJudge();
 				}
-				hitcheck->PuddleCheck(player->GetPos(), puddle->GetPos(),player);
+				hitcheck->PuddleCheck(player->GetPos(), puddle->GetPos(), player);
 
 				// 画面を初期化する
 				ClearDrawScreen();
@@ -222,7 +223,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 
 				hitcheck->circleDraw();
 
-				if (DeadJudge==true)
+				if (DeadJudge == true)
 				{
 					gameStatus = STATE_END;
 				}
@@ -239,7 +240,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				bus->GameDraw();
 				car->GameDraw();
 				player->Draw();
-				if (EndJudge==false)
+				if (EndJudge == false)
 				{
 					gameStatus = STATE_GAMEOVER;
 				}
@@ -262,6 +263,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				if (CheckHitKey(KEY_INPUT_SPACE))
 				{
 					ClearDrawScreen();
+					WaitTimer(80);
 					gameStatus = STATE_INIT;
 				}
 			}

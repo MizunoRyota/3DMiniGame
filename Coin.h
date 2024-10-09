@@ -11,13 +11,13 @@ public:
 	void CoinMove();
 	const VECTOR& GetPos() const { return pos; }//ポジションの位置返す
 private:
-	VECTOR pos;
-	int CoinHandle;
-	float Rotation;
-	float Hight;
-	bool isActive;
+	VECTOR pos;				//
+	int CoinHandle;			//
+	float Rotation;			//
+	float Hight;			//
+	bool isActive;			//
 	// 静的定数.
-	static const float Scale;
-	static const float CoinNum;
+	static const float Scale;	//	
+	static const float CoinNum;	//
 
 };

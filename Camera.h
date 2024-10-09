@@ -25,4 +25,3 @@ private:
 	VECTOR	pos;			// ポジション.
 	VECTOR targtpos;		//　カメラが注視するポジション
 };
-

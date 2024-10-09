@@ -6,9 +6,9 @@ NewsPaper::NewsPaper()
 {
 	NewsPaperHandle = MV1LoadModel("Data/3Dmodel/Obstacle/NewsPaper/NewsPaper.mv1");
     NewsPaperGraph = LoadGraph("Data/Texture/game/NewsPaper.png");
-    bool flag = false; // フラグの初期値
-    int interval = 800000; // 切り替え間隔（ミリ秒）
-    int lastTime = 0; // 最後にフラグを切り替えた時間
+    bool flag = false;      // フラグの初期値
+    int interval = 800000;  // 切り替え間隔（ミリ秒）
+    int lastTime = 0;       // 最後にフラグを切り替えた時間
 	Pos = VGet(0, 3, 0);
     RightDir = false;
     LeftDir = true;
@@ -29,14 +29,6 @@ void NewsPaper::Initialize()
 {
     Pos = VGet(0.0f, 1.0f, 80.0f);
     MV1SetRotationXYZ(NewsPaperHandle, VGet(0.0f,0.0f,0.0f ));
-    // ３Dモデルのポジション設定
-    MV1SetPosition(NewsPaperHandle, Pos);
-}
-
-void NewsPaper::Ready()
-{
-    Pos = VGet(-1.0f, 2.0f , 0.0f);
-    MV1SetRotationXYZ(NewsPaperHandle, VGet(90.0f * DX_PI_F / 180.0f, 0.0f, Rotation));
     // ３Dモデルのポジション設定
     MV1SetPosition(NewsPaperHandle, Pos);
 }
@@ -124,5 +116,4 @@ void NewsPaper::Draw()
         DrawRotaGraph(800, 200, 1.2f, PI / 3, NewsPaperGraph, TRUE);
     }
     MV1DrawModel(NewsPaperHandle);
-
 }

@@ -7,7 +7,6 @@ public:
 	void Initialize();
 	void LateralMove();
 	void Update();
-	void Ready();
 	void CrashPaper();
 	void ChangeCrush();
 	void Draw();

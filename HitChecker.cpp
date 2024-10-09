@@ -13,8 +13,8 @@ HitChecker::HitChecker()
     PlayerRadius = 0.5f;
     PuddleRadius = 0.9f;
     CarRadius = 1.3f;
-    NewsPaperRadius = 1.3f;
-
+    NewsPaperRadius = 1.5f;
+    
     CoinRadius = 1.0;
     deadgudge = false;
     SpeedDownjudge = false;
@@ -170,7 +170,6 @@ void HitChecker::circleDraw()
     //DrawSphere3D(PlayerCircle, PlayerRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
     //DrawSphere3D(CoinCircle, PlayerRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
     //DrawSphere3D(NewsPaperCircle, PlayerRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
-
 
     //for (size_t i = 0; i < 3; i++)
     //{

@@ -28,7 +28,7 @@ void Bus::Init()
 {
 	for (int i = 0; i < BusNum; i++)
 	{
-		pos[i] = VGet(0.0f, 1.2f, -20.0f);
+		pos[i] = VGet(0.0f, 1.2f, -40.0f);
 		MV1SetRotationXYZ(BusHandle[i], VGet(0.0f, 4.7f, 0.0f));
 		// 3Dモデルのスケール決定
 		MV1SetScale(BusHandle[i], VGet(Scale, Scale, Scale));
@@ -65,17 +65,16 @@ void Bus::Update(int PlacePattern,float ObstacleSpeed)
 		else
 		{
 			pos[0].x = 0;
+			pos[1].x = 0;
 		}
 	}
 	// ３Dモデルのポジション設定
 	MV1SetPosition(BusHandle[0], pos[0]);
 	MV1SetPosition(BusHandle[1], pos[1]);
-
-
 }
 
 void Bus::GameDraw()
 {
-		MV1DrawModel(BusHandle[0]);
-		MV1DrawModel(BusHandle[1]);
+	MV1DrawModel(BusHandle[0]);
+	MV1DrawModel(BusHandle[1]);
 }

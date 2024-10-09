@@ -5,7 +5,7 @@
 // 速度（1=1m、60fps固定として、時速10km）
 // 10000m ÷ 時間 ÷ 分 ÷ 秒 ÷ フレーム
 const float Player::Speed = static_cast<float>(10000.0 / 45.0 / 45.0 / 45.0);
-const float Player::DownSpeed = static_cast<float>(10000.0 / 80.0 / 80.0 / 80.0);
+const float Player::DownSpeed = static_cast<float>(10000.0 / 60.0 / 60.0 / 60.0);
 
 const float Player::Scale = 0.006f;		// スケール
 const float Player::Gravity = 0.60f;     // 重力加速度
@@ -188,11 +188,11 @@ void Player::PlayerUpdate()
 
 	if (Pos.x>3)
 	{
-		Pos.x -= 0.3;
+		Pos.x = 3;
 	}
 	else if (Pos.x<-3)
 	{
-		Pos.x -= -0.3;
+		Pos.x = -3;
 	}
 
 	// 3Dモデルのスケール決定

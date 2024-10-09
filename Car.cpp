@@ -22,7 +22,7 @@ Car::~Car()
 
 void Car::Init()
 {
-	pos = VGet(2.0f, 0.5f, -20.0f);
+	pos = VGet(2.0f, 0.5f, -40.0f);
 	MV1SetRotationXYZ(CarHandle, VGet(0.0f, 0.0f, 0.0f));
 	// 3Dモデルのスケール決定
 	MV1SetScale(CarHandle, VGet(Scale, Scale, Scale));

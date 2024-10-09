@@ -27,6 +27,8 @@ Coin::~Coin()
 void Coin::CoinInitalize()
 {
     pos = VGet(0.0f, 0.0f, 0.0f);
+    // ３Dモデルのポジション設定
+    MV1SetPosition(CoinHandle, pos);
 }
 
 void Coin::Update(const VECTOR& carpos)
