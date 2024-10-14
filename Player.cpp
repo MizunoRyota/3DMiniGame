@@ -17,8 +17,10 @@ Player::Player()
 	PlayerHandle = MV1LoadModel("Data/3Dmodel/Player/Player.mv1");
 	//‰æ‘œ‚Ì“Ç‚Ýž‚Ý
 	SpeedDownHandle = LoadGraph("Data/Texture/game/SpeedDown.png");
-	BettoriHnadle = LoadGraph("Data/Texture/game/Bettori.png");
 	BettoriFrame = LoadGraph("Data/Texture/game/newNettori.png");
+	BettoriHnadle = LoadGraph("Data/Texture/game/Bettori.png");
+	InvicibleGraph= LoadGraph("Data/Texture/game/CanInvicible.png");
+	InvicibleChargeGraph=LoadGraph("Data/Texture/game/Invicible.png");
 	// Ä¶ŽžŠÔ‚Ì‰Šú‰»
 	PlayTime = 0.0f;
 	EndJudge = true;
@@ -27,6 +29,8 @@ Player::Player()
 	Pos = VGet(0, 0.5f, 0);
 	Dir = VGet(0, 0, 1);
 	ChangeSpeedTime = 0;
+	mVal = 0;
+	mValInc = 0.075;
 	//‚R‚cƒ‚ƒfƒ‹‚ÌYŽ²‚Ì‰ñ“]’l‚ð‚X‚O“x‚ÉƒZƒbƒg‚·‚é
 	MV1SetRotationXYZ(PlayerHandle, VGet(0.0f,-90.0f * DX_PI_F / 180.0f, 0.0f));
 	//‚RDƒ‚ƒfƒ‹‚Ìƒ|ƒWƒVƒ‡ƒ“Ý’è
@@ -101,6 +105,9 @@ void Player::ChangeMotion(int motionNum)
 
 void Player::PlayerUpdate()
 {
+
+	MeterMove();
+
 	// ‚R‚cƒ‚ƒfƒ‹‚ÌYŽ²‚Ì‰ñ“]’l‚ð³–Ê‚ÉƒZƒbƒg‚·‚é
 	MV1SetRotationXYZ(PlayerHandle, VGet(0.0f, 180.0f * DX_PI_F / 180.0f, 0.0f));
 
@@ -108,7 +115,7 @@ void Player::PlayerUpdate()
 	int Key = GetJoypadInputState(DX_INPUT_KEY_PAD1);
 
 	// ƒL[ƒ{[ƒh“ü—Í‚Ìƒ`ƒFƒbƒN
-	if (CheckHitKey(KEY_INPUT_UP))
+	if (CheckHitKey(KEY_INPUT_UP) || CheckHitKey(KEY_INPUT_SPACE))
 	{
 		Jump();  // ƒXƒy[ƒXƒL[‚ª‰Ÿ‚³‚ê‚½‚çƒWƒƒƒ“ƒv‚ðŠJŽn
 	}
@@ -298,6 +305,66 @@ void Player::DrawSpeedDown()
 	}
 }
 
+void Player::MeterMove()
+{
+	//val‘‰Á
+	mVal += mValInc;
+
+	//val‚ªãŒÀA‰ºŒÀ‚ð’´‚¦‚½Žž‚Ìˆ—
+	if (mVal > mMaxval)
+	{
+		mVal = mMaxval;
+		//mValInc *= -1;
+	}
+
+	if (mVal < 0)
+	{
+		mVal = 0;
+		mValInc *= -1;
+	}
+}
+
+// ƒQ[ƒW‚ð•`‰æ‚·‚é
+// x,y ƒQ[ƒW•`‰æ¶ãÀ•W@width, height ƒQ[ƒW•,‚‚³, ƒQ[ƒWÅ‘å’l, ƒQ[ƒW’l, ƒQ[ƒW“àƒJƒ‰[
+void Player::DrawInvicibleMeter(int x, int y, int width, int height, int max, int val, int color)
+{
+	int meterlen;
+	int left = x - 2;
+	int right = x + width + 2;
+	int top = y - 2;
+	int bottom = y + height + 2;
+
+	meterlen = (int)((float)width * ((float)val / (float)max));
+
+
+	//‘Ì—ÍƒQ[ƒW”wŒi•”•ª
+	SetDrawBlendMode(DX_BLENDMODE_ALPHA, 100);
+	DrawBox(left, top, right, bottom, 0xFF880000, TRUE);
+
+	//‘Ì—ÍƒQ[ƒW•”•ª
+	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 255);
+	DrawBox(x, y, x + meterlen, y + height, color, TRUE);
+
+	//‘Ì—ÍƒQ[ƒW‚Ì˜g‚ð•`‰æ
+
+	//ã‰º‰¡ü
+	DrawLine(left, top, right, top, 0xFFFFFFFF);
+	DrawLine(left, bottom, right, bottom, 0xFFFFFFFF);
+
+	//¶‰Ecü
+	DrawLine(left, top, left, bottom, 0xFFFFFFFF);
+	DrawLine(right, top, right, bottom, 0xFFFFFFFF);
+
+}
+
+void Player::DrawInvicible()
+{
+	DrawInvicibleMeter(650, 800, 300, 16, 150, mVal, 0xFF00AA00);
+
+	//DrawGraph(600, 700, InvicibleGraph, true);
+	DrawGraph(620, 700, InvicibleChargeGraph, true);
+
+}
 /// <summary>
 /// •`‰æ
 /// </summary>
@@ -306,4 +373,6 @@ void Player::Draw()
 	// ‚R‚cƒ‚ƒfƒ‹‚Ì•`‰æ
 	MV1DrawModel(PlayerHandle);
 	DrawSpeedDown();
+	DrawInvicible();
+
 }
