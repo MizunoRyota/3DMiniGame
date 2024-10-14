@@ -169,6 +169,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 
 				// プレイヤー制御
 				player->PlayerUpdate();
+				player->MeterMove();
+
 				// カメラの制御
 				camera->Update(player->GetPos());
 				// スカイドーム制御
@@ -219,6 +221,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				coin->Draw();
 				newspaper->Draw();
 				player->Draw();
+				player->DrawInvicible();
 				game->ScoreDraw();
 
 				hitcheck->circleDraw();

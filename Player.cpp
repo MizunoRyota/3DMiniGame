@@ -5,7 +5,7 @@
 // 速度（1=1m、60fps固定として、時速10km）
 // 10000m ÷ 時間 ÷ 分 ÷ 秒 ÷ フレーム
 const float Player::Speed = static_cast<float>(10000.0 / 45.0 / 45.0 / 45.0);
-const float Player::DownSpeed = static_cast<float>(10000.0 / 60.0 / 60.0 / 60.0);
+const float Player::DownSpeed = static_cast<float>(10000.0 / 65.0 / 65.0 / 65.0);
 
 const float Player::Scale = 0.006f;		// スケール
 const float Player::Gravity = 0.60f;     // 重力加速度
@@ -24,8 +24,10 @@ Player::Player()
 	// 再生時間の初期化
 	PlayTime = 0.0f;
 	EndJudge = true;
-	Velocity = VGet(0, 0, 0);
+	Invicible = false;
 	SpeedDownJudge = false;
+	CanInvicible = false;
+	Velocity = VGet(0, 0, 0);
 	Pos = VGet(0, 0.5f, 0);
 	Dir = VGet(0, 0, 1);
 	ChangeSpeedTime = 0;
@@ -55,6 +57,7 @@ void Player::PlayerInitialize()
 	Dir = VGet(0, 0, 0);
 	Rotation=0;
 	SpeedDownJudge = false;
+	Invicible = false;
 	// ３ＤモデルのY軸の回転値を９０度にセットする
 	MV1SetRotationXYZ(PlayerHandle, VGet(0.0f,300.0f * DX_PI_F / 180.0f, 0.0f));
 	MV1GetRotationXYZ( PlayerHandle);
@@ -105,9 +108,6 @@ void Player::ChangeMotion(int motionNum)
 
 void Player::PlayerUpdate()
 {
-
-	MeterMove();
-
 	// ３ＤモデルのY軸の回転値を正面にセットする
 	MV1SetRotationXYZ(PlayerHandle, VGet(0.0f, 180.0f * DX_PI_F / 180.0f, 0.0f));
 
@@ -139,6 +139,8 @@ void Player::PlayerUpdate()
 			jumpVelocity = 0;  // ジャンプ速度をリセット
 		}
 	}
+	//無敵の切り替え
+	ChangeInvicible();
 
 	if (Pos.y <= 0.5f)
 	{
@@ -204,13 +206,10 @@ void Player::PlayerUpdate()
 
 	// 3Dモデルのスケール決定
 	MV1SetScale(PlayerHandle, VGet(Scale, Scale, Scale));
-
 	// ３Dモデルのポジション設定
 	MV1SetPosition(PlayerHandle, Pos);
-
 	//3dモデルのアニメーションのセット
 	MV1SetAttachAnimTime(PlayerHandle, AttachIndex, PlayTime);
-
 }
 
 void Player::Jump()
@@ -258,7 +257,6 @@ bool Player::PlayerEnd()
 	MV1SetAttachAnimTime(PlayerHandle, AttachIndex, PlayTime);
 
 	return EndJudge;
-
 }
 
 void Player::PlayerGameOver()
@@ -314,6 +312,7 @@ void Player::MeterMove()
 	if (mVal > mMaxval)
 	{
 		mVal = mMaxval;
+		CanInvicible = true;
 		//mValInc *= -1;
 	}
 
@@ -321,6 +320,15 @@ void Player::MeterMove()
 	{
 		mVal = 0;
 		mValInc *= -1;
+	}
+}
+
+void Player::ChangeInvicible()
+{
+	if (mVal==mMaxval&&CanInvicible==true&& CheckHitKey(KEY_INPUT_SPACE))
+	{
+		Invicible = true;
+		CanInvicible = false;
 	}
 }
 
@@ -354,7 +362,6 @@ void Player::DrawInvicibleMeter(int x, int y, int width, int height, int max, in
 	//左右縦線
 	DrawLine(left, top, left, bottom, 0xFFFFFFFF);
 	DrawLine(right, top, right, bottom, 0xFFFFFFFF);
-
 }
 
 void Player::DrawInvicible()
@@ -363,7 +370,6 @@ void Player::DrawInvicible()
 
 	//DrawGraph(600, 700, InvicibleGraph, true);
 	DrawGraph(620, 700, InvicibleChargeGraph, true);
-
 }
 /// <summary>
 /// 描画
@@ -373,6 +379,4 @@ void Player::Draw()
 	// ３Ｄモデルの描画
 	MV1DrawModel(PlayerHandle);
 	DrawSpeedDown();
-	DrawInvicible();
-
 }

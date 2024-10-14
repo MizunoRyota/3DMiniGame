@@ -113,7 +113,7 @@ void NewsPaper::Draw()
     if (CrushJudge==true)
     {
         // 読みこんだグラフィックを回転描画
-        DrawRotaGraph(800, 200, 1.2f, PI / 3, NewsPaperGraph, TRUE);
+        DrawRotaGraph(800, 220, 1.2f, PI / 3, NewsPaperGraph, TRUE);
     }
     MV1DrawModel(NewsPaperHandle);
 }

@@ -14,6 +14,7 @@ public:
 	void ChangeMotion(int motionNum);//モーション変更
 	void ChangeSpeedFlag();			 //下がったスピードを元に戻す関数
 	void MeterMove();
+	void ChangeInvicible();
 	void DrawInvicibleMeter(int x, int y, int width, int height, int max, int val, int color);//
 	void DrawInvicible();			 //無敵の表示
 	void DrawSpeedDown();	//スピードダウン画像の表示
@@ -33,6 +34,7 @@ private:
 	int InvicibleChargeGraph;//チャージ中の画像
 	int InvicibleCharge;	//無敵までのチャージ時間
 	bool Invicible;			//無敵かどうかの判定
+	bool CanInvicible;      //無敵になれるかの判定
 	float mVal;				//メーター
 	float mValInc;			//メーターの増える値
 	static const int mMaxval = 150;//メーターの最大値
