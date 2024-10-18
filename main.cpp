@@ -196,18 +196,22 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 					coin->Update(car->GetPos());
 				}
 
-				hitcheck->BusCheck(player->GetPos(), bus->GetPos());//バスとの接触確認
-				hitcheck->BusCheck(player->GetPos(), bus->GetPos2());//バスとの接触確認
-				if (hitcheck->NewsPaperCheck(player->GetPos(), newspaper->GetPos()))
+				hitcheck->BusCheck(player->GetPos(), bus->GetPos(),player->GetInvicible());//バスとの接触確認
+				hitcheck->BusCheck(player->GetPos(), bus->GetPos2(), player->GetInvicible());//バスとの接触確認
+				if(hitcheck->NewsPaperCheck(player->GetPos(), newspaper->GetPos(), player->GetInvicible() == true))
+				{
+					newspaper->CrushInvicible();
+				}
+				if (hitcheck->NewsPaperCheck(player->GetPos(), newspaper->GetPos(), player->GetInvicible() == false))
 				{
 					newspaper->ChangeCrush();
 				}
 				DeadJudge = hitcheck->GetDead();//ゲームオーバーの判定
-				if (hitcheck->CarCheck(player->GetPos(), car->GetPos()))//普通自動車との判定
+				if (hitcheck->CarCheck(player->GetPos(), car->GetPos(), player->GetInvicible()))//普通自動車との判定
 				{
 					DeadJudge = hitcheck->DeadJudge();
 				}
-				hitcheck->PuddleCheck(player->GetPos(), puddle->GetPos(), player);
+				hitcheck->PuddleCheck(player->GetPos(), puddle->GetPos(), player, player->GetInvicible());
 
 				// 画面を初期化する
 				ClearDrawScreen();
@@ -221,7 +225,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				coin->Draw();
 				newspaper->Draw();
 				player->Draw();
-				player->DrawInvicible();
+				//player->DrawInvicible();
 				game->ScoreDraw();
 
 				hitcheck->circleDraw();

@@ -17,7 +17,7 @@ Player::Player()
 	PlayerHandle = MV1LoadModel("Data/3Dmodel/Player/Player.mv1");
 	//画像の読み込み
 	SpeedDownHandle = LoadGraph("Data/Texture/game/SpeedDown.png");
-	BettoriFrame = LoadGraph("Data/Texture/game/newNettori.png");
+	BettoriFrame = LoadGraph("Data/Texture/game/TarGraph.png");
 	BettoriHnadle = LoadGraph("Data/Texture/game/Bettori.png");
 	InvicibleGraph= LoadGraph("Data/Texture/game/CanInvicible.png");
 	InvicibleChargeGraph=LoadGraph("Data/Texture/game/Invicible.png");
@@ -55,9 +55,11 @@ void Player::PlayerInitialize()
 	Pos = VGet(0.5, 0.5f, -7.0);
 	Velocity = VGet(0, 0, 0);
 	Dir = VGet(0, 0, 0);
-	Rotation=0;
+	Rotation = 0; 
+	mVal = 0;
 	SpeedDownJudge = false;
 	Invicible = false;
+	CanInvicible = false;
 	// ３ＤモデルのY軸の回転値を９０度にセットする
 	MV1SetRotationXYZ(PlayerHandle, VGet(0.0f,300.0f * DX_PI_F / 180.0f, 0.0f));
 	MV1GetRotationXYZ( PlayerHandle);
@@ -296,17 +298,21 @@ void Player::DrawSpeedDown()
 {
 	if (SpeedDownJudge == true)
 	{
-		DrawGraph(600, 600, BettoriHnadle, true);
+		DrawGraph(400, 400, BettoriHnadle, true);
 		DrawGraph(900, 150, BettoriHnadle, true);
 		DrawGraph(100, 100, BettoriHnadle, true);
-		DrawGraph(0, 0, BettoriFrame, true);
+		DrawGraph(0, 475, BettoriFrame, true);
 	}
 }
 
 void Player::MeterMove()
 {
-	//val増加
-	mVal += mValInc;
+	//mVal = mMaxval;
+	if (CanInvicible == false)
+	{
+		//val増加
+		mVal += mValInc;
+	}
 
 	//valが上限、下限を超えた時の処理
 	if (mVal > mMaxval)
@@ -325,6 +331,7 @@ void Player::MeterMove()
 
 void Player::ChangeInvicible()
 {
+	//スペースを入力した時に無敵状態になる
 	if (mVal==mMaxval&&CanInvicible==true&& CheckHitKey(KEY_INPUT_SPACE))
 	{
 		Invicible = true;
@@ -367,7 +374,6 @@ void Player::DrawInvicibleMeter(int x, int y, int width, int height, int max, in
 void Player::DrawInvicible()
 {
 	DrawInvicibleMeter(650, 800, 300, 16, 150, mVal, 0xFF00AA00);
-
 	//DrawGraph(600, 700, InvicibleGraph, true);
 	DrawGraph(620, 700, InvicibleChargeGraph, true);
 }

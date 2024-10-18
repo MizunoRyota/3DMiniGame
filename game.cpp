@@ -7,6 +7,7 @@ GameState::GameState()
 	Controller = LoadGraph("data/texture/title/setumei.png");
 	TitleHandle = LoadGraph("data/texture/title/TitleLogo.png");
 	PuddleTutorialHandle= LoadGraph("data/texture/game/PuddleTutorial2.png");
+	KeyBordHandle = LoadGraph("data/texture/title/KeyBord.png");
 	NewsPaperTutorialHandle= LoadGraph("data/texture/game/新聞紙.png");
 	PaintHandle[0] = LoadGraph("data/texture/GameOver/GreenPaint.png");
 	PaintHandle[1] = LoadGraph("data/texture/GameOver/RedPaint.png");
@@ -24,18 +25,22 @@ GameState::GameState()
 
 GameState::~GameState()
 {
+	//処理なし
 }
 
 void GameState::GameInitialize()
 {
-	ReadyPhase1 = true;
-	ReadyPhase2 = false;
-	ReadyPhase3 = false;
+	ReadyPhase1 = true;		//チュートリアル画面１
+	ReadyPhase2 = false;	//チュートリアル画面２
+	ReadyPhase3 = false;	//チュートリアル画面３
+	//ハイスコアの設定
 	if (HighScore <= Score)
 	{
 		HighScore = Score;
 	}
+	//スコアを初期化
 	Score = 0;
+	//障害物のスピードの初期化
 	ObstacleSpeed = 0.5;
 }
 
@@ -55,12 +60,14 @@ void GameState::GameReady()
 	DrawBox(0, 780, 1600, 790, Pallet::Aqua.GetHandle(), TRUE);
 	// 描画モードを元に戻す
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+	//チュートリアル画面１
 	if (ReadyPhase1 == true)
 	{
 		SetFontSize(50);
-		DrawFormatString(600, 300, Pallet::AliceBlue.GetHandle(), "　 チュートリアル\n\n ←→で移動↑でジャンプ");
+		DrawFormatString(400, 300, Pallet::AliceBlue.GetHandle(), "　 チュートリアル\n\n ←→で移動↑でジャンプ");
 		DrawFormatString(600, 670, Pallet::AliceBlue.GetHandle(), "PRESS RIGHT KEY");
-		DrawGraph(150, 350, Controller, true);
+		DrawGraph(150, 400, Controller, true);
+		DrawGraph(1000, 400, KeyBordHandle, true);
 		if (CheckHitKey(KEY_INPUT_RIGHT))
 		{
 			WaitTimer(80);
@@ -68,6 +75,7 @@ void GameState::GameReady()
 			ReadyPhase2 = true;
 		}
 	}
+	//チュートリアル画面２
 	else if (ReadyPhase2 == true)
 	{
 		DrawFormatString(600, 400, Pallet::AliceBlue.GetHandle(), "  みずたまりにあたると動きにくくなるぞ");
@@ -80,6 +88,7 @@ void GameState::GameReady()
 			ReadyPhase3 = true;
 		}
 	}
+	//チュートリアル画面３
 	else if (ReadyPhase3 == true)
 	{
 		DrawFormatString(600, 400, Pallet::AliceBlue.GetHandle(), "新聞紙に当たると視界が遮られるぞ");
@@ -90,7 +99,9 @@ void GameState::GameReady()
 
 void GameState::GameUpdate()
 {
+	//障害物のスピード更新
 	ObstacleSpeedUpdate();
+	//障害物のパターン設定
 	ObstacleConfiguration();
 	Score++;
 }
@@ -133,6 +144,7 @@ void GameState::ObstacleSpeedUpdate()
 
 void GameState::ObstacleConfiguration()
 {
+	//障害物のパターン設定
 	if (IsObstacle=true)
 	{
 		ObstaclePattern = rand() % 4;
@@ -141,7 +153,6 @@ void GameState::ObstacleConfiguration()
 
 void GameState::ScoreUp()
 {
-
 	DrawFormatString(800, 20, Pallet::LemonYellow.GetHandle(), "SCORE UP", Score);
 	Score = Score + 100;
 }

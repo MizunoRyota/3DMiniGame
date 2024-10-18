@@ -1,15 +1,17 @@
 #include"DxLib.h"
 #include"NewsPaper.h"
-const float NewsPaper::Scale = 0.02f;		// スケール
+#include"Pallet.h"
+const float NewsPaper::Scale = 0.03f;		// スケール
 #define PI    3.1415926535897932384626433832795f
 NewsPaper::NewsPaper()
 {
-	NewsPaperHandle = MV1LoadModel("Data/3Dmodel/Obstacle/NewsPaper/NewsPaper.mv1");
-    NewsPaperGraph = LoadGraph("Data/Texture/game/NewsPaper.png");
+	NewsPaperHandle = MV1LoadModel("Data/3Dmodel/Obstacle/NewsPaper/Paper.mv1");
+    NewsPaperGraph = LoadGraph("Data/Texture/game/Sinnbun.png");
     bool flag = false;      // フラグの初期値
     int interval = 800000;  // 切り替え間隔（ミリ秒）
     int lastTime = 0;       // 最後にフラグを切り替えた時間
 	Pos = VGet(0, 3, 0);
+    ShadowRad = 0.6f;
     RightDir = false;
     LeftDir = true;
     CrushTime = 0;
@@ -27,15 +29,22 @@ NewsPaper::~NewsPaper()
 
 void NewsPaper::Initialize()
 {
+    // ３Dモデルのポジション設定
     Pos = VGet(0.0f, 1.0f, 80.0f);
     MV1SetRotationXYZ(NewsPaperHandle, VGet(0.0f,0.0f,0.0f ));
-    // ３Dモデルのポジション設定
     MV1SetPosition(NewsPaperHandle, Pos);
+}
+
+void NewsPaper::UpdateShadow()
+{
+    Toppos = VGet(Pos.x, -1, Pos.z);
+    Bottompos = VGet(Pos.x, Pos.y-0.65f, Pos.z);
 }
 
 void NewsPaper::Update()
 {
     LateralMove();
+    UpdateShadow();
     if (CrushJudge==true)
     {
         CrashPaper();
@@ -49,6 +58,7 @@ void NewsPaper::Update()
     if (Pos.z <= -100)
     {
         Pos.z = 80;
+        Pos.y = 1.0f;
     }
     int currentTime = GetNowCount();
     if (Pos.x > 3)
@@ -95,17 +105,24 @@ void NewsPaper::ChangeCrush()
 }
 void NewsPaper::LateralMove ()
 {
+    //左の上限に入ると反対に移動
     if (LeftDir==true)
     {
         Pos.x -= 0.05;
     }
 
+    //右の上限に入ると反対に移動
     else if (RightDir==true)
     {
         Pos.x += 0.05f;
     }    
     // ３Dモデルのポジション設定
     MV1SetPosition(NewsPaperHandle, Pos);
+}
+
+void NewsPaper::CrushInvicible()
+{
+    Pos.y += 0.05;
 }
 
 void NewsPaper::Draw()
@@ -116,4 +133,6 @@ void NewsPaper::Draw()
         DrawRotaGraph(800, 220, 1.2f, PI / 3, NewsPaperGraph, TRUE);
     }
     MV1DrawModel(NewsPaperHandle);
+    DrawCone3D(Toppos, Bottompos, ShadowRad, 8, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), TRUE);
+
 }

@@ -14,7 +14,6 @@ HitChecker::HitChecker()
     PuddleRadius = 0.9f;
     CarRadius = 1.3f;
     NewsPaperRadius = 1.5f;
-    
     CoinRadius = 1.0;
     deadgudge = false;
     SpeedDownjudge = false;
@@ -35,7 +34,7 @@ void HitChecker::Init()
 /// </summary>
 /// <param name="player"></param>
 /// <param name="obs"></param>
-void HitChecker::BusCheck(const VECTOR& player, const VECTOR& obs)
+void HitChecker::BusCheck(const VECTOR& player, const VECTOR& obs, bool Invicible)
 {
     //オブジェクトの位置獲得
     PlayerCircle = VGet(player.x, player.y + 0.6f, player.z);
@@ -65,7 +64,7 @@ void HitChecker::BusCheck(const VECTOR& player, const VECTOR& obs)
 /// <param name="playerpos"></param>
 /// <param name="obs"></param>
 /// <param name="player"></param>
-void HitChecker::PuddleCheck(const VECTOR& playerpos, const VECTOR& obs, Player* player)
+void HitChecker::PuddleCheck(const VECTOR& playerpos, const VECTOR& obs, Player* player, bool Invicible)
 {
     //オブジェクトの位置獲得
     PuddleCircle[1] = VGet(obs.x , obs.y, obs.z);         //中心
@@ -96,7 +95,7 @@ void HitChecker::PuddleCheck(const VECTOR& playerpos, const VECTOR& obs, Player*
 /// <param name="player"></param>
 /// <param name="obs"></param>
 /// <returns></returns>
-bool HitChecker::CarCheck(const VECTOR& player, const VECTOR& obs)
+bool HitChecker::CarCheck(const VECTOR& player, const VECTOR& obs, bool Invicible)
 {
     //オブジェクトの位置獲得
     CarCircle = VGet(obs.x, obs.y+0.6, obs.z);
@@ -106,7 +105,7 @@ bool HitChecker::CarCheck(const VECTOR& player, const VECTOR& obs)
 
     //オブジェクトとプレイヤーの半径の合計
     CarLength = PlayerRadius + CarRadius;
-
+    //正規化
     CarDistance = VSquareSize(Cardistance);
 
     return CarDistance <= (CarLength);
@@ -122,13 +121,13 @@ bool HitChecker::CoinCheck(const VECTOR& player, const VECTOR& obs)
 
     //オブジェクトとプレイヤーの半径の合計
     CoinLength = PlayerRadius + CoinRadius;
-
+    //正規化
     CoinDistance = VSquareSize(Coindistance);
 
     return CoinDistance <= (CoinLength);
 }
 
-bool HitChecker::NewsPaperCheck(const VECTOR& player, const VECTOR& obs)
+bool HitChecker::NewsPaperCheck(const VECTOR& player, const VECTOR& obs, bool Invicible)
 {
     //オブジェクトの位置獲得
     NewsPaperCircle = VGet(obs.x, obs.y + 0.6, obs.z);
@@ -138,10 +137,10 @@ bool HitChecker::NewsPaperCheck(const VECTOR& player, const VECTOR& obs)
 
     //オブジェクトとプレイヤーの半径の合計
     NewsPaperLength = PlayerRadius + NewsPaperRadius;
-
+    //正規化
     NewsPaperDistance = VSquareSize(NewsPaperdistance);
 
-    return NewsPaperDistance <= (NewsPaperLength);
+        return NewsPaperDistance <= (NewsPaperLength);
 }
 
 bool HitChecker::DeadJudge()

@@ -39,7 +39,9 @@ void Car::CarTitle()
 
 void Car::Update(int PlacePattern, float ObstacleSpeed)
 {
+	//ˆÚ“®
 	pos.z -= ObstacleSpeed;
+	//áŠQ•¨‚Ìƒpƒ^[ƒ“Œˆ’è
 	if (pos.z <= -20)
 	{
 		pos.z = 50.0f;

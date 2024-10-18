@@ -33,7 +33,7 @@ void Camera::Init()
 /// @param playerpos 
 void Camera::GameTitle(const VECTOR& playerpos)
 {
-
+    //タイトル画面の更新
     pos = VGet(pos.x, playerpos.y + Hight, playerpos.z + zoom);
     targtpos = VGet(playerpos.x, playerpos.y + 1, playerpos.z);
     SetCameraPositionAndTarget_UpVecY(pos, targtpos);
@@ -42,7 +42,7 @@ void Camera::GameTitle(const VECTOR& playerpos)
 /// @param playerpos 
 void Camera::ReadyUpdate(const VECTOR& playerpos)
 {
-
+    //ゲーム開始位置の更新
     if (zoom>=-3.2)
     {
         zoom-=0.04;
@@ -51,8 +51,9 @@ void Camera::ReadyUpdate(const VECTOR& playerpos)
     {
         Hight += 0.04;
     }
-
+    //カメラのポジションの設定
     pos = VGet(playerpos.x, playerpos.y + Hight, playerpos.z + zoom);
+    //見つめるポジションの設定
     targtpos = VGet(playerpos.x, playerpos.y + 1, playerpos.z);
 
     SetCameraPositionAndTarget_UpVecY(pos, targtpos);
@@ -77,13 +78,14 @@ void Camera::Update(const VECTOR playerpos)
     //VECTOR   aimPos = VSub(targetPos, pos);              // (b-a)
     //VECTOR   scalsepos = VScale(aimPos, 0.5);         // ((b-a) * t)
     //pos = VAdd(pos, scalsepos);         // a + ((b-a) * t)
+
+    // カメラに位置を反映.
     SetCameraPositionAndTarget_UpVecY(pos, targtpos);
 }
 
 void Camera::GameEnd(const VECTOR playerpos)
 {
     // TODO:z軸上で、プレイヤーから一定距離離れた状態でプレイヤーを常に見続けるよう位置調整
-    // カメラに位置を反映.
     if (zoom >= -10)
     {
         zoom -= 0.1;
@@ -91,6 +93,7 @@ void Camera::GameEnd(const VECTOR playerpos)
     }
     //targtpos = VGet(playerpos.x, playerpos.y + 1, 0);
 
+    // カメラに位置を反映.
     SetCameraPositionAndTarget_UpVecY(pos, targtpos);
 
 }

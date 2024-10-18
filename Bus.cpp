@@ -37,11 +37,24 @@ void Bus::Init()
 	}
 }
 
+void Bus::BlowAway()
+{
+	//回転値の更新
+	Rotation += 0.1;
+	//障害物の回転
+	for (int i = 0; i < BusNum; i++)
+	{
+		MV1SetRotationXYZ(BusHandle[i], VGet(0.0f, Rotation, Rotation));
+	}
+
+}
+
 void Bus::Update(int PlacePattern,float ObstacleSpeed)
 {
-	isActive = true;
+	//移動
 	pos[0].z-=ObstacleSpeed;
 	pos[1].z -= ObstacleSpeed;
+	//障害物パターンの更新
 	if (pos[0].z<=-20&&pos[1].z<=-20)
 	{
 		pos[0].z = 50.0f;
@@ -75,6 +88,7 @@ void Bus::Update(int PlacePattern,float ObstacleSpeed)
 
 void Bus::GameDraw()
 {
+	//描画
 	MV1DrawModel(BusHandle[0]);
 	MV1DrawModel(BusHandle[1]);
 }

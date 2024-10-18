@@ -22,6 +22,7 @@ private:
 	int Controller;							//コントローラーの画像
 	int PaintHandle[4];						//ペイントの画像
 	int TitleHandle;						//タイトルの画像
+	int KeyBordHandle;						//キーボードの画像
 	int PuddleTutorialHandle;				//水たまり画像
 	int NewsPaperTutorialHandle;			//新聞紙画像
 	int CrushNewsPaperHandle;				//新聞紙に衝突した時の画像ハンドル

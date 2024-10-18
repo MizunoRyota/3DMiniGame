@@ -13,15 +13,16 @@ public:
 	void PlayerGameOver();	//ゲームオーバー
 	void ChangeMotion(int motionNum);//モーション変更
 	void ChangeSpeedFlag();			 //下がったスピードを元に戻す関数
-	void MeterMove();
-	void ChangeInvicible();
-	void DrawInvicibleMeter(int x, int y, int width, int height, int max, int val, int color);//
+	void MeterMove();				 //無敵メーターの更新
+	void ChangeInvicible();			//無敵状態ににする
+	void DrawInvicibleMeter(int x, int y, int width, int height, int max, int val, int color);//無敵ゲージの更新
 	void DrawInvicible();			 //無敵の表示
 	void DrawSpeedDown();	//スピードダウン画像の表示
 	void Draw();			// 描画.
 	void Jump();			//ジャンプ
 	// モデルハンドルの取得.
 	const VECTOR& GetPos() const { return Pos; }
+	const bool GetInvicible() const { return Invicible; }
 	void Set(bool flag) { SpeedDownJudge = flag; }
 private:
 	//プレイヤー自身に関するメンバ変数
