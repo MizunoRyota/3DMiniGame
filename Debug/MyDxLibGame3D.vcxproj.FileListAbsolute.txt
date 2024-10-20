@@ -1,3 +1,5 @@
 D:\ゆいぜみ\school\2024ゆいゼミ\school\ゲーム制作コピー用 - コピー\Debug\MyDxLibGame3D.exe
 C:\Users\user\Desktop\バックアップ\3Dミニゲーム\Debug\MyDxLibGame3D.exe
 D:\ゆいぜみ\school\2024ゆいゼミ\school\3Dミニゲーム\Debug\MyDxLibGame3D.exe
+D:\ゆいぜみ\school\2024ゆいゼミ\3DMiniGame\Debug\MyDxLibGame3D.exe
+F:\ゆいぜみ\school\2024ゆいゼミ\3DMiniGame\Debug\MyDxLibGame3D.exe

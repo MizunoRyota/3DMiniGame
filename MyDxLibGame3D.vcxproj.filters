@@ -40,9 +40,6 @@
     <ClCompile Include="Stage.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Stage2.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="Bus.cpp">
       <Filter>Obstacle</Filter>
     </ClCompile>
@@ -52,13 +49,13 @@
     <ClCompile Include="Car.cpp">
       <Filter>Obstacle</Filter>
     </ClCompile>
-    <ClCompile Include="BackEnemy.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="CoinChecker.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="Puddle.cpp">
+      <Filter>Obstacle</Filter>
+    </ClCompile>
+    <ClCompile Include="NewsPaper.cpp">
+      <Filter>Obstacle</Filter>
+    </ClCompile>
+    <ClCompile Include="ObstacleManager.cpp">
       <Filter>Obstacle</Filter>
     </ClCompile>
   </ItemGroup>
@@ -90,9 +87,6 @@
     <ClInclude Include="Stage.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Stage2.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="Bus.h">
       <Filter>Obstacle</Filter>
     </ClInclude>
@@ -102,13 +96,13 @@
     <ClInclude Include="Car.h">
       <Filter>Obstacle</Filter>
     </ClInclude>
-    <ClInclude Include="BackEnemy.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="CoinChecker.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="Puddle.h">
+      <Filter>Obstacle</Filter>
+    </ClInclude>
+    <ClInclude Include="NewsPaper.h">
+      <Filter>Obstacle</Filter>
+    </ClInclude>
+    <ClInclude Include="ObstacleManager.h">
       <Filter>Obstacle</Filter>
     </ClInclude>
   </ItemGroup>

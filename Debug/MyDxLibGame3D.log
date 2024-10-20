@@ -1,15 +1,40 @@
-﻿  HitChecker.cpp
-  Player.cpp
-D:\ゆいぜみ\school\2024ゆいゼミ\school\3Dミニゲーム\HitChecker.cpp(46,45): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
-D:\ゆいぜみ\school\2024ゆいゼミ\school\3Dミニゲーム\HitChecker.cpp(46,33): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
-D:\ゆいぜみ\school\2024ゆいゼミ\school\3Dミニゲーム\HitChecker.cpp(47,45): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
-D:\ゆいぜみ\school\2024ゆいゼミ\school\3Dミニゲーム\HitChecker.cpp(47,33): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
-D:\ゆいぜみ\school\2024ゆいゼミ\school\3Dミニゲーム\HitChecker.cpp(58,21): error C2352: 'Player::ChangeSpeedFlag': 非静的メンバー関数の呼び出しにはオブジェクトが必要です
-  D:\ゆいぜみ\school\2024ゆいゼミ\school\3Dミニゲーム\Player.h(15,7):
-  'Player::ChangeSpeedFlag' の宣言を確認してください
-  
-D:\ゆいぜみ\school\2024ゆいゼミ\school\3Dミニゲーム\HitChecker.cpp(65,34): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
-D:\ゆいぜみ\school\2024ゆいゼミ\school\3Dミニゲーム\Player.cpp(186,15): warning C4305: '-=': 'double' から 'float' へ切り詰めます。
-D:\ゆいぜみ\school\2024ゆいゼミ\school\3Dミニゲーム\Player.cpp(190,16): warning C4305: '-=': 'double' から 'float' へ切り詰めます。
+﻿  Box.cpp
+  Camera.cpp
+  Car.cpp
+D:\ゆいぜみ\school\2024ゆいゼミ\3DMiniGame\Camera.cpp(14,13): warning C4305: '=': 'double' から 'float' へ切り詰めます。
+D:\ゆいぜみ\school\2024ゆいゼミ\3DMiniGame\Camera.cpp(30,13): warning C4305: '=': 'double' から 'float' へ切り詰めます。
+D:\ゆいぜみ\school\2024ゆいゼミ\3DMiniGame\Camera.cpp(48,19): warning C4305: '-=': 'double' から 'float' へ切り詰めます。
+D:\ゆいぜみ\school\2024ゆいゼミ\3DMiniGame\Camera.cpp(52,22): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+D:\ゆいぜみ\school\2024ゆいゼミ\3DMiniGame\Camera.cpp(91,20): warning C4305: '-=': 'double' から 'float' へ切り詰めます。
+  Coin.cpp
+  Color.cpp
+  game.cpp
+D:\ゆいぜみ\school\2024ゆいゼミ\3DMiniGame\game.cpp(20,18): warning C4305: '=': 'double' から 'float' へ切り詰めます。
+  HitChecker.cpp
+D:\ゆいぜみ\school\2024ゆいゼミ\3DMiniGame\HitChecker.cpp(101,34): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
+D:\ゆいぜみ\school\2024ゆいゼミ\3DMiniGame\HitChecker.cpp(117,36): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
+D:\ゆいぜみ\school\2024ゆいゼミ\3DMiniGame\HitChecker.cpp(133,41): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
   main.cpp
+  Bus.cpp
+D:\ゆいぜみ\school\2024ゆいゼミ\3DMiniGame\Bus.cpp(43,17): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+  NewsPaper.cpp
+D:\ゆいぜみ\school\2024ゆいゼミ\3DMiniGame\NewsPaper.cpp(66,21): warning C4305: '-=': 'double' から 'float' へ切り詰めます。
+D:\ゆいぜみ\school\2024ゆいゼミ\3DMiniGame\NewsPaper.cpp(72,22): warning C4305: '-=': 'double' から 'float' へ切り詰めます。
+D:\ゆいぜみ\school\2024ゆいゼミ\3DMiniGame\NewsPaper.cpp(89,36): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+D:\ゆいぜみ\school\2024ゆいゼミ\3DMiniGame\NewsPaper.cpp(111,22): warning C4305: '-=': 'double' から 'float' へ切り詰めます。
+D:\ゆいぜみ\school\2024ゆいゼミ\3DMiniGame\NewsPaper.cpp(125,18): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+  ObstacleManager.cpp
+  Player.cpp
+D:\ゆいぜみ\school\2024ゆいゼミ\3DMiniGame\Player.cpp(35,12): warning C4305: '=': 'double' から 'float' へ切り詰めます。
+D:\ゆいぜみ\school\2024ゆいゼミ\3DMiniGame\Player.cpp(267,16): warning C4305: '-=': 'double' から 'float' へ切り詰めます。
+D:\ゆいぜみ\school\2024ゆいゼミ\3DMiniGame\Player.cpp(376,45): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  Puddle.cpp
+D:\ゆいぜみ\school\2024ゆいゼミ\3DMiniGame\Puddle.cpp(9,40): warning C4305: '引数': 'double' から 'float' へ切り詰めます。
+  SkyDome.cpp
+D:\ゆいぜみ\school\2024ゆいゼミ\3DMiniGame\SkyDome.cpp(24,20): warning C4305: '-=': 'double' から 'float' へ切り詰めます。
+D:\ゆいぜみ\school\2024ゆいゼミ\3DMiniGame\SkyDome.cpp(30,19): warning C4305: '-=': 'double' から 'float' へ切り詰めます。
+  Stage.cpp
+D:\ゆいぜみ\school\2024ゆいゼミ\3DMiniGame\Stage.cpp(16,27): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+D:\ゆいぜみ\school\2024ゆいゼミ\3DMiniGame\Stage.cpp(50,18): warning C4305: '-=': 'double' から 'float' へ切り詰めます。
   コードを生成中...
+  MyDxLibGame3D.vcxproj -> D:\ゆいぜみ\school\2024ゆいゼミ\3DMiniGame\Debug\MyDxLibGame3D.exe
