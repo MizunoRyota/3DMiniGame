@@ -39,6 +39,8 @@ private:
 	float mVal;				//メーター
 	float mValInc;			//メーターの増える値
 	static const int mMaxval = 150;//メーターの最大値
+
+
 	//ゲームに関する変数
 	bool EndJudge;				//ゲームオーバー演出が終わったかどうかの判定
 	int SpeedDownHandle;		//スピードダウン中の画像

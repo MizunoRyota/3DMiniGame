@@ -153,25 +153,25 @@ bool HitChecker::DeadJudge()
 
 void HitChecker::circleDraw()
 {
-    //for (int i = 0; i < 3; i++)
-    //{
-    //    if (Busdistance[i] <= (Length))
-    //    {
-    //        DrawSphere3D(BusCircle[i], BusRadius, 16, Pallet::AliceBlue.GetHandle(), Pallet::AliceBlue.GetHandle(), false);
-    //    }
-    //    else
-    //    {
-    //    DrawSphere3D(BusCircle[i], BusRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
-    //    }
-    //}
+    for (int i = 0; i < 3; i++)
+    {
+        if (Busdistance[i] <= (Length))
+        {
+            DrawSphere3D(BusCircle[i], BusRadius, 16, Pallet::AliceBlue.GetHandle(), Pallet::AliceBlue.GetHandle(), false);
+        }
+        else
+        {
+        DrawSphere3D(BusCircle[i], BusRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
+        }
+    }
 
-    //DrawSphere3D(CarCircle, CarRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
-    //DrawSphere3D(PlayerCircle, PlayerRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
-    //DrawSphere3D(CoinCircle, PlayerRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
-    //DrawSphere3D(NewsPaperCircle, PlayerRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
+    DrawSphere3D(CarCircle, CarRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
+    DrawSphere3D(PlayerCircle, PlayerRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
+    DrawSphere3D(CoinCircle, PlayerRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
+    DrawSphere3D(NewsPaperCircle, PlayerRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
 
-    //for (size_t i = 0; i < 3; i++)
-    //{
-    //    DrawSphere3D(PuddleCircle[i], PuddleRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
-    //}
+    for (size_t i = 0; i < 3; i++)
+    {
+        DrawSphere3D(PuddleCircle[i], PuddleRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
+    }
 }

@@ -1,4 +1,5 @@
 #pragma once
+
 class Bus
 {
 public:
@@ -6,6 +7,9 @@ public:
 	~Bus();
 	void Init();
 	void Update(int PlacePattern,float ObstacleSpeed);		//ゲーム中の更新
+	void Phase1Pattern();
+	void Phase2Pattern();
+
 	void BlowAway();										//ぶっ飛び処理
 	void GameDraw();										//バスの描画
 	const VECTOR& GetPos() const { return pos[0]; }			//一つ目のバスのポジションを返す

@@ -1,15 +1,16 @@
 #include"DxLib.h"
 #include"Player.h"
 #include"HitChecker.h"
+#include"Bgm.h"
 // 静的定数
 // 速度（1=1m、60fps固定として、時速10km）
 // 10000m ÷ 時間 ÷ 分 ÷ 秒 ÷ フレーム
-const float Player::Speed = static_cast<float>(10000.0 / 45.0 / 45.0 / 45.0);
-const float Player::DownSpeed = static_cast<float>(10000.0 / 65.0 / 65.0 / 65.0);
+const float Player::Speed = static_cast<float>(10000.0 / 42.0 / 42.0 / 42.0);
+const float Player::DownSpeed = static_cast<float>(10000.0 / 60.0 / 60.0 / 60.0);
 
 const float Player::Scale = 0.006f;		// スケール
-const float Player::Gravity = 0.60f;     // 重力加速度
-const float Player::JumpSpeed = 0.18f;   // ジャンプの初速度
+const float Player::Gravity = 0.75f;     // 重力加速度
+const float Player::JumpSpeed = 0.2f;   // ジャンプの初速度
 
 Player::Player()
 {
@@ -119,6 +120,7 @@ void Player::PlayerUpdate()
 	// キーボード入力のチェック
 	if (CheckHitKey(KEY_INPUT_UP) || CheckHitKey(KEY_INPUT_SPACE))
 	{
+
 		Jump();  // スペースキーが押されたらジャンプを開始
 	}
 
@@ -197,13 +199,13 @@ void Player::PlayerUpdate()
 		Dir = VNorm(Velocity);
 	}
 
-	if (Pos.x>3)
+	if (Pos.x>2.5)
 	{
-		Pos.x = 3;
+		Pos.x = 2.5;
 	}
-	else if (Pos.x<-3)
+	else if (Pos.x<-2.5)
 	{
-		Pos.x = -3;
+		Pos.x = -2.5;
 	}
 
 	// 3Dモデルのスケール決定
@@ -281,7 +283,7 @@ void Player::ChangeSpeedFlag()
 		}
 
 		// 経過時間が3000ミリ秒(3秒)以上経過したらフラグを切り替える
-		if (GetNowCount() - ChangeSpeedTime >= 2500)
+		if (GetNowCount() - ChangeSpeedTime >= 1300)
 		{
 			SpeedDownJudge = false;
 			ChangeSpeedTime = 0;

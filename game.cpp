@@ -7,13 +7,21 @@ GameState::GameState()
 	Controller = LoadGraph("data/texture/title/setumei.png");
 	TitleHandle = LoadGraph("data/texture/title/TitleLogo.png");
 	PuddleTutorialHandle= LoadGraph("data/texture/game/PuddleTutorial2.png");
-	KeyBordHandle = LoadGraph("data/texture/title/KeyBord.png");
+	LeftArrowHandle = LoadGraph("data/texture/title/leftButton.png");
+	RightArrowHandle = LoadGraph("data/texture/title/RightButton.png");
+	SpaceHandle = LoadGraph("data/texture/title/SPACE.png");
+	RedSpaceHandle = LoadGraph("data/texture/title/RedSPACE.png");
 	NewsPaperTutorialHandle= LoadGraph("data/texture/game/新聞紙.png");
+	ArrowHandle = LoadGraph("data/texture/title/Arrow.png");
 	PaintHandle[0] = LoadGraph("data/texture/GameOver/GreenPaint.png");
 	PaintHandle[1] = LoadGraph("data/texture/GameOver/RedPaint.png");
 	PaintHandle[2] = LoadGraph("data/texture/GameOver/SkybluePaint.png");
 	PaintHandle[3] = LoadGraph("data/texture/GameOver/YellowPaint.png");
+	ArrowPosX = 630;
+	ArrowSpeed = 0.5f;
 	ColorChangeSpeed = 1;
+	IsCoin = false;
+	ArrowMove = false;
 	ReadyPhase1 = true;
 	ReadyPhase2 = false;
 	ReadyPhase3 = false;
@@ -51,24 +59,60 @@ void GameState::GameTitle()
 	DrawFormatString(150, 750, Pallet::AliceBlue.GetHandle(), "PRESS SPACE KEY");
 }
 
+void GameState::MoveArrow()
+{
+	if (ArrowMove==false)
+	{
+		ArrowPosX += ArrowSpeed;
+	}
+	else
+	{
+		ArrowPosX -= ArrowSpeed;
+	}
+	if (ArrowPosX>=640)
+	{
+		ArrowSpeed = 1.0f;
+	}
+	else
+	{
+		ArrowSpeed = 0.5f;
+	}
+	if (ArrowPosX>=650)
+	{
+		ArrowMove = true;
+	}
+	else if(ArrowPosX <= 630)
+	{
+		ArrowMove = false;
+	}
+}
+
 void GameState::GameReady()
 {
 	// 例：透明度50%の白色の四角形を描画する
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, 128);
-	DrawBox(0, 200, 1600, 800, Pallet::Black.GetHandle(), TRUE);
-	DrawBox(0, 210, 1600, 220, Pallet::Aqua.GetHandle(), TRUE);
+	DrawBox(0, 100, 1600, 800, Pallet::Black.GetHandle(), TRUE);
+	DrawBox(0, 110, 1600, 120, Pallet::Aqua.GetHandle(), TRUE);
 	DrawBox(0, 780, 1600, 790, Pallet::Aqua.GetHandle(), TRUE);
 	// 描画モードを元に戻す
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+	//矢印の更新
+	MoveArrow();
 	//チュートリアル画面１
 	if (ReadyPhase1 == true)
 	{
 		SetFontSize(50);
-		DrawFormatString(400, 300, Pallet::AliceBlue.GetHandle(), "　 チュートリアル\n\n ←→で移動↑でジャンプ");
-		DrawFormatString(600, 670, Pallet::AliceBlue.GetHandle(), "PRESS RIGHT KEY");
-		DrawGraph(150, 400, Controller, true);
-		DrawGraph(1000, 400, KeyBordHandle, true);
-		if (CheckHitKey(KEY_INPUT_RIGHT))
+		DrawFormatString(600, 150, Pallet::AliceBlue.GetHandle(), "チュートリアル");
+		DrawFormatString(700, 300, Pallet::AliceBlue.GetHandle(), "・・・左移動");
+		DrawFormatString(700, 450, Pallet::AliceBlue.GetHandle(), "・・・右移動");
+		DrawFormatString(700, 580, Pallet::AliceBlue.GetHandle(), "・・・ジャンプ");
+				
+		DrawGraph(ArrowPosX, 700, ArrowHandle, true);
+		DrawGraph(700, 670, SpaceHandle, true);
+		DrawGraph(480, 550, RedSpaceHandle, true);
+		DrawGraph(500, 250, LeftArrowHandle, true);
+		DrawGraph(500, 400, RightArrowHandle, true);
+		if (CheckHitKey(KEY_INPUT_SPACE))
 		{
 			WaitTimer(80);
 			ReadyPhase1 = false;
@@ -78,10 +122,11 @@ void GameState::GameReady()
 	//チュートリアル画面２
 	else if (ReadyPhase2 == true)
 	{
-		DrawFormatString(600, 400, Pallet::AliceBlue.GetHandle(), "  みずたまりにあたると動きにくくなるぞ");
-		DrawFormatString(600, 670, Pallet::AliceBlue.GetHandle(), "PRESS RIGHT KEY");
-		DrawGraph(150, 400, PuddleTutorialHandle, true);
-		if (CheckHitKey(KEY_INPUT_RIGHT))
+		DrawFormatString(600, 400, Pallet::AliceBlue.GetHandle(), "  地面のタールにあたると\n  動きにくくなるぞ");
+		DrawGraph(ArrowPosX, 700, ArrowHandle, true);
+		DrawGraph(700, 670, SpaceHandle, true);
+		DrawGraph(100, 350, PuddleTutorialHandle, true);
+		if (CheckHitKey(KEY_INPUT_SPACE))
 		{
 			WaitTimer(80);
 			ReadyPhase2 = false;
@@ -92,13 +137,37 @@ void GameState::GameReady()
 	else if (ReadyPhase3 == true)
 	{
 		DrawFormatString(600, 400, Pallet::AliceBlue.GetHandle(), "新聞紙に当たると視界が遮られるぞ");
-		DrawFormatString(600, 670, Pallet::AliceBlue.GetHandle(), "PRESS SPACE KEY");
-		DrawGraph(150, 350, NewsPaperTutorialHandle, true);
+		DrawGraph(ArrowPosX, 700, ArrowHandle, true);
+		DrawGraph(700, 670, SpaceHandle, true);
+		DrawGraph(50, 300, NewsPaperTutorialHandle, true);
+	}
+}
+
+void GameState::CountDown()
+{
+	// 数字を表示
+	for (int i = 1; i <= 4; i++)
+	{
+		if (i < 4)
+		{
+			SetFontSize(100);
+			DrawFormatString(100, 200,Pallet::AliceBlue.GetHandle(), "%d", 4 - i);
+			WaitTimer(500); // 1秒待機
+		}
+		else if (true)
+		{
+			DrawFormatString(100, 200, Pallet::AliceBlue.GetHandle(), "GO");
+			WaitTimer(500); // 1秒待機
+		}
 	}
 }
 
 void GameState::GameUpdate()
 {
+	if (CheckHitKey(KEY_INPUT_DOWN))
+	{
+		Score=5000;
+	}
 	//障害物のスピード更新
 	ObstacleSpeedUpdate();
 	//障害物のパターン設定
@@ -108,37 +177,25 @@ void GameState::GameUpdate()
 
 void GameState::ObstacleSpeedUpdate()
 {
-	if (Score>=1000)
+	if (Score>=1000&& Score <= 2000)
 	{
 		ObstacleSpeed = 0.6f;
 	} 
-	else if (Score>=2000)
+	else if (Score>=2000&&Score <= 3000)
+	{
+		ObstacleSpeed = 0.65f;
+	}
+	else if (Score>=3000 && Score <= 4000)
+	{
+		ObstacleSpeed = 0.7f;
+	}
+	else if (Score>=4000 && Score <= 5000)
+	{
+		ObstacleSpeed = 0.75f;
+	}
+	else if (Score>=5000 && Score <= 6000)
 	{
 		ObstacleSpeed = 0.8f;
-	}
-	else if (Score>=3000)
-	{
-		ObstacleSpeed = 0.9f;
-	}
-	else if (Score>=4000)
-	{
-		ObstacleSpeed = 1.0f;
-	}
-	else if (Score>=5000)
-	{
-		ObstacleSpeed = 1.1f;
-	}
-	else if (Score >= 6000)
-	{
-		ObstacleSpeed = 1.2f;
-	}
-	else if (Score >= 7000)
-	{
-		ObstacleSpeed = 1.3f;
-	}
-	else if (Score>=8000)
-	{
-		ObstacleSpeed = 1.4f;
 	}
 }
 
@@ -147,14 +204,36 @@ void GameState::ObstacleConfiguration()
 	//障害物のパターン設定
 	if (IsObstacle=true)
 	{
-		ObstaclePattern = rand() % 4;
+		ObstaclePattern = rand() % 8;
 	}
+}
+
+void GameState::SpeedUpDraw()
+{
+	if (Score >= 3000 && Score <= 3500)
+	{
+		SetFontSize(80);
+		DrawFormatString(100, 300, Pallet::AliceBlue.GetHandle(), "SPEED UP!");
+	}
+	if (Score >= 5000 && Score <= 5500)
+	{
+		SetFontSize(80);
+		DrawFormatString(100, 300, Pallet::AliceBlue.GetHandle(), "SPEED UP!");
+	}
+}
+
+void GameState::CrushCoin()
+{
+	IsCoin = false;
 }
 
 void GameState::ScoreUp()
 {
-	DrawFormatString(800, 20, Pallet::LemonYellow.GetHandle(), "SCORE UP", Score);
-	Score = Score + 100;
+	if (!IsCoin)
+	{
+		Score = Score + 200;
+		IsCoin = true;
+	}
 }
 
 void GameState::ScoreDraw()
@@ -195,9 +274,18 @@ void GameState::ChangeScoreColor()
 	}
 }
 
+void GameState::Draw()
+{
+	ScoreDraw();
+	SpeedUpDraw();
+}
+
 void GameState::GameOver()
 {
-	SetFontSize(60);
+
+	//矢印の更新
+	MoveArrow();
+
 	// 例：透明度50%の白色の四角形を描画する
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, 128);
 
@@ -222,7 +310,7 @@ void GameState::GameOver()
 	DrawFormatString(500, 520, Pallet::AliceBlue.GetHandle(), "YOUR SCORE");
 	SetFontSize(75);
 	DrawFormatString(800, 500, Color, " %d", Score);
-	SetFontSize(50);
 
-	DrawFormatString(600, 670, Pallet::AliceBlue.GetHandle(), "PRESS SPACE KEY");
+	DrawGraph(ArrowPosX, 700, ArrowHandle, true);
+	DrawGraph(700, 670, SpaceHandle, true);
 }

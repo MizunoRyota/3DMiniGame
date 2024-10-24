@@ -57,29 +57,69 @@ void Bus::Update(int PlacePattern,float ObstacleSpeed)
 	//障害物パターンの更新
 	if (pos[0].z<=-20&&pos[1].z<=-20)
 	{
+
 		pos[0].z = 50.0f;
 		pos[1].z = 50.0f;
 
-		if ( PlacePattern==0)
+		if (ObstacleSpeed<0.8)
 		{
-			pos[0].x = -2.0;
-			pos[1].x = 2.0;
+			if (PlacePattern == 0 || PlacePattern == 1 || PlacePattern == 2)
+			{
+				pos[0].x = -2.0;		//left
+				pos[1].x = -2.0;		//left
+
+			}
+			else if (PlacePattern == 3 || PlacePattern == 4 || PlacePattern == 5)
+			{
+				pos[0].x = 2.0;		//right
+				pos[1].x = 2.0;		//right
+			}
+			else if (PlacePattern == 6)
+			{
+				pos[0].x = -2.0;	//左
+				pos[1].x = -2.0;	//left
+			}
+			else if(PlacePattern==7)
+			{
+				pos[0].x = 2.0;		//左
+				pos[1].x = 2.0;		//右
+			}
+
 		}
-		else if( PlacePattern==1)
+		else if(ObstacleSpeed>=0.8)
 		{
-			pos[0].x = 2.0;
-			pos[1].x = 0;
+			if (PlacePattern == 0)
+			{
+				pos[0].x = -2.0;	//左
+				pos[1].x = 2.0;		//右
+			}
+			else if (PlacePattern == 1)
+			{
+				pos[0].x = 2.0;		//右
+				pos[1].x = 0;		//中心
+			}
+			else if (PlacePattern == 2)
+			{
+				pos[0].x = -2.0;	//左
+				pos[1].x = 0;		//中心
+			}
+			else if(PlacePattern==3||PlacePattern==4)
+			{
+				pos[0].x = 0;		//中心
+				pos[1].x = 0;		//中心
+			}
+			else if (PlacePattern == 5 || PlacePattern == 6)
+			{
+				pos[0].x = -2.0;		//左
+				pos[1].x = -2.0;		//left
+			}
+			else if (PlacePattern == 7)
+			{
+				pos[0].x = 2.0;		//right
+				pos[1].x = 2.0;		//right
+			}
 		}
-		else if(PlacePattern == 2)
-		{
-			pos[0].x = -2.0;
-			pos[1].x = 0;
-		}
-		else
-		{
-			pos[0].x = 0;
-			pos[1].x = 0;
-		}
+
 	}
 	// ３Dモデルのポジション設定
 	MV1SetPosition(BusHandle[0], pos[0]);

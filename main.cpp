@@ -2,6 +2,7 @@
 #include <ctime>
 #include<vector>
 #include"Pallet.h"
+#include"Bgm.h"
 #include"game.h"
 #include"HitChecker.h"
 #include"Camera.h"
@@ -18,6 +19,7 @@ enum STATE
 	STATE_INIT,
 	STATE_TITLE,		// タイトル.
 	STATE_READY,        //準備
+	STATE_COUNTDOWN,	//ゲームが始まるまでのカウント
 	STATE_GAME,			// ゲーム中.
 	STATE_END,			//やられている状態
 	STATE_GAMEOVER,		// ゲームオーバー.
@@ -55,6 +57,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	ChangeFont("ラノベPOP v2", DX_CHARSET_DEFAULT);
 	// インスタンス生成
 	GameState* game = new GameState();
+	BGM* bgm = new BGM();
 	Camera* camera = new Camera();
 	Skydome* skydome = new Skydome();
 	HitChecker* hitcheck = new HitChecker;
@@ -72,7 +75,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	bool EndJudge = false;			//ゲームオーバーに遷移できるかどうかの判定
 	bool debugPauseFlag = false;	//ポーズするときの変数
 	int gameStatus = STATE_INIT;	//現在のゲーム中の状態
-
+	bool getcoin = false;
 	while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_ESCAPE) == 0)
 	{
 		// フレーム開始時の時間を取得
@@ -115,6 +118,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 			//タイトル画面
 			if (gameStatus == STATE_TITLE)
 			{
+				bgm->PlayGameTitle();
 				skydome->SkydomeTitle();
 				car->CarTitle();
 				camera->GameTitle(player->GetPos());
@@ -155,15 +159,53 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				car->GameDraw();
 				game->GameReady();
 				// ゲーム状態変化
-				if (CheckHitKey(KEY_INPUT_SPACE))
+				if (CheckHitKey(KEY_INPUT_SPACE)&&game->GetReadyPhase3())
 				{
 					ClearDrawScreen();
-					gameStatus = STATE_GAME;
+					gameStatus = STATE_COUNTDOWN;
 				}
+			}
+			//ゲームが始まるまでのカウントダウン
+			if (gameStatus == STATE_COUNTDOWN)
+			{
+				skydome->SkydomeDraw();
+				stage->GameDraw();
+				player->Draw();
+				bus->GameDraw();
+				car->GameDraw();
+				// 数字を表示
+				for (int i = 1; i <= 4; i++)
+				{
+
+					//描画
+					ClearDrawScreen();
+
+					skydome->SkydomeDraw();
+					stage->GameDraw();
+					player->Draw();
+					bus->GameDraw();
+					car->GameDraw();
+					if (i < 4)
+					{
+						SetFontSize(300);
+						DrawFormatString(680, 400, Pallet::AliceBlue.GetHandle(), "%d", 4 - i);
+					}
+					else if (i==4)
+					{
+						SetFontSize(300);
+						DrawFormatString(600, 400, Pallet::AliceBlue.GetHandle(), "GO");
+					}
+					// 裏画面の内容を表画面に反映させる
+					ScreenFlip();
+						WaitTimer(700); // 1秒待機
+				}
+				gameStatus = STATE_GAME;
 			}
 			//ゲーム中
 			if (gameStatus == STATE_GAME)
 			{
+				bgm->StopGameTitle();
+				bgm->PlayGameSound();
 				//ゲームシーンの制御
 				game->GameUpdate();
 
@@ -182,17 +224,19 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				//障害物制御
 				car->Update(game->GetObstaclePattern(), game->GetObstacleSpeed());
 				bus->Update(game->GetObstaclePattern(), game->GetObstacleSpeed());
-				puddle->Update(game->GetObstacleSpeed());
+				puddle->Update(game->GetObstacleSpeed(), game->GetObstaclePattern());
 				newspaper->Update();
 
 				////コイン制御
 				if (hitcheck->CoinCheck(player->GetPos(), coin->GetPos()))
 				{
-					game->ScoreUp();//スコア上昇
-					coin->CoinMove();//
+						game->ScoreUp();//スコア上昇
+						coin->CoinMove();//
 				}
 				else
 				{
+
+					game->CrushCoin();
 					coin->Update(car->GetPos());
 				}
 
@@ -226,12 +270,14 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				newspaper->Draw();
 				player->Draw();
 				//player->DrawInvicible();
-				game->ScoreDraw();
+				game->Draw();
 
-				hitcheck->circleDraw();
+				//hitcheck->circleDraw();
 
 				if (DeadJudge == true)
 				{
+					bgm->StopGameSound();
+					bgm->PlayGameEnd();
 					gameStatus = STATE_END;
 				}
 			}

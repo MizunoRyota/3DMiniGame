@@ -30,7 +30,7 @@ NewsPaper::~NewsPaper()
 void NewsPaper::Initialize()
 {
     // ３Dモデルのポジション設定
-    Pos = VGet(0.0f, 1.0f, 80.0f);
+    Pos = VGet(0.0f, 1.5f, 80.0f);
     MV1SetRotationXYZ(NewsPaperHandle, VGet(0.0f,0.0f,0.0f ));
     MV1SetPosition(NewsPaperHandle, Pos);
 }
@@ -38,7 +38,7 @@ void NewsPaper::Initialize()
 void NewsPaper::UpdateShadow()
 {
     Toppos = VGet(Pos.x, -1, Pos.z);
-    Bottompos = VGet(Pos.x, Pos.y-0.65f, Pos.z);
+    Bottompos = VGet(Pos.x, Pos.y-1.15f, Pos.z);
 }
 
 void NewsPaper::Update()
@@ -58,7 +58,6 @@ void NewsPaper::Update()
     if (Pos.z <= -100)
     {
         Pos.z = 80;
-        Pos.y = 1.0f;
     }
     int currentTime = GetNowCount();
     if (Pos.x > 3)
@@ -89,7 +88,7 @@ void NewsPaper::CrashPaper()
             CrushTime = GetNowCount();  // ミリ秒単位で現在時刻を取得
         }
         // 経過時間が3000ミリ秒(3秒)以上経過したらフラグを切り替える
-        if (GetNowCount() - CrushTime >= 2000)
+        if (GetNowCount() - CrushTime >= 1000)
         {
             CrushJudge = false;
             CrushTime = 0;
@@ -103,6 +102,7 @@ void NewsPaper::ChangeCrush()
 {
     CrushJudge = true;
 }
+
 void NewsPaper::LateralMove ()
 {
     //左の上限に入ると反対に移動
@@ -134,5 +134,4 @@ void NewsPaper::Draw()
     }
     MV1DrawModel(NewsPaperHandle);
     DrawCone3D(Toppos, Bottompos, ShadowRad, 8, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), TRUE);
-
 }

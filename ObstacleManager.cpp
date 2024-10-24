@@ -10,4 +10,3 @@ ObstacleManager::~ObstacleManager()
 
 }
 
-

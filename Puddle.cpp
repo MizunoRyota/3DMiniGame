@@ -25,7 +25,7 @@ void Puddle::Init()
 	MV1SetPosition(PuddleHandle, pos);
 }
 
-void Puddle::Update( float ObstacleSpeed)
+void Puddle::Update( float ObstacleSpeed,bool ObstaclePattern)
 {
 	//ポジションの更新
 	pos.z -= ObstacleSpeed;

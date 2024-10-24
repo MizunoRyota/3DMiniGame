@@ -45,22 +45,54 @@ void Car::Update(int PlacePattern, float ObstacleSpeed)
 	if (pos.z <= -20)
 	{
 		pos.z = 50.0f;
-		if (PlacePattern == 0)
+		if (ObstacleSpeed<0.8)
 		{
-			pos.x = 0;
+			if (PlacePattern == 0|| PlacePattern == 1|| PlacePattern == 2)
+			{
+				pos.x = 2.0;
+			}
+			else if (PlacePattern == 3 || PlacePattern == 4 || PlacePattern == 5)
+			{
+				pos.x = -2.0;
+			}
+			else if (PlacePattern == 6 )
+			{
+				pos.x = 0;
+			}
+			else if (PlacePattern == 7)
+			{
+				pos.x = 0;
+			}
+
 		}
-		else if (PlacePattern == 1)
+		else if(ObstacleSpeed >= 0.8)
 		{
-			pos.x = -2.0;
+			if (PlacePattern == 0)
+			{
+				pos.x = 0;
+			}
+			else if (PlacePattern == 1)
+			{
+				pos.x = -2.0;
+			}
+			else if (PlacePattern == 2)
+			{
+				pos.x = 2.0;
+			}
+			else if (PlacePattern == 3 || PlacePattern == 4 )
+			{
+				pos.x = 2.0;
+			}
+			else if (PlacePattern == 5 || PlacePattern == 6)
+			{
+				pos.x = 2.0;
+			}
+			else if (PlacePattern == 7)
+			{
+				pos.x = -2.0;
+			}
 		}
-		else if (PlacePattern == 2)
-		{
-			pos.x = 2.0;
-		}
-		else if (PlacePattern == 3)
-		{
-			pos.x = 2.0;
-		}
+
 	}
 	// ３Dモデルのポジション設定
 	MV1SetPosition(CarHandle, pos);

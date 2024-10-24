@@ -58,6 +58,9 @@
     <ClCompile Include="ObstacleManager.cpp">
       <Filter>Obstacle</Filter>
     </ClCompile>
+    <ClCompile Include="Bgm.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">
@@ -104,6 +107,9 @@
     </ClInclude>
     <ClInclude Include="ObstacleManager.h">
       <Filter>Obstacle</Filter>
+    </ClInclude>
+    <ClInclude Include="Bgm.h">
+      <Filter>ソース ファイル</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
