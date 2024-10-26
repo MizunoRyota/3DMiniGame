@@ -13,6 +13,10 @@ public:
 	void SpeedUpDraw();						//
 	void CountDown();						//
 	void CrushCoin();						//
+	void PlayDecideSound();
+	void StopDecideSound();
+	void PlayCoinSound();
+	void StopCoinSound();
 	void ObstacleSpeedUpdate();				//障害物のスピード更新
 	void ObstacleConfiguration();			//障害物パターンの配置
 	void ChangeScoreColor();				//スコアの色の更新
@@ -40,6 +44,7 @@ private:
 	int ScoreColorG;						//	スコアの色G
 	int ScoreColorB;						//　スコアの色B
 	int ColorChangeSpeed;					//	スコアの色が変化する速度
+	int Coin;
 	int Score;								//スコア
 	int HighScore;							//ハイスコア
 	int SpeedMeter;							//現在のスピード
@@ -52,7 +57,8 @@ private:
 	bool ReadyPhase3;						//チュートリアル画面3段階
 	bool ArrowMove;						
 	int ArrowHandle;						//矢印画像ハンドル
-	float ArrowPosX;							//矢印のX座標の位置
+	float ArrowPosX;						//矢印のX座標の位置
 	float ArrowSpeed;						//矢印のスピード
+	int Decide;								//決定音
 
 };

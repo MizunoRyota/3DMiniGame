@@ -4,6 +4,7 @@
 #include"game.h"
 GameState::GameState()
 {
+	//
 	Controller = LoadGraph("data/texture/title/setumei.png");
 	TitleHandle = LoadGraph("data/texture/title/TitleLogo.png");
 	PuddleTutorialHandle= LoadGraph("data/texture/game/PuddleTutorial2.png");
@@ -17,6 +18,11 @@ GameState::GameState()
 	PaintHandle[1] = LoadGraph("data/texture/GameOver/RedPaint.png");
 	PaintHandle[2] = LoadGraph("data/texture/GameOver/SkybluePaint.png");
 	PaintHandle[3] = LoadGraph("data/texture/GameOver/YellowPaint.png");
+	//
+	Decide = LoadSoundMem("Data/Sound/Game/決定ボタンを押す7.mp3");
+	ChangeVolumeSoundMem(255 * 100 / 100, Decide);
+	Coin = LoadSoundMem("Data/Sound/Game/Coin.mp3");
+	ChangeVolumeSoundMem(255 * 40 / 100, Coin);
 	ArrowPosX = 630;
 	ArrowSpeed = 0.5f;
 	ColorChangeSpeed = 1;
@@ -86,7 +92,14 @@ void GameState::MoveArrow()
 		ArrowMove = false;
 	}
 }
-
+void GameState::PlayDecideSound()
+{
+	PlaySoundMem(Decide, DX_PLAYTYPE_BACK, true);           //kettei
+}
+void GameState::StopDecideSound()
+{
+	StopSoundMem(Decide);
+}
 void GameState::GameReady()
 {
 	// 例：透明度50%の白色の四角形を描画する
@@ -115,6 +128,7 @@ void GameState::GameReady()
 		if (CheckHitKey(KEY_INPUT_SPACE))
 		{
 			WaitTimer(80);
+			PlayDecideSound();
 			ReadyPhase1 = false;
 			ReadyPhase2 = true;
 		}
@@ -129,6 +143,7 @@ void GameState::GameReady()
 		if (CheckHitKey(KEY_INPUT_SPACE))
 		{
 			WaitTimer(80);
+			PlayDecideSound();
 			ReadyPhase2 = false;
 			ReadyPhase3 = true;
 		}
@@ -226,11 +241,19 @@ void GameState::CrushCoin()
 {
 	IsCoin = false;
 }
-
+void GameState::PlayCoinSound()
+{
+	PlaySoundMem(Coin, DX_PLAYTYPE_BACK, true);            //コインゲット
+}
+void GameState::StopCoinSound()
+{
+	StopSoundMem(Coin);
+}
 void GameState::ScoreUp()
 {
 	if (!IsCoin)
 	{
+		PlayCoinSound();
 		Score = Score + 200;
 		IsCoin = true;
 	}

@@ -119,6 +119,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 			if (gameStatus == STATE_TITLE)
 			{
 				bgm->PlayGameTitle();
+				bgm->StopGameOver();
+
 				skydome->SkydomeTitle();
 				car->CarTitle();
 				camera->GameTitle(player->GetPos());
@@ -136,6 +138,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				// ƒQ[ƒ€ó‘Ô•Ï‰»
 				if (CheckHitKey(KEY_INPUT_SPACE))
 				{
+					game->PlayDecideSound();
 					WaitTimer(200);
 					ClearDrawScreen();
 					car->Init();
@@ -161,6 +164,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				// ƒQ[ƒ€ó‘Ô•Ï‰»
 				if (CheckHitKey(KEY_INPUT_SPACE)&&game->GetReadyPhase3())
 				{
+					game->PlayDecideSound();
 					ClearDrawScreen();
 					gameStatus = STATE_COUNTDOWN;
 				}
@@ -302,6 +306,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 			//ƒQ[ƒ€ƒŠƒUƒ‹ƒg
 			if (gameStatus == STATE_GAMEOVER)
 			{
+				bgm->PlayGameOver();
 				player->PlayerGameOver();
 				// ‰æ–Ê‚ð‰Šú‰»‚·‚é
 				ClearDrawScreen();
@@ -315,6 +320,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				// ƒQ[ƒ€ó‘Ô•Ï‰»
 				if (CheckHitKey(KEY_INPUT_SPACE))
 				{
+					game->PlayDecideSound();
 					ClearDrawScreen();
 					WaitTimer(80);
 					gameStatus = STATE_INIT;

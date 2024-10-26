@@ -7,6 +7,11 @@ NewsPaper::NewsPaper()
 {
 	NewsPaperHandle = MV1LoadModel("Data/3Dmodel/Obstacle/NewsPaper/Paper.mv1");
     NewsPaperGraph = LoadGraph("Data/Texture/game/Sinnbun.png");
+
+    Paper = LoadSoundMem("Data/Sound/bgm/CrushTar.mp3");
+    ChangeVolumeSoundMem(255 * 40 / 100, Paper);
+    Paper = LoadSoundMem("Data/Sound/bgm/Crush.mp3");
+    ChangeVolumeSoundMem(255 * 40 / 100, Paper);
     bool flag = false;      // フラグの初期値
     int interval = 800000;  // 切り替え間隔（ミリ秒）
     int lastTime = 0;       // 最後にフラグを切り替えた時間
@@ -85,6 +90,7 @@ void NewsPaper::CrashPaper()
         // 初回の呼び出し時に開始時刻を設定
         if (CrushTime == 0)
         {
+
             CrushTime = GetNowCount();  // ミリ秒単位で現在時刻を取得
         }
         // 経過時間が3000ミリ秒(3秒)以上経過したらフラグを切り替える

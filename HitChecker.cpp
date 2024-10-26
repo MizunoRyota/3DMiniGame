@@ -170,7 +170,7 @@ void HitChecker::circleDraw()
     DrawSphere3D(CoinCircle, PlayerRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
     DrawSphere3D(NewsPaperCircle, PlayerRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
 
-    for (size_t i = 0; i < 3; i++)
+    for (int i = 0; i < 3; i++)
     {
         DrawSphere3D(PuddleCircle[i], PuddleRadius, 16, Pallet::Black.GetHandle(), Pallet::Black.GetHandle(), false);
     }

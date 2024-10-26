@@ -14,12 +14,10 @@ public:
 	void PlayGameOver();
 	void StopGameOver();
 	//Œø‰Ê‰¹
-	void PlayCrushTar();
-	void StopCrushTar();
+
 	void PlayCrushNewsPaper();
 	void StopCrushNewsPaper();
-	void PlayCoinSound();
-	void StopCoinSound();
+
 	void PlayJumpSound();
 	void StopJumpSound();
 private:
@@ -29,9 +27,6 @@ private:
 	int GameEnd;
 	int GameOver;
 	//Œø‰Ê‰¹
-	int Tar;
-	int NewsPaper;
-	int Coin;
 	int Jump;
 };
 

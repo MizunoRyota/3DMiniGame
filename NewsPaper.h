@@ -14,6 +14,7 @@ public:
 	void Draw();
 	const VECTOR& GetPos() const { return Pos; }//ポジションの位置返す
 
+
 private:
 	VECTOR Pos;				//ポジション
 	VECTOR Toppos;			//影の頂点
@@ -24,6 +25,7 @@ private:
 	float Rotation;			//回転変数
 	float CrushTime;		//ぶつかる時間
 	bool flag ;				// フラグの初期値
+	int Paper;
 	bool RightDir;			//右動き	
 	bool LeftDir;			//左動き
 	bool CrushJudge;		//当たったか判定

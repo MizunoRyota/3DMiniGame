@@ -5,22 +5,17 @@ BGM::BGM()
 {
     //ゲームサウンド
     Game=LoadSoundMem("Data/Sound/bgm/Game.mp3");
-    ChangeVolumeSoundMem(255 * 20 / 100, Game);
+    ChangeVolumeSoundMem(255 * 35 / 100, Game);
     Title = LoadSoundMem("Data/Sound/bgm/Title.mp3");
     ChangeVolumeSoundMem(255 * 40 / 100, Title);    
     GameEnd = LoadSoundMem("Data/Sound/bgm/Crush.mp3");
     ChangeVolumeSoundMem(255 * 40 / 100, GameEnd);
     GameOver = LoadSoundMem("Data/Sound/bgm/Game.mp3");
-    ChangeVolumeSoundMem(255 * 20 / 100, Game);
+    ChangeVolumeSoundMem(255 * 20 / 100, GameOver);
     //効果音
-    GameEnd = LoadSoundMem("Data/Sound/bgm/CrushTar.mp3");
-    ChangeVolumeSoundMem(255 * 40 / 100, Coin);    
-    GameEnd = LoadSoundMem("Data/Sound/bgm/Crush.mp3");
-    ChangeVolumeSoundMem(255 * 40 / 100, Coin);
-    GameEnd = LoadSoundMem("Data/Sound/bgm/Crush.mp3");
-    ChangeVolumeSoundMem(255 * 40 / 100, Coin);
-    GameOver = LoadSoundMem("Data/Sound/bgm/Game.mp3");
-    ChangeVolumeSoundMem(255 * 20 / 100, Jump);
+    GameOver = LoadSoundMem("Data/Sound/bgm/GameOver.mp3");
+    ChangeVolumeSoundMem(255 * 20 / 100, GameOver);
+
 }
 
 BGM::~BGM()
@@ -31,7 +26,7 @@ BGM::~BGM()
 
 void BGM::PlayGameSound()
 {
-    PlaySoundMem(Game, DX_PLAYTYPE_LOOP, false);            //ゲーム中
+    PlaySoundMem(Game, DX_PLAYTYPE_LOOP, true);            //ゲーム中
 }
 void BGM::StopGameSound()
 {
@@ -39,16 +34,16 @@ void BGM::StopGameSound()
 }
 void BGM::PlayGameTitle()
 {
-    PlaySoundMem(Title, DX_PLAYTYPE_LOOP, false);           //タイトル
+    PlaySoundMem(Title, DX_PLAYTYPE_LOOP, true);           //タイトル
 }
 void BGM::StopGameTitle()
 {
     StopSoundMem(Title);
-
 }
+
 void BGM::PlayGameEnd()
 {
-    PlaySoundMem(GameEnd, DX_PLAYTYPE_BACK, false);         //ゲーム終わり
+    PlaySoundMem(GameEnd, DX_PLAYTYPE_BACK, true);         //ゲーム終わり
 }
 void BGM::StopGameEnd()
 {
@@ -56,23 +51,17 @@ void BGM::StopGameEnd()
 }
 void BGM::PlayGameOver()
 {
-    PlaySoundMem(GameOver, DX_PLAYTYPE_LOOP, false);        //ゲームオーバー
+    PlaySoundMem(GameOver, DX_PLAYTYPE_LOOP, true);        //ゲームオーバー
 }
 void BGM::StopGameOver()
 {
     StopSoundMem(GameOver);
 }
-void BGM::PlayCoinSound()
-{
-    PlaySoundMem(Coin, DX_PLAYTYPE_BACK, false);            //コインゲット
-}
-void BGM::StopGameEnd()
-{
-    StopSoundMem(Coin);
-}
+
+
 void BGM::PlayJumpSound()
 {
-    PlaySoundMem(Jump, DX_PLAYTYPE_BACK, false);            //ジャンプ
+    PlaySoundMem(Jump, DX_PLAYTYPE_BACK, true);            //ジャンプ
 }
 void BGM::StopJumpSound()
 {

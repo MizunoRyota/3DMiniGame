@@ -12,6 +12,8 @@ const float Player::Scale = 0.006f;		// スケール
 const float Player::Gravity = 0.75f;     // 重力加速度
 const float Player::JumpSpeed = 0.2f;   // ジャンプの初速度
 
+BGM* bgm = new BGM();
+
 Player::Player()
 {
 	// ３Ｄモデルの読み込み
@@ -22,6 +24,9 @@ Player::Player()
 	BettoriHnadle = LoadGraph("Data/Texture/game/Bettori.png");
 	InvicibleGraph= LoadGraph("Data/Texture/game/CanInvicible.png");
 	InvicibleChargeGraph=LoadGraph("Data/Texture/game/Invicible.png");
+
+	Tar = LoadSoundMem("Data/Sound/Game/水ぶくぶく2.mp3");
+	ChangeVolumeSoundMem(255 * 70 / 100, Tar);
 	// 再生時間の初期化
 	PlayTime = 0.0f;
 	EndJudge = true;
@@ -111,6 +116,7 @@ void Player::ChangeMotion(int motionNum)
 
 void Player::PlayerUpdate()
 {
+
 	// ３ＤモデルのY軸の回転値を正面にセットする
 	MV1SetRotationXYZ(PlayerHandle, VGet(0.0f, 180.0f * DX_PI_F / 180.0f, 0.0f));
 
@@ -270,7 +276,14 @@ void Player::PlayerGameOver()
 	// ３Dモデルのポジション設定
 	MV1SetPosition(PlayerHandle, Pos);
 }
-
+void Player::PlayCrushTar()
+{
+	PlaySoundMem(Tar, DX_PLAYTYPE_BACK, true);            //べっとり音
+}
+void Player::StopCrushTar()
+{
+	StopSoundMem(Tar);
+}
 void Player::ChangeSpeedFlag()
 {
 	if (SpeedDownJudge==true)
@@ -279,6 +292,7 @@ void Player::ChangeSpeedFlag()
 		// 初回の呼び出し時に開始時刻を設定
 		if (ChangeSpeedTime == 0)
 		{
+			PlayCrushTar();
 			ChangeSpeedTime = GetNowCount();  // ミリ秒単位で現在時刻を取得
 		}
 
