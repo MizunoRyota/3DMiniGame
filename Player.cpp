@@ -26,7 +26,9 @@ Player::Player()
 	InvicibleChargeGraph=LoadGraph("Data/Texture/game/Invicible.png");
 
 	Tar = LoadSoundMem("Data/Sound/Game/水ぶくぶく2.mp3");
-	ChangeVolumeSoundMem(255 * 70 / 100, Tar);
+	ChangeVolumeSoundMem(255 * 80 / 100, Tar);
+	JumpSound = LoadSoundMem("Data/Sound/Gsme/jump.mp3");
+	ChangeVolumeSoundMem(255 * 40 / 100, JumpSound);
 	// 再生時間の初期化
 	PlayTime = 0.0f;
 	EndJudge = true;
@@ -126,7 +128,7 @@ void Player::PlayerUpdate()
 	// キーボード入力のチェック
 	if (CheckHitKey(KEY_INPUT_UP) || CheckHitKey(KEY_INPUT_SPACE))
 	{
-
+		PlayJumpSound();
 		Jump();  // スペースキーが押されたらジャンプを開始
 	}
 
@@ -221,7 +223,14 @@ void Player::PlayerUpdate()
 	//3dモデルのアニメーションのセット
 	MV1SetAttachAnimTime(PlayerHandle, AttachIndex, PlayTime);
 }
-
+void Player::PlayJumpSound()
+{
+	PlaySoundMem(JumpSound, DX_PLAYTYPE_BACK, true);            //ジャンプ
+}
+void Player::StopJumpSound()
+{
+	StopSoundMem(JumpSound);
+}
 void Player::Jump()
 {
 	//モーションの変更

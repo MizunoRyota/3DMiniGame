@@ -180,6 +180,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 				// êîéöÇï\é¶
 				for (int i = 1; i <= 4; i++)
 				{
+					bgm->PlayCountDown1();
 
 					//ï`âÊ
 					ClearDrawScreen();
@@ -191,11 +192,13 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 					car->GameDraw();
 					if (i < 4)
 					{
+						bgm->PlayCountDown1();
 						SetFontSize(300);
 						DrawFormatString(680, 400, Pallet::AliceBlue.GetHandle(), "%d", 4 - i);
 					}
 					else if (i==4)
 					{
+						bgm->PlayCountDown2();
 						SetFontSize(300);
 						DrawFormatString(600, 400, Pallet::AliceBlue.GetHandle(), "GO");
 					}

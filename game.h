@@ -46,6 +46,8 @@ private:
 	int ColorChangeSpeed;					//	スコアの色が変化する速度
 	int Coin;
 	int Score;								//スコア
+	int ScoreX;
+	int ScoreSpeed;
 	int HighScore;							//ハイスコア
 	int SpeedMeter;							//現在のスピード
 	int ObstaclePattern;					//障害物の配置パターン

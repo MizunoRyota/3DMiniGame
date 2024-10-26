@@ -11,6 +11,8 @@ public:
 	void CrashPaper();
 	void ChangeCrush();
 	void CrushInvicible();
+	void PlayCrushNewsPaper();
+	void StopCrushNewsPaper();
 	void Draw();
 	const VECTOR& GetPos() const { return Pos; }//ポジションの位置返す
 

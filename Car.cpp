@@ -67,23 +67,23 @@ void Car::Update(int PlacePattern, float ObstacleSpeed)
 		}
 		else if(ObstacleSpeed >= 0.8)
 		{
-			if (PlacePattern == 0)
+			if (PlacePattern == 0 )
 			{
 				pos.x = 0;
 			}
-			else if (PlacePattern == 1)
+			else if (PlacePattern == 1 || PlacePattern == 4)
 			{
 				pos.x = -2.0;
 			}
-			else if (PlacePattern == 2)
+			else if (PlacePattern == 2 || PlacePattern == 6)
 			{
 				pos.x = 2.0;
 			}
-			else if (PlacePattern == 3 || PlacePattern == 4 )
+			else if (PlacePattern == 3 )
 			{
 				pos.x = 2.0;
 			}
-			else if (PlacePattern == 5 || PlacePattern == 6)
+			else if (PlacePattern == 5 )
 			{
 				pos.x = 2.0;
 			}

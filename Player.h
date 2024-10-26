@@ -17,6 +17,8 @@ public:
 	void ChangeInvicible();			//無敵状態ににする
 	void PlayCrushTar();
 	void StopCrushTar();
+	void PlayJumpSound();
+	void StopJumpSound();
 	void DrawInvicibleMeter(int x, int y, int width, int height, int max, int val, int color);//無敵ゲージの更新
 	void DrawInvicible();			 //無敵の表示
 	void DrawSpeedDown();	//スピードダウン画像の表示
@@ -41,7 +43,9 @@ private:
 	float mVal;				//メーター
 	float mValInc;			//メーターの増える値
 	static const int mMaxval = 150;//メーターの最大値
+	int JumpSound;
 	int Tar;
+
 
 
 	//ゲームに関する変数

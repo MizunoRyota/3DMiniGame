@@ -13,9 +13,10 @@ BGM::BGM()
     GameOver = LoadSoundMem("Data/Sound/bgm/Game.mp3");
     ChangeVolumeSoundMem(255 * 20 / 100, GameOver);
     //効果音
-    GameOver = LoadSoundMem("Data/Sound/bgm/GameOver.mp3");
-    ChangeVolumeSoundMem(255 * 20 / 100, GameOver);
-
+    CountDown1 = LoadSoundMem("Data/Sound/bgm/Countdown1.mp3");
+    ChangeVolumeSoundMem(255 * 80 / 100, CountDown1);
+    CountDown2 = LoadSoundMem("Data/Sound/bgm/CountDown2.mp3");
+    ChangeVolumeSoundMem(255 * 80 / 100, CountDown2);
 }
 
 BGM::~BGM()
@@ -26,7 +27,7 @@ BGM::~BGM()
 
 void BGM::PlayGameSound()
 {
-    PlaySoundMem(Game, DX_PLAYTYPE_LOOP, true);            //ゲーム中
+    PlaySoundMem(Game, DX_PLAYTYPE_LOOP, false);            //ゲーム中
 }
 void BGM::StopGameSound()
 {
@@ -34,7 +35,7 @@ void BGM::StopGameSound()
 }
 void BGM::PlayGameTitle()
 {
-    PlaySoundMem(Title, DX_PLAYTYPE_LOOP, true);           //タイトル
+    PlaySoundMem(Title, DX_PLAYTYPE_LOOP, false);           //タイトル
 }
 void BGM::StopGameTitle()
 {
@@ -51,19 +52,25 @@ void BGM::StopGameEnd()
 }
 void BGM::PlayGameOver()
 {
-    PlaySoundMem(GameOver, DX_PLAYTYPE_LOOP, true);        //ゲームオーバー
+    PlaySoundMem(GameOver, DX_PLAYTYPE_LOOP, false);        //ゲームオーバー
 }
 void BGM::StopGameOver()
 {
     StopSoundMem(GameOver);
 }
-
-
-void BGM::PlayJumpSound()
+void BGM::PlayCountDown1()
 {
-    PlaySoundMem(Jump, DX_PLAYTYPE_BACK, true);            //ジャンプ
+    PlaySoundMem(CountDown1, DX_PLAYTYPE_BACK, true);        //CountDown1
 }
-void BGM::StopJumpSound()
+void BGM::StopCountDown1()
 {
-    StopSoundMem(Jump);
+    StopSoundMem(CountDown1);
+}
+void BGM::PlayCountDown2()
+{
+    PlaySoundMem(CountDown2, DX_PLAYTYPE_BACK, true);        //CountDown2
+}
+    void BGM::StopCountDown2()
+{
+    StopSoundMem(CountDown2);
 }

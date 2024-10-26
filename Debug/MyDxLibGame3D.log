@@ -1,4 +1,7 @@
-﻿  Bgm.cpp
-  main.cpp
-  コードを生成中...
+﻿  game.cpp
+D:\ゆいぜみ\school\2024ゆいゼミ\3DMiniGame\game.cpp(34,18): warning C4305: '=': 'double' から 'float' へ切り詰めます。
+D:\ゆいぜみ\school\2024ゆいゼミ\3DMiniGame\game.cpp(127,13): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\ゆいぜみ\school\2024ゆいゼミ\3DMiniGame\game.cpp(144,13): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\ゆいぜみ\school\2024ゆいゼミ\3DMiniGame\game.cpp(159,13): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+D:\ゆいぜみ\school\2024ゆいゼミ\3DMiniGame\game.cpp(357,12): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
   MyDxLibGame3D.vcxproj -> D:\ゆいぜみ\school\2024ゆいゼミ\3DMiniGame\Debug\MyDxLibGame3D.exe

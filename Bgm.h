@@ -14,12 +14,12 @@ public:
 	void PlayGameOver();
 	void StopGameOver();
 	//å¯â âπ
+	void PlayCountDown1();
+	void StopCountDown1();	
+	void PlayCountDown2();
+	void StopCountDown2();
 
-	void PlayCrushNewsPaper();
-	void StopCrushNewsPaper();
 
-	void PlayJumpSound();
-	void StopJumpSound();
 private:
 	//ÉQÅ[ÉÄBGM
 	int Title;
@@ -27,6 +27,7 @@ private:
 	int GameEnd;
 	int GameOver;
 	//å¯â âπ
-	int Jump;
+	int CountDown1;
+	int CountDown2;
 };
 

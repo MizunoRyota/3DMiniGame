@@ -7,12 +7,12 @@ GameState::GameState()
 	//
 	Controller = LoadGraph("data/texture/title/setumei.png");
 	TitleHandle = LoadGraph("data/texture/title/TitleLogo.png");
-	PuddleTutorialHandle= LoadGraph("data/texture/game/PuddleTutorial2.png");
+	PuddleTutorialHandle = LoadGraph("data/texture/game/PuddleTutorial2.png");
 	LeftArrowHandle = LoadGraph("data/texture/title/leftButton.png");
 	RightArrowHandle = LoadGraph("data/texture/title/RightButton.png");
 	SpaceHandle = LoadGraph("data/texture/title/SPACE.png");
 	RedSpaceHandle = LoadGraph("data/texture/title/RedSPACE.png");
-	NewsPaperTutorialHandle= LoadGraph("data/texture/game/新聞紙.png");
+	NewsPaperTutorialHandle = LoadGraph("data/texture/game/新聞紙.png");
 	ArrowHandle = LoadGraph("data/texture/title/Arrow.png");
 	PaintHandle[0] = LoadGraph("data/texture/GameOver/GreenPaint.png");
 	PaintHandle[1] = LoadGraph("data/texture/GameOver/RedPaint.png");
@@ -33,6 +33,8 @@ GameState::GameState()
 	ReadyPhase3 = false;
 	ObstacleSpeed = 0.3;
 	ObstaclePattern = 0;
+	ScoreSpeed = 7;
+	ScoreX = 1600;
 	HighScore = 0;
 	Score = 0;
 }
@@ -54,6 +56,8 @@ void GameState::GameInitialize()
 	}
 	//スコアを初期化
 	Score = 0;
+	ScoreX = 1600;
+
 	//障害物のスピードの初期化
 	ObstacleSpeed = 0.5;
 }
@@ -194,15 +198,15 @@ void GameState::ObstacleSpeedUpdate()
 {
 	if (Score>=1000&& Score <= 2000)
 	{
-		ObstacleSpeed = 0.6f;
+		ObstacleSpeed = 0.5f;
 	} 
 	else if (Score>=2000&&Score <= 3000)
 	{
-		ObstacleSpeed = 0.65f;
+		ObstacleSpeed = 0.6f;
 	}
 	else if (Score>=3000 && Score <= 4000)
 	{
-		ObstacleSpeed = 0.7f;
+		ObstacleSpeed = 0.65f;
 	}
 	else if (Score>=4000 && Score <= 5000)
 	{
@@ -225,15 +229,31 @@ void GameState::ObstacleConfiguration()
 
 void GameState::SpeedUpDraw()
 {
-	if (Score >= 3000 && Score <= 3500)
+	if (Score >= 3000 && Score <= 4000)
 	{
+		if (ScoreX <= 0)
+		{
+			ScoreX = 1600;
+		}
+		if (ScoreX>=-300)
+		{
+			ScoreX -= ScoreSpeed;
+		}
 		SetFontSize(80);
-		DrawFormatString(100, 300, Pallet::AliceBlue.GetHandle(), "SPEED UP!");
+		DrawFormatString(ScoreX, 200, Pallet::AliceBlue.GetHandle(), "SPEED UP!");
 	}
-	if (Score >= 5000 && Score <= 5500)
+	if (Score >= 5000 && Score <= 6000)
 	{
+		if (ScoreX<=0)
+		{
+			ScoreX = 1600;
+		}
+		if (ScoreX >= -300)
+		{
+			ScoreX -= ScoreSpeed;
+		}
 		SetFontSize(80);
-		DrawFormatString(100, 300, Pallet::AliceBlue.GetHandle(), "SPEED UP!");
+		DrawFormatString(ScoreX, 200, Pallet::AliceBlue.GetHandle(), "SPEED UP!");
 	}
 }
 
