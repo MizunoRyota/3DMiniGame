@@ -3,16 +3,100 @@
   "WorkspaceRootPath": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Box.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Box.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Box.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Box.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Pallet.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Pallet.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Color.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Color.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Color.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Color.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\HitChecker.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:HitChecker.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Bgm.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Bgm.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Car.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Car.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Bus.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Bus.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Coin.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Coin.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Bgm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Bgm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\NewsPaper.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:NewsPaper.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Puddle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Puddle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\NewsPaper.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:NewsPaper.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Bus.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Bus.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Coin.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Coin.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Puddle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Puddle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\ObstacleManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:ObstacleManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\ObstacleManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:ObstacleManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\HitChecker.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -23,52 +107,8 @@
       "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Bgm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Bgm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\HitChecker.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:HitChecker.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Puddle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Puddle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Puddle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Puddle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\NewsPaper.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:NewsPaper.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\NewsPaper.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:NewsPaper.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Coin.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Coin.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\ObstacleManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:ObstacleManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Car.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -83,52 +123,12 @@
       "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Stage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Pallet.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Pallet.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Coin.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Coin.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\ObstacleManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:ObstacleManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Car.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Car.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Bus.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Bus.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Bus.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Bus.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\SkyDome.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:SkyDome.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Stage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Stage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Box.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Box.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Color.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Color.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Color.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Color.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Box.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{229C6CCE-D20D-4863-AA78-E2C8A1C45EF6}|MyDxLibGame3D.vcxproj|solutionrelative:Box.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\include\\vector||{3B902123-F8A7-4915-9F01-361F908088D0}|"
@@ -145,112 +145,47 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 15,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "game.h",
-              "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\game.h",
-              "RelativeDocumentMoniker": "game.h",
-              "ToolTip": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\game.h",
-              "RelativeToolTip": "game.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-25T14:47:16.195Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Camera.h",
-              "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Camera.h",
-              "RelativeDocumentMoniker": "Camera.h",
-              "ToolTip": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Camera.h",
-              "RelativeToolTip": "Camera.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-26T15:52:31.765Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "NewsPaper.cpp",
-              "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\NewsPaper.cpp",
-              "RelativeDocumentMoniker": "NewsPaper.cpp",
-              "ToolTip": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\NewsPaper.cpp",
-              "RelativeToolTip": "NewsPaper.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-30T07:39:04.025Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Coin.h",
-              "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Coin.h",
-              "RelativeDocumentMoniker": "Coin.h",
-              "ToolTip": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Coin.h",
-              "RelativeToolTip": "Coin.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-28T08:34:10.571Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Puddle.h",
-              "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Puddle.h",
-              "RelativeDocumentMoniker": "Puddle.h",
-              "ToolTip": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Puddle.h",
-              "RelativeToolTip": "Puddle.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-01T18:41:42.898Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 16,
               "Title": "Puddle.cpp",
               "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Puddle.cpp",
               "RelativeDocumentMoniker": "Puddle.cpp",
               "ToolTip": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Puddle.cpp",
               "RelativeToolTip": "Puddle.cpp",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-27T17:32:45.868Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-27T17:32:45.868Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 23,
               "Title": "Player.h",
               "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Player.h",
               "RelativeDocumentMoniker": "Player.h",
               "ToolTip": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Player.h",
               "RelativeToolTip": "Player.h",
-              "ViewState": "AgIAAAgAAAAAAAAAAAD4vxsAAAAJAAAAAAAAAA==",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAAC0AAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-23T15:42:45.263Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-23T15:42:45.263Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "NewsPaper.h",
               "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\NewsPaper.h",
               "RelativeDocumentMoniker": "NewsPaper.h",
               "ToolTip": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\NewsPaper.h",
               "RelativeToolTip": "NewsPaper.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAFAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-09-30T07:38:39.457Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 24,
               "Title": "HitChecker.h",
               "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\HitChecker.h",
               "RelativeDocumentMoniker": "HitChecker.h",
@@ -258,60 +193,68 @@
               "RelativeToolTip": "HitChecker.h",
               "ViewState": "AgIAACEAAAAAAAAAAAAAAA4AAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-23T15:47:21.92Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-23T15:47:21.92Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 9,
               "Title": "Bgm.cpp",
               "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Bgm.cpp",
               "RelativeDocumentMoniker": "Bgm.cpp",
               "ToolTip": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Bgm.cpp",
               "RelativeToolTip": "Bgm.cpp",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAADIAAAABAAAAAAAAAA==",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAADYAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-24T08:09:03.568Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-24T08:09:03.568Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 13,
               "Title": "Bgm.h",
               "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Bgm.h",
               "RelativeDocumentMoniker": "Bgm.h",
               "ToolTip": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Bgm.h",
               "RelativeToolTip": "Bgm.h",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-24T08:08:48.263Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-24T08:08:48.263Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "main.cpp",
               "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAAIUAAAAAAAAAAAAlwGUAAAAEAAAAAAAAAA==",
+              "ViewState": "AQIAAIsAAAAAAAAAAAAQwJoAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-23T15:52:12.328Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-23T15:52:12.328Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "game.cpp",
               "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\game.cpp",
               "RelativeDocumentMoniker": "game.cpp",
               "ToolTip": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\game.cpp",
               "RelativeToolTip": "game.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF8AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAK8AAAAAAAAAAAAgwNMAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-09-25T14:47:15.276Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "game.h",
+              "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\game.h",
+              "RelativeDocumentMoniker": "game.h",
+              "ToolTip": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\game.h",
+              "RelativeToolTip": "game.h",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAADEAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-09-25T14:47:16.195Z"
             },
             {
               "$type": "Document",
@@ -321,14 +264,13 @@
               "RelativeDocumentMoniker": "HitChecker.cpp",
               "ToolTip": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\HitChecker.cpp",
               "RelativeToolTip": "HitChecker.cpp",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAAAFYAAAAXAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-23T15:47:28.455Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-23T15:47:28.455Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 26,
               "Title": "Camera.cpp",
               "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Camera.cpp",
               "RelativeDocumentMoniker": "Camera.cpp",
@@ -340,31 +282,132 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 2,
               "Title": "Pallet.h",
               "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Pallet.h",
               "RelativeDocumentMoniker": "Pallet.h",
               "ToolTip": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Pallet.h",
               "RelativeToolTip": "Pallet.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-29T07:55:55.205Z"
+              "WhenOpened": "2024-09-29T07:55:55.205Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 3,
+              "Title": "Color.h",
+              "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Color.h",
+              "RelativeDocumentMoniker": "Color.h",
+              "ToolTip": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Color.h",
+              "RelativeToolTip": "Color.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-09-29T08:05:19.002Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Color.cpp",
+              "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Color.cpp",
+              "RelativeDocumentMoniker": "Color.cpp",
+              "ToolTip": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Color.cpp",
+              "RelativeToolTip": "Color.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-29T08:05:18.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Box.h",
+              "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Box.h",
+              "RelativeDocumentMoniker": "Box.h",
+              "ToolTip": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Box.h",
+              "RelativeToolTip": "Box.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-09T06:55:55.204Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Box.cpp",
+              "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Box.cpp",
+              "RelativeDocumentMoniker": "Box.cpp",
+              "ToolTip": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Box.cpp",
+              "RelativeToolTip": "Box.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-09T06:55:56.357Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Puddle.h",
+              "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Puddle.h",
+              "RelativeDocumentMoniker": "Puddle.h",
+              "ToolTip": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Puddle.h",
+              "RelativeToolTip": "Puddle.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-01T18:41:42.898Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Coin.h",
+              "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Coin.h",
+              "RelativeDocumentMoniker": "Coin.h",
+              "ToolTip": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Coin.h",
+              "RelativeToolTip": "Coin.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-09-28T08:34:10.571Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "NewsPaper.cpp",
+              "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\NewsPaper.cpp",
+              "RelativeDocumentMoniker": "NewsPaper.cpp",
+              "ToolTip": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\NewsPaper.cpp",
+              "RelativeToolTip": "NewsPaper.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-30T07:39:04.025Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Camera.h",
+              "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Camera.h",
+              "RelativeDocumentMoniker": "Camera.h",
+              "ToolTip": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Camera.h",
+              "RelativeToolTip": "Camera.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-09-26T15:52:31.765Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "Player.cpp",
               "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Player.cpp",
               "RelativeDocumentMoniker": "Player.cpp",
               "ToolTip": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Player.cpp",
               "RelativeToolTip": "Player.cpp",
-              "ViewState": "AQIAAPoAAAAAAAAAAAAlwCYBAAAAAAAA",
+              "ViewState": "AQIAAPwAAAAAAAAAAAAiwCEBAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-09-23T15:49:39.152Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 31,
               "Title": "Stage.h",
               "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Stage.h",
               "RelativeDocumentMoniker": "Stage.h",
@@ -376,31 +419,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 21,
               "Title": "ObstacleManager.h",
               "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\ObstacleManager.h",
               "RelativeDocumentMoniker": "ObstacleManager.h",
               "ToolTip": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\ObstacleManager.h",
               "RelativeToolTip": "ObstacleManager.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-10-16T06:31:34.074Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 12,
               "Title": "Coin.cpp",
               "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Coin.cpp",
               "RelativeDocumentMoniker": "Coin.cpp",
               "ToolTip": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Coin.cpp",
               "RelativeToolTip": "Coin.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAQAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-09-27T14:19:51.729Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 22,
               "Title": "ObstacleManager.cpp",
               "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\ObstacleManager.cpp",
               "RelativeDocumentMoniker": "ObstacleManager.cpp",
@@ -412,7 +455,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 28,
               "Title": "SkyDome.cpp",
               "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\SkyDome.cpp",
               "RelativeDocumentMoniker": "SkyDome.cpp",
@@ -424,19 +467,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 11,
               "Title": "Bus.cpp",
               "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Bus.cpp",
               "RelativeDocumentMoniker": "Bus.cpp",
               "ToolTip": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Bus.cpp",
               "RelativeToolTip": "Bus.cpp",
-              "ViewState": "AQIAAEkAAAAAAAAAAAAQwHMAAAAdAAAA",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAAAF8AAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-09-26T15:18:49.24Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 30,
               "Title": "SkyDome.h",
               "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\SkyDome.h",
               "RelativeDocumentMoniker": "SkyDome.h",
@@ -448,7 +491,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 29,
               "Title": "Stage.cpp",
               "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Stage.cpp",
               "RelativeDocumentMoniker": "Stage.cpp",
@@ -460,19 +503,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 10,
               "Title": "Car.cpp",
               "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Car.cpp",
               "RelativeDocumentMoniker": "Car.cpp",
               "ToolTip": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Car.cpp",
               "RelativeToolTip": "Car.cpp",
-              "ViewState": "AQIAADMAAAAAAAAAAAAqwFsAAAANAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEkAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-09-26T15:22:28.089Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 27,
               "Title": "Car.h",
               "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Car.h",
               "RelativeDocumentMoniker": "Car.h",
@@ -484,7 +527,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 18,
               "Title": "Bus.h",
               "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Bus.h",
               "RelativeDocumentMoniker": "Bus.h",
@@ -493,54 +536,6 @@
               "ViewState": "AQIAAAAAAAAAAAAAAADwvwkAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-09-26T15:24:28.855Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "Color.h",
-              "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Color.h",
-              "RelativeDocumentMoniker": "Color.h",
-              "ToolTip": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Color.h",
-              "RelativeToolTip": "Color.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-29T08:05:19.002Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "Box.h",
-              "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Box.h",
-              "RelativeDocumentMoniker": "Box.h",
-              "ToolTip": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Box.h",
-              "RelativeToolTip": "Box.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-09T06:55:55.204Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "Box.cpp",
-              "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Box.cpp",
-              "RelativeDocumentMoniker": "Box.cpp",
-              "ToolTip": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Box.cpp",
-              "RelativeToolTip": "Box.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvxAAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-09T06:55:56.357Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "Color.cpp",
-              "DocumentMoniker": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Color.cpp",
-              "RelativeDocumentMoniker": "Color.cpp",
-              "ToolTip": "D:\\\u3086\u3044\u305C\u307F\\school\\2024\u3086\u3044\u30BC\u30DF\\3DMiniGame\\Color.cpp",
-              "RelativeToolTip": "Color.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-29T08:05:18.425Z"
             },
             {
               "$type": "Document",
